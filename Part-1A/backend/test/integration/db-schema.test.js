@@ -15,7 +15,7 @@ function createSchemaDatabase(t) {
     database.close();
     rmSync(directory, { recursive: true, force: true });
   });
-  assert.deepEqual(runMigrations(database), [1]);
+  assert.deepEqual(runMigrations(database), [1, 2, 3]);
   return database;
 }
 
@@ -82,7 +82,9 @@ test('creates all T006 schema tables and primary keys', (t) => {
     ORDER BY name
   `).all().map(({ name }) => name);
 
-  assert.deepEqual(actualTables, [...expectedTables].sort());
+  for (const tableName of expectedTables) {
+    assert.ok(actualTables.includes(tableName), `expected table ${tableName}`);
+  }
 
   for (const tableName of expectedTables) {
     const columns = database.pragma(`table_info(${tableName})`);

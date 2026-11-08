@@ -1,0 +1,39 @@
+
+> backend@1.0.0 test
+> node --test
+
+✔ configures foreign keys, WAL, and a 5000 ms busy timeout on each file connection (44.932324ms)
+✔ uses the configured environment path for the database file (9.218311ms)
+✔ supports parameterized statements and committed transactions (4.033952ms)
+✔ rolls back a failed transaction (1.712761ms)
+✔ applies migrations in ascending order and does not reapply them (17.40733ms)
+✔ rolls back a failed migration without recording its version (3.687612ms)
+✔ detects an applied migration whose file is missing (4.512542ms)
+✔ rejects invalid and duplicate migration filenames (2.409837ms)
+✔ closes database connections cleanly (0.971516ms)
+✔ rejects overlapping availability inserts for the same doctor (69.902278ms)
+✔ rejects overlapping availability updates but allows adjacent slots (23.054871ms)
+✔ allows overlapping intervals for different doctors (18.795145ms)
+✔ rejects updates and deletes of authorization audit records (14.316587ms)
+✔ rejects invalid foreign keys, slot uniqueness and CHECK constraints (8.085902ms)
+✔ rolls back the complete transaction when an availability trigger rejects a write (6.357282ms)
+✔ reapplying migrations leaves schema and triggers unchanged (6.278839ms)
+✔ creates all T006 schema tables and primary keys (36.873341ms)
+✔ enforces account requirements and normalized email uniqueness (9.907991ms)
+✔ enforces patient profile one-to-one and patient account ownership (13.590372ms)
+✔ enforces beneficiary ownership, approved relationships, dates and nullable authorization status (20.897881ms)
+✔ accepts only the approved adult beneficiary authorization states (11.541786ms)
+✔ enforces doctor profiles belong uniquely to doctor accounts (5.813078ms)
+✔ enforces unique department and specialization names case-insensitively (5.49005ms)
+✔ enforces session token-hash uniqueness and account references (5.427091ms)
+✔ enforces unique doctor-department and doctor-specialization associations (13.697818ms)
+✔ enforces restrictive deletion for dependent profiles, beneficiaries, associations and sessions (8.55855ms)
+✔ creates required lookup indexes and remains repeatable (5.81779ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 850.49239
