@@ -284,6 +284,47 @@ test('only the doctor owner or permitted staff can manage a schedule', async (t)
   assert.equal(unauthenticated.status, 401);
 });
 
+test('availability update and delete require ownership or schedule-management permission', async (t) => {
+  const fixture = await createHttpFixture(t, { availabilityManagerAccountIds: [900] });
+  const owner = seedDoctor(fixture);
+  const otherDoctor = seedDoctor(fixture, 'Another Fictional Availability Doctor');
+  const patient = createAccountSession(fixture, { role: 'PATIENT' });
+  const unpermittedStaff = createAccountSession(fixture, { role: 'STAFF' });
+  const slotResponse = await createSlot(fixture, owner);
+  assert.equal(slotResponse.status, 201);
+  const { id: slotId } = (await slotResponse.json()).data;
+
+  for (const actor of [otherDoctor, patient, unpermittedStaff]) {
+    for (const method of ['PATCH', 'DELETE']) {
+      const response = await fixture.request(
+        `${slotPath(owner.accountId)}/${slotId}`,
+        {
+          method,
+          headers: writeHeaders(fixture, actor),
+          body: method === 'PATCH'
+            ? {
+              startAt: '2026-11-09T12:00:00-05:00',
+              endAt: '2026-11-09T13:00:00-05:00',
+            }
+            : undefined,
+        },
+      );
+      assert.equal(response.status, 403, `${method} denied for ${actor.accountId}`);
+      assert.equal((await response.json()).error.code, 'FORBIDDEN');
+    }
+  }
+
+  assert.equal(
+    fixture.database.prepare('SELECT COUNT(*) AS count FROM availability_slots').get().count,
+    1,
+  );
+  assert.equal(
+    fixture.database.prepare('SELECT start_at FROM availability_slots WHERE id = ?')
+      .get(slotId).start_at,
+    '2026-11-09T15:00:00.000Z',
+  );
+});
+
 test('staff schedule viewing has an independent permission from schedule management', async (t) => {
   const fixture = await createHttpFixture(t, {
     availabilityViewerAccountIds: [901],
