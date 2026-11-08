@@ -1,0 +1,50 @@
+{
+  "seed": 20261107,
+  "benchmarkClockAnchor": "2026-11-07T00:00:00.000Z",
+  "hospitalTimeZone": "America/New_York",
+  "generatorRevision": "phase9-fixture-v1",
+  "dateOffsetRules": {
+    "referenceInstant": "2026-11-07T00:00:00.000Z",
+    "localCalendarReference": "2026-11-06",
+    "beneficiaryBirthDates": "Hospital-local anchor date minus seeded whole-year ages; minors 1-17, adults 18-70.",
+    "availabilityStart": "UTC anchor plus 7 days plus 2 hours per slot index.",
+    "availabilityDuration": "30 minutes per slot; per-doctor intervals are non-overlapping.",
+    "appointmentDate": "Appointment slots inherit their deterministic availability UTC instants.",
+    "createdUpdatedAt": "Fixed benchmark clock anchor for seeded database timestamps."
+  },
+  "counts": {
+    "patients": 200,
+    "beneficiaries": {
+      "total": 100,
+      "minor": 40,
+      "pendingAdult": 20,
+      "authorizedAdult": 20,
+      "rejectedAdult": 20
+    },
+    "doctors": 20,
+    "departments": 10,
+    "availabilitySlots": {
+      "total": 300,
+      "unbooked": 200,
+      "futureBookedCancellationTargets": 100
+    },
+    "appointments": {
+      "BOOKED": 100,
+      "CANCELLED": 200,
+      "COMPLETED": 200
+    },
+    "authorizationAudits": 40
+  },
+  "search": {
+    "query": "Fixture Doctor",
+    "expectedResultCount": 20,
+    "pageSize": 20,
+    "sortOrder": "professionalName ASC, accountId ASC"
+  },
+  "pagination": {
+    "pageSize": 20,
+    "patientSortOrder": "fullName ASC, patientAccountId ASC",
+    "appointmentSortOrder": "startAt DESC, appointmentId DESC"
+  },
+  "manifestSha256": "da595652dfef3b6e610abdef3fc4cee200d6bd32f7a4d48137c20568410907f8"
+}

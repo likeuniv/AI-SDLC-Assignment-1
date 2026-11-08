@@ -21,8 +21,8 @@ export function createAuthRepository(database) {
   });
 
   const insertSession = database.prepare(`
-    INSERT INTO sessions (account_id, token_hash, expires_at)
-    VALUES (?, ?, ?)
+    INSERT INTO sessions (account_id, token_hash, created_at, expires_at)
+    VALUES (?, ?, ?, ?)
   `);
   const invalidateSession = database.prepare(`
     UPDATE sessions SET invalidated_at = ?
@@ -38,7 +38,7 @@ export function createAuthRepository(database) {
     if (previousSessionId) {
       invalidateSession.run(now, previousSessionId);
     }
-    insertSession.run(accountId, tokenHash, expiresAt);
+    insertSession.run(accountId, tokenHash, now, expiresAt);
   });
 
   return Object.freeze({

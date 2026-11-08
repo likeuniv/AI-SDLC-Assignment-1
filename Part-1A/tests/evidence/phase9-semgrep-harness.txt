@@ -1,0 +1,34 @@
+[00.13][WARNING]: !!! You're using one or more options starting with '--x-'. These options are not part of the semgrep API. They will change or will be removed without notice !!!
+
+
+┌─────────────┐
+│ Scan Status │
+└─────────────┘
+  Scanning 14 files with 1073 Code rules:
+
+  Language      Rules   Files          Origin      Rules
+ ─────────────────────────────        ───────────────────
+  <multilang>      47      14          Community    1073
+  js              152      13
+  json              4       1
+
+Warning: 1 timeout error(s) in tests/harness/benchmark.js when running the following rules:
+[javascript.express.security.audit.express-ssrf.express-ssrf]
+Warning: 1 timeout error(s) in tests/harness/fixtures/generator.js when running the following rules:
+[javascript.express.security.cors-misconfiguration.cors-misconfiguration]
+
+
+┌──────────────┐
+│ Scan Summary │
+└──────────────┘
+✅ Scan completed successfully.
+ • Findings: 0 (0 blocking)
+ • Rules run: 202
+ • Targets scanned: 14
+ • Parsed lines: ~100.0%
+ • No ignore information available
+Ran 202 rules on 14 files: 0 findings.
+(need more rules? `semgrep login` for additional free Semgrep Registry rules)
+
+If Semgrep missed a finding, please send us feedback to let us know!
+See https://semgrep.dev/docs/reporting-false-negatives/

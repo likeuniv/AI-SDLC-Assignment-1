@@ -1,0 +1,50 @@
+
+> part-1a@1.0.0 harness:preflight
+> node tests/harness/cli.js preflight
+
+{
+  "command": "HOSPITAL_TIME_ZONE=<configured> node tests/harness/cli.js preflight",
+  "exitStatus": 0,
+  "manifestSha256": "da595652dfef3b6e610abdef3fc4cee200d6bd32f7a4d48137c20568410907f8",
+  "actionCount": 49,
+  "passedActions": 49,
+  "independentDatabaseChecks": {
+    "integrityCheck": "ok",
+    "foreignKeyViolations": 0,
+    "fixtureCounts": {
+      "patients": 200,
+      "beneficiaries": 100,
+      "doctors": 20,
+      "departments": 10,
+      "availabilitySlots": 300,
+      "appointments": 500
+    },
+    "fixtureAppointmentStatusCounts": {
+      "BOOKED": 100,
+      "CANCELLED": 200,
+      "COMPLETED": 200
+    },
+    "activeAppointmentOverlapCount": 0,
+    "missingAuthorizationAuditCount": 0,
+    "reviewedBeneficiaryAuditResults": [
+      {
+        "outcome": "AUTHORIZED",
+        "verificationMethod": "PHONE",
+        "reviewerRole": "STAFF",
+        "reviewedAtIsUtc": true,
+        "passed": true
+      },
+      {
+        "outcome": "REJECTED",
+        "verificationMethod": "IN_PERSON",
+        "reviewerRole": "STAFF",
+        "reviewedAtIsUtc": true,
+        "passed": true
+      }
+    ],
+    "hashedSessionRecordCount": 3,
+    "seededTimestampsMatchAnchor": true,
+    "connectionMode": "read-only SQLite connection"
+  },
+  "evidenceFile": "tests/evidence/phase9-preflight-results.json"
+}

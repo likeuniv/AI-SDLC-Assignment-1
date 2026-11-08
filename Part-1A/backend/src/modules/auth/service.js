@@ -32,13 +32,14 @@ export function createAuthService(database, config) {
       }
 
       const token = randomBytes(32).toString('base64url');
-      const expiresAt = new Date(config.now().getTime() + config.sessionTtlSeconds * 1000).toISOString();
+      const now = config.now();
+      const expiresAt = new Date(now.getTime() + config.sessionTtlSeconds * 1000).toISOString();
       repository.createSession(
         account.id,
         token,
         expiresAt,
         previousSessionId,
-        config.now().toISOString(),
+        now.toISOString(),
       );
       return {
         token,

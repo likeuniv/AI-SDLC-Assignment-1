@@ -1,0 +1,18 @@
+✔ benchmark protocol fixes warm-ups, measured count, page size and concurrency (71.115794ms)
+✔ nearest-rank percentile uses the ceil(p*n) 1-based rank without mutating samples (1.294076ms)
+✔ deterministic batching preserves order and never exceeds three active requests (28.56031ms)
+✔ reset and setup time are excluded from measured request durations (1.246913ms)
+✔ booking and cancellation measurements use distinct future fixture targets (12.587191ms)
+✔ independent benchmark records all samples, warm-ups, concurrency and sanitized outcomes (2799.831958ms)
+✔ fixture manifest, fixed clock and entity cohorts match the approved dataset (65.635241ms)
+✔ the same seed, anchor and hospital zone produce byte-identical fixture data and dates (25.359282ms)
+✔ fixture date offsets, relationships, active intervals and mutation targets are valid (15.957615ms)
+✔ public-API preflight is repeatable under different host dates and checks read-only SQLite state (5193.412788ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6051.730817
