@@ -1,0 +1,212 @@
+
+> part-1a@1.0.0 coverage
+> node --experimental-test-coverage --test
+
+✔ backend/test/helpers/http-fixture.js (377.888324ms)
+✔ maps malformed structure to 400 and validly structured field errors to 422 (259.173877ms)
+✔ returns stable duplicate, unauthorized and privacy-safe not-found errors (1188.230846ms)
+✔ 204 success has no body and body-bearing success uses the approved envelope (1093.85541ms)
+✔ role denial is 403 and cannot be bypassed with client-supplied role (766.089052ms)
+✔ unexpected errors return generic 500 and logs omit exception details (13.311028ms)
+✔ central response helper emits the standard 204 response (8.292694ms)
+✔ patient books for self, minor beneficiary and authorized adult with server-attributed identity (343.915826ms)
+✔ staff booking checks patient ownership and attributes the responsible account and actor separately (370.485622ms)
+✔ booking conceals cross-account recipients and rejects pending or rejected adult authorization (57.74961ms)
+✔ booking validates recipient shape, role, authentication, and slot availability (57.680293ms)
+✔ failed appointment persistence rolls back the booking transaction (33.548308ms)
+✔ patients can cancel owned bookings; assigned doctors complete and terminal transitions conflict (105.496664ms)
+✔ permission-scoped staff cancellation and cancellation releases only a future slot (42.048772ms)
+✔ patient appointment list and doctor worklist expose only authorized minimal fields (50.069694ms)
+✔ patient history excludes pending adults and includes terminal and elapsed appointments (292.806571ms)
+✔ staff appointment reads require view permission and minimize patient information (40.937396ms)
+✔ admin dashboard and patient directory are permission-scoped with empty-list behavior (35.937296ms)
+✔ independent HTTP peers race on the same slot and only one booking commits (44.339355ms)
+✔ active interval conflicts reject bookings even when overlapping slots predate integrity triggers (45.867483ms)
+✔ booking concurrent with cancellation is serialized and leaves no partial state (63.685599ms)
+✔ competing cancellation and completion have exactly one winner (46.423044ms)
+✔ registers a patient, creates the profile, and persists only a bcrypt hash (743.146229ms)
+✔ registration rejects duplicates and invalid fields with safe responses (750.721392ms)
+✔ unknown email and incorrect password return equivalent login errors (981.113785ms)
+✔ issues high-entropy HttpOnly SameSite session cookies and stores only token hashes (949.502553ms)
+✔ restores authenticated identity from the cookie and ignores client role spoofing (691.888232ms)
+✔ binds CSRF tokens to sessions and rotates/invalidate sessions on re-login (1226.775827ms)
+✔ enforces CSRF Origin and token checks on cookie-authenticated writes (665.019612ms)
+✔ login rate limiting returns the approved 429 error envelope (1085.612881ms)
+✔ logout invalidates the session and expires its cookie (750.162624ms)
+✔ expired sessions cannot restore a session or obtain a CSRF token (863.177816ms)
+✔ doctor creates future availability using explicit-offset hospital-local time and persists UTC (199.674808ms)
+✔ availability rejects malformed offsets, DST gaps, past times and nonpositive intervals (94.621614ms)
+✔ future time on the current hospital-local date is allowed while elapsed time is rejected (46.300572ms)
+✔ repeated DST wall times require valid explicit offsets and persist as distinct instants (28.986188ms)
+✔ same-doctor overlaps conflict, adjacent half-open intervals are accepted, and updates are transactional (50.551269ms)
+✔ doctor can update and remove an unbooked future slot (25.033895ms)
+✔ concurrent overlapping schedule writes produce one slot and one conflict (23.888659ms)
+✔ only the doctor owner or permitted staff can manage a schedule (37.941859ms)
+✔ staff schedule viewing has an independent permission from schedule management (27.734564ms)
+✔ booked slots cannot be modified or removed and patient schedules hide them and expose no patient data (33.595903ms)
+✔ schedule reads use stable bounded pagination and strict query validation (84.693829ms)
+✔ direct SQL overlap triggers and service conflicts leave schedule unchanged (49.968684ms)
+✔ beneficiary service creates minor and pending adult records and validates input (381.773194ms)
+✔ beneficiary HTTP endpoints create, list, read and update owner records (851.604787ms)
+✔ adult creation discloses only pending status and invalid input makes no changes (773.402607ms)
+✔ authorization decisions record both outcomes and reject terminal-state retries (993.52008ms)
+✔ authorization state and audit history roll back together on audit insertion failure (891.223412ms)
+✔ configures foreign keys, WAL, and a 5000 ms busy timeout on each file connection (282.394807ms)
+✔ uses the configured environment path for the database file (2.297098ms)
+✔ supports parameterized statements and committed transactions (2.644266ms)
+✔ rolls back a failed transaction (2.275915ms)
+✔ applies migrations in ascending order and does not reapply them (6.774851ms)
+✔ rolls back a failed migration without recording its version (4.897291ms)
+✔ detects an applied migration whose file is missing (3.141472ms)
+✔ rejects invalid and duplicate migration filenames (3.866072ms)
+✔ closes database connections cleanly (1.251258ms)
+✔ rejects overlapping availability inserts for the same doctor (38.772837ms)
+✔ rejects overlapping availability updates but allows adjacent slots (8.879586ms)
+✔ allows overlapping intervals for different doctors (8.098821ms)
+✔ rejects updates and deletes of authorization audit records (9.95326ms)
+✔ rejects invalid foreign keys, slot uniqueness and CHECK constraints (8.643869ms)
+✔ rolls back the complete transaction when an availability trigger rejects a write (28.804732ms)
+✔ reapplying migrations leaves schema and triggers unchanged (20.504821ms)
+✔ creates all T006 schema tables and primary keys (27.98741ms)
+✔ enforces account requirements and normalized email uniqueness (9.819009ms)
+✔ enforces patient profile one-to-one and patient account ownership (7.450495ms)
+✔ enforces beneficiary ownership, approved relationships, dates and nullable authorization status (13.592338ms)
+✔ accepts only the approved adult beneficiary authorization states (8.956822ms)
+✔ enforces doctor profiles belong uniquely to doctor accounts (5.019137ms)
+✔ enforces unique department and specialization names case-insensitively (14.469028ms)
+✔ enforces session token-hash uniqueness and account references (15.633187ms)
+✔ enforces unique doctor-department and doctor-specialization associations (9.571838ms)
+✔ enforces restrictive deletion for dependent profiles, beneficiaries, associations and sessions (11.627134ms)
+✔ creates required lookup indexes and remains repeatable (11.267229ms)
+✔ department service validates fields and reports duplicate names (95.875381ms)
+✔ department HTTP supports create, view, update and duplicate conflict (157.749011ms)
+✔ department association replacement is atomic and preserves required relationships (236.597559ms)
+✔ patient, doctor and unpermitted staff cannot administer departments (956.758745ms)
+✔ department association route requires authentication and validates body fields (39.312765ms)
+✔ patient doctor discovery supports combined partial filters and stable bounded pagination (216.438884ms)
+✔ doctor discovery validates query shape and pagination bounds (148.698608ms)
+✔ staff provisions doctor account, profile and assignments without exposing credentials (919.247054ms)
+✔ doctor provisioning rejects invalid fields, duplicate email and missing assignments atomically (825.385291ms)
+✔ patients, doctors and unpermitted staff cannot provision doctors (62.507123ms)
+✔ doctor can update only own permitted summary; private account fields and assignments stay protected (441.668435ms)
+✔ authenticated doctor self-profile route does not authorize another role (454.066755ms)
+✔ patient can read and update only permitted fields on their profile (1348.688233ms)
+✔ profile read and update conceal cross-account access and validate fields (1105.526865ms)
+✔ requires a valid configured IANA timezone (23.796223ms)
+✔ converts an offset date-time only when its offset agrees with hospital timezone (1.864735ms)
+✔ rejects daylight-saving gaps and accepts repeated local times with explicit offsets (0.91976ms)
+✔ uses the injected clock and hospital-local date for calendar calculations (2.607074ms)
+✔ pending and rejected adult profiles return 422 while status remains available (1426.395773ms)
+✔ authorized owner and minor can access profiles; beneficiary has no login account (1007.649887ms)
+✔ beneficiary access is isolated to the managing patient account (2044.451947ms)
+✔ staff without beneficiary review permission receives 403 (734.143589ms)
+✔ adult eligibility changes on the hospital-local birthday boundary (6.122248ms)
+✔ authorization audit history is retained after terminal-state retries (1584.550866ms)
+✔ appointment service validates recipients, books atomically and maps slot conflicts (92.128516ms)
+✔ appointment service exposes only terminal conditional transitions (22.593681ms)
+✔ API client maps envelopes, attaches CSRF only to mutations, and never sets Origin (1994.149028ms)
+✔ API client returns only safe mapped errors and rejects malformed envelopes (6.039523ms)
+✔ route guards allow only the configured role and keep public department discovery accessible (0.373546ms)
+✔ session restoration acquires CSRF and logout followed by login refreshes session CSRF (491.934685ms)
+✔ patient login, profile saving and sign-out show only confirmed outcomes (591.129418ms)
+✔ login failures use a generic message without revealing account existence (97.71103ms)
+✔ patient registration shows validation/network feedback and explicit success before sign-in (141.862721ms)
+✔ beneficiary listing hides pending adult identity and supports an authorized minor update (165.26074ms)
+✔ adult beneficiary creation shows safe validation/network feedback and only confirmed status (271.646187ms)
+✔ doctor discovery submits combined filters and uses stable bounded pagination (235.090268ms)
+✔ patient booking and cancellation remain unconfirmed until the server responds (162.737144ms)
+✔ assigned doctor sees and completes worklist; staff view has no complete or reschedule actions (87.282027ms)
+✔ doctor can update only the permitted professional summary (201.758689ms)
+✔ doctor schedule displays booked slots as immutable and confirms schedule changes (282.094781ms)
+✔ staff department association changes call the API and refresh server-confirmed data (144.711733ms)
+✔ staff dashboard provisions doctors and makes patient directory reads permission-scoped (129.792014ms)
+✔ staff booking submits the patient and responsible-account fields with CSRF (70.292793ms)
+✔ staff booking controls hide after the API denies schedule access (36.714832ms)
+ℹ tests 120
+ℹ suites 0
+ℹ pass 120
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 24357.978222
+ℹ start of coverage report
+ℹ ---------------------------------------------------------------------------------------------------------------------------------------
+ℹ file                   | line % | branch % | funcs % | uncovered lines
+ℹ ---------------------------------------------------------------------------------------------------------------------------------------
+ℹ backend                |        |          |         |
+ℹ  src                   |        |          |         |
+ℹ   app.js               |  96.23 |    75.00 |  100.00 | 26-27
+ℹ   config               |        |          |         |
+ℹ    index.js            |  60.98 |    63.64 |   71.43 | 5-6 10-11 44-45 47-48 50-51 108-109 138-205
+ℹ   db                   |        |          |         |
+ℹ    connection.js       |  61.33 |    53.33 |  100.00 | 16-17 37-38 43-44 49-50 54-74
+ℹ    migrate.js          |  92.73 |    85.19 |  100.00 | 16-17 24-25 36-37 47-48
+ℹ   middleware           |        |          |         |
+ℹ    authentication.js   |  87.50 |    72.73 |  100.00 | 13-14 19-20 22 55-56 71-73
+ℹ    csrf.js             | 100.00 |   100.00 |  100.00 |
+ℹ    error-handler.js    |  88.64 |    86.67 |  100.00 | 12-13 20-22
+ℹ    rate-limit.js       | 100.00 |    81.82 |   66.67 |
+ℹ    request-context.js  | 100.00 |   100.00 |  100.00 |
+ℹ   modules              |        |          |         |
+ℹ    admin               |        |          |         |
+ℹ     controller.js      | 100.00 |   100.00 |  100.00 |
+ℹ     routes.js          | 100.00 |   100.00 |  100.00 |
+ℹ     service.js         | 100.00 |   100.00 |  100.00 |
+ℹ    appointments        |        |          |         |
+ℹ     controller.js      | 100.00 |   100.00 |  100.00 |
+ℹ     repository.js      |  94.71 |    83.78 |  100.00 | 120-121 123-124 128-129 181-182 200-201 210-211
+ℹ     routes.js          | 100.00 |   100.00 |  100.00 |
+ℹ     service.js         |  87.74 |    82.50 |  100.00 | 60-61 63-64 82-83 88-99 107 126-127 157-158 166-167 191-192 201 222-223 235-236
+ℹ     validation.js      |  81.36 |    69.77 |  100.00 | 20-21 27-28 38-39 42-43 45-46 71-73 75-77 96-97 103-104 110-111
+ℹ    auth                |        |          |         |
+ℹ     controller.js      |  96.23 |    91.67 |  100.00 | 36-37
+ℹ     repository.js      | 100.00 |   100.00 |  100.00 |
+ℹ     routes.js          | 100.00 |   100.00 |  100.00 |
+ℹ     service.js         | 100.00 |   100.00 |  100.00 |
+ℹ     validation.js      |  86.36 |    62.50 |  100.00 | 35-36 38-39 41-42
+ℹ    availability        |        |          |         |
+ℹ     controller.js      | 100.00 |   100.00 |  100.00 |
+ℹ     repository.js      |  89.86 |    60.00 |  100.00 | 77-78 80-81 92-93 98-99 101-102 104-105 118-119
+ℹ     routes.js          | 100.00 |   100.00 |  100.00 |
+ℹ     service.js         |  90.24 |    80.00 |  100.00 | 49-50 69-70 85-86 99-100 111-112 133-134 136-137 154-155
+ℹ     validation.js      |  90.00 |    81.82 |  100.00 | 11-12 21-22 35-36 39-40 60-61
+ℹ    beneficiaries       |        |          |         |
+ℹ     controller.js      | 100.00 |   100.00 |  100.00 |
+ℹ     repository.js      | 100.00 |   100.00 |  100.00 |
+ℹ     routes.js          | 100.00 |   100.00 |  100.00 |
+ℹ     service.js         |  95.54 |    89.74 |  100.00 | 63-65 163-164 176-177 189-190
+ℹ     validation.js      |  91.19 |    77.59 |  100.00 | 40-41 59-60 75-76 92-93 99 106 151 154 161 178-179 181-182
+ℹ    departments         |        |          |         |
+ℹ     controller.js      | 100.00 |   100.00 |  100.00 |
+ℹ     repository.js      | 100.00 |   100.00 |  100.00 |
+ℹ     routes.js          | 100.00 |   100.00 |  100.00 |
+ℹ     service.js         |  91.67 |    86.36 |  100.00 | 22-25 41-42 65-66
+ℹ     validation.js      |  85.29 |    74.19 |  100.00 | 8-9 17-18 20-21 34 38-39 55
+ℹ    doctors             |        |          |         |
+ℹ     controller.js      | 100.00 |   100.00 |  100.00 |
+ℹ     repository.js      |  98.73 |    87.50 |  100.00 | 148-149
+ℹ     routes.js          | 100.00 |   100.00 |  100.00 |
+ℹ     service.js         |  86.96 |    71.43 |  100.00 | 52-56 61-62 91-92 95-96 101-102 105-106
+ℹ     validation.js      |  94.05 |    90.00 |   90.00 | 22-26 34-36 98-99
+ℹ    patients            |        |          |         |
+ℹ     controller.js      | 100.00 |   100.00 |  100.00 |
+ℹ     repository.js      | 100.00 |   100.00 |  100.00 |
+ℹ     routes.js          | 100.00 |   100.00 |  100.00 |
+ℹ     service.js         |  83.53 |    65.22 |   85.71 | 16-17 23-25 27-29 48-49 58-59 63-64
+ℹ     validation.js      |  87.01 |    72.41 |  100.00 | 16-17 24-25 41-42 46 53 60 68
+ℹ   shared               |        |          |         |
+ℹ    errors.js           | 100.00 |   100.00 |  100.00 |
+ℹ    responses.js        | 100.00 |   100.00 |  100.00 |
+ℹ    time.js             |  88.51 |    73.68 |   84.62 | 39-40 45-46 81-82 87-88 101-102 113-114 118 123-124 136-137
+ℹ    validation.js       | 100.00 |   100.00 |  100.00 |
+ℹ frontend               |        |          |         |
+ℹ  src                   |        |          |         |
+ℹ   api                  |        |          |         |
+ℹ    client.js           |  82.91 |    75.00 |   76.92 | 27-30 32-33 41-42 46-55 94-95 101-106 144
+ℹ   app                  |        |          |         |
+ℹ    useRoute.js         |  57.78 |    85.71 |   75.00 | 4-22
+ℹ ---------------------------------------------------------------------------------------------------------------------------------------
+ℹ all files              |  90.36 |    81.93 |   96.15 |
+ℹ ---------------------------------------------------------------------------------------------------------------------------------------
+ℹ end of coverage report

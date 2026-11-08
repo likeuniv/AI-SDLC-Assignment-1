@@ -1,0 +1,37 @@
+✔ API client maps envelopes, attaches CSRF only to mutations, and never sets Origin (1952.008569ms)
+✔ API client returns only safe mapped errors and rejects malformed envelopes (2.290901ms)
+✔ route guards allow only the configured role and keep public department discovery accessible (0.350352ms)
+✔ session restoration acquires CSRF and logout followed by login refreshes session CSRF (621.345078ms)
+✔ patient login, profile saving and sign-out show only confirmed outcomes (345.061837ms)
+✔ patient registration shows validation/network feedback and explicit success before sign-in (98.760374ms)
+✔ beneficiary listing hides pending adult identity and supports an authorized minor update (216.606076ms)
+✔ doctor discovery submits combined filters and uses stable bounded pagination (125.329878ms)
+✔ patient booking and cancellation remain unconfirmed until the server responds (548.723566ms)
+✔ assigned doctor sees and completes worklist; staff view has no complete or reschedule actions (186.25142ms)
+✔ doctor can update only the permitted professional summary (80.174108ms)
+✔ doctor schedule displays booked slots as immutable and confirms schedule changes (83.045839ms)
+✔ staff department association changes call the API and refresh server-confirmed data (254.507091ms)
+✔ staff dashboard provisions doctors and makes patient directory reads permission-scoped (171.85027ms)
+✔ staff booking submits the patient and responsible-account fields with CSRF (203.82446ms)
+✔ staff booking controls hide after the API denies schedule access (247.218082ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8228.043071
+ℹ start of coverage report
+ℹ ----------------------------------------------------------------------------------------
+ℹ file          | line % | branch % | funcs % | uncovered lines
+ℹ ----------------------------------------------------------------------------------------
+ℹ src           |        |          |         |
+ℹ  api          |        |          |         |
+ℹ   client.js   |  82.91 |    75.00 |   76.92 | 27-30 32-33 41-42 46-55 94-95 101-106 144
+ℹ  app          |        |          |         |
+ℹ   useRoute.js |  57.78 |    85.71 |   75.00 | 4-22
+ℹ ----------------------------------------------------------------------------------------
+ℹ all files     |  77.34 |    76.74 |   76.47 |
+ℹ ----------------------------------------------------------------------------------------
+ℹ end of coverage report

@@ -1,0 +1,30 @@
+
+> frontend@0.0.0 test
+> node --test
+
+✔ API client maps envelopes, attaches CSRF only to mutations, and never sets Origin (847.426165ms)
+✔ API client returns only safe mapped errors and rejects malformed envelopes (1.89823ms)
+✔ route guards allow only the configured role and keep public department discovery accessible (0.579748ms)
+✔ session restoration acquires CSRF and logout followed by login refreshes session CSRF (705.991333ms)
+✔ patient login, profile saving and sign-out show only confirmed outcomes (399.661643ms)
+✔ login failures use a generic message without revealing account existence (26.887688ms)
+✔ patient registration shows validation/network feedback and explicit success before sign-in (134.276649ms)
+✔ beneficiary listing hides pending adult identity and supports an authorized minor update (339.715724ms)
+✔ adult beneficiary creation shows safe validation/network feedback and only confirmed status (102.309563ms)
+✔ doctor discovery submits combined filters and uses stable bounded pagination (716.38893ms)
+✔ patient booking and cancellation remain unconfirmed until the server responds (899.890887ms)
+✔ assigned doctor sees and completes worklist; staff view has no complete or reschedule actions (781.230617ms)
+✔ doctor can update only the permitted professional summary (712.328812ms)
+✔ doctor schedule displays booked slots as immutable and confirms schedule changes (484.707806ms)
+✔ staff department association changes call the API and refresh server-confirmed data (201.752121ms)
+✔ staff dashboard provisions doctors and makes patient directory reads permission-scoped (116.165575ms)
+✔ staff booking submits the patient and responsible-account fields with CSRF (67.63777ms)
+✔ staff booking controls hide after the API denies schedule access (65.70024ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8770.553949
