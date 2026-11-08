@@ -16,4 +16,4 @@
 ## Final checkpoint
 
 The final implementation and evidence are committed to Git.
-The final checkpoint commit revision will be recorded after the commit.
+Final checkpoint commit: b0f3ddfc9f4a90b602b339eb485b1ad0c29d8360
