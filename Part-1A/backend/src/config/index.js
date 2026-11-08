@@ -23,6 +23,7 @@ export function createConfig({
   beneficiaryAuthorizationReviewerAccountIds = [],
   departmentManagerAccountIds = [],
   doctorManagerAccountIds = [],
+  availabilityManagerAccountIds = [],
   now = () => new Date(),
 } = {}) {
   if (typeof hospitalTimeZone !== 'string' || hospitalTimeZone.trim() === '') {
@@ -85,6 +86,7 @@ export function createConfig({
     'beneficiary:review-authorization': beneficiaryAuthorizationReviewerAccountIds,
     'department:manage': departmentManagerAccountIds,
     'doctor:manage': doctorManagerAccountIds,
+    'availability:manage': availabilityManagerAccountIds,
   };
   for (const [permission, accountIds] of Object.entries(permissionAccounts)) {
     if (
@@ -124,6 +126,7 @@ export function loadConfig(environment = process.env) {
   const reviewerIds = environment.BENEFICIARY_AUTHORIZATION_REVIEWER_IDS;
   const departmentManagerIds = environment.DEPARTMENT_MANAGER_ACCOUNT_IDS;
   const doctorManagerIds = environment.DOCTOR_MANAGER_ACCOUNT_IDS;
+  const availabilityManagerIds = environment.AVAILABILITY_MANAGER_ACCOUNT_IDS;
   const beneficiaryAuthorizationReviewerAccountIds = reviewerIds
     ? reviewerIds.split(',').map((value) => Number(value.trim()))
     : [];
@@ -132,6 +135,9 @@ export function loadConfig(environment = process.env) {
     : [];
   const doctorManagerAccountIds = doctorManagerIds
     ? doctorManagerIds.split(',').map((value) => Number(value.trim()))
+    : [];
+  const availabilityManagerAccountIds = availabilityManagerIds
+    ? availabilityManagerIds.split(',').map((value) => Number(value.trim()))
     : [];
   return createConfig({
     hospitalTimeZone: environment.HOSPITAL_TIME_ZONE,
@@ -152,5 +158,6 @@ export function loadConfig(environment = process.env) {
     beneficiaryAuthorizationReviewerAccountIds,
     departmentManagerAccountIds,
     doctorManagerAccountIds,
+    availabilityManagerAccountIds,
   });
 }

@@ -1,0 +1,12 @@
+✔ requires a valid configured IANA timezone (28.850558ms)
+✔ converts an offset date-time only when its offset agrees with hospital timezone (5.287883ms)
+✔ rejects daylight-saving gaps and accepts repeated local times with explicit offsets (1.428551ms)
+✔ uses the injected clock and hospital-local date for calendar calculations (1.936861ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 278.924881

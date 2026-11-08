@@ -36,6 +36,22 @@ export function resourceInUse() {
   return new HttpError(409, 'RESOURCE_IN_USE', 'The resource is in use and cannot be changed.');
 }
 
+export function availabilityConflict() {
+  return new HttpError(
+    409,
+    'AVAILABILITY_CONFLICT',
+    "The requested time conflicts with the doctor's availability.",
+  );
+}
+
+export function appointmentSlotUnavailable() {
+  return new HttpError(
+    409,
+    'APPOINTMENT_SLOT_UNAVAILABLE',
+    'The slot is linked to an appointment and cannot be changed.',
+  );
+}
+
 export function beneficiaryStateConflict() {
   return new HttpError(
     409,

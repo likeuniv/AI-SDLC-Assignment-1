@@ -1,0 +1,30 @@
+✔ doctor creates future availability using explicit-offset hospital-local time and persists UTC (598.22497ms)
+✔ availability rejects malformed offsets, DST gaps, past times and nonpositive intervals (449.671175ms)
+✔ future time on the current hospital-local date is allowed while elapsed time is rejected (158.9216ms)
+✔ repeated DST wall times require valid explicit offsets and persist as distinct instants (138.20624ms)
+✔ same-doctor overlaps conflict, adjacent half-open intervals are accepted, and updates are transactional (245.09548ms)
+✔ doctor can update and remove an unbooked future slot (248.257878ms)
+✔ concurrent overlapping schedule writes produce one slot and one conflict (184.005133ms)
+✔ only the doctor owner or permitted staff can manage a schedule (324.275013ms)
+✔ booked slots cannot be modified or removed and patient schedules hide them and expose no patient data (78.278723ms)
+✔ schedule reads use stable bounded pagination and strict query validation (206.692811ms)
+✔ direct SQL overlap triggers and service conflicts leave schedule unchanged (71.85137ms)
+✔ rejects overlapping availability inserts for the same doctor (59.949378ms)
+✔ rejects overlapping availability updates but allows adjacent slots (5.809465ms)
+✔ allows overlapping intervals for different doctors (10.05496ms)
+✔ rejects updates and deletes of authorization audit records (7.894592ms)
+✔ rejects invalid foreign keys, slot uniqueness and CHECK constraints (28.475526ms)
+✔ rolls back the complete transaction when an availability trigger rejects a write (23.932109ms)
+✔ reapplying migrations leaves schema and triggers unchanged (32.26634ms)
+✔ requires a valid configured IANA timezone (69.280396ms)
+✔ converts an offset date-time only when its offset agrees with hospital timezone (3.610794ms)
+✔ rejects daylight-saving gaps and accepts repeated local times with explicit offsets (4.895689ms)
+✔ uses the injected clock and hospital-local date for calendar calculations (5.865412ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4059.508931

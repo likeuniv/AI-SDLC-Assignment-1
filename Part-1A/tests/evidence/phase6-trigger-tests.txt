@@ -1,0 +1,15 @@
+✔ rejects overlapping availability inserts for the same doctor (25.379294ms)
+✔ rejects overlapping availability updates but allows adjacent slots (6.440761ms)
+✔ allows overlapping intervals for different doctors (7.875151ms)
+✔ rejects updates and deletes of authorization audit records (6.83948ms)
+✔ rejects invalid foreign keys, slot uniqueness and CHECK constraints (7.908318ms)
+✔ rolls back the complete transaction when an availability trigger rejects a write (8.977411ms)
+✔ reapplying migrations leaves schema and triggers unchanged (6.585322ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 268.865092
