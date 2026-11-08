@@ -284,6 +284,34 @@ test('only the doctor owner or permitted staff can manage a schedule', async (t)
   assert.equal(unauthenticated.status, 401);
 });
 
+test('staff schedule viewing has an independent permission from schedule management', async (t) => {
+  const fixture = await createHttpFixture(t, {
+    availabilityViewerAccountIds: [901],
+  });
+  const doctor = seedDoctor(fixture);
+  const patient = createAccountSession(fixture, { role: 'PATIENT' });
+  const staffViewer = createAccountSession(fixture, { accountId: 901, role: 'STAFF' });
+  await createSlot(fixture, doctor);
+
+  const visible = await fixture.request(slotPath(doctor.accountId), {
+    headers: { Cookie: staffViewer.cookie },
+  });
+  assert.equal(visible.status, 200);
+  const deniedWrite = await fixture.request(slotPath(doctor.accountId), {
+    method: 'POST',
+    headers: writeHeaders(fixture, staffViewer),
+    body: {
+      startAt: '2026-11-09T12:00:00-05:00',
+      endAt: '2026-11-09T13:00:00-05:00',
+    },
+  });
+  assert.equal(deniedWrite.status, 403);
+  const deniedPatient = await fixture.request(slotPath(doctor.accountId), {
+    headers: { Cookie: patient.cookie },
+  });
+  assert.equal(deniedPatient.status, 200);
+});
+
 test('booked slots cannot be modified or removed and patient schedules hide them and expose no patient data', async (t) => {
   const fixture = await createHttpFixture(t);
   const doctor = seedDoctor(fixture);

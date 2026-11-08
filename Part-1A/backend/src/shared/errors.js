@@ -52,6 +52,22 @@ export function appointmentSlotUnavailable() {
   );
 }
 
+export function appointmentStateConflict() {
+  return new HttpError(
+    409,
+    'APPOINTMENT_STATE_CONFLICT',
+    'The appointment has already changed state.',
+  );
+}
+
+export function invalidAppointmentRecipient() {
+  return new HttpError(
+    422,
+    'INVALID_APPOINTMENT_RECIPIENT',
+    'Exactly one eligible appointment recipient must be selected.',
+  );
+}
+
 export function beneficiaryStateConflict() {
   return new HttpError(
     409,

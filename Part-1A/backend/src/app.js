@@ -14,6 +14,8 @@ import {
 import { createDepartmentRouter } from './modules/departments/routes.js';
 import { createDoctorRouter } from './modules/doctors/routes.js';
 import { createAvailabilityRouter } from './modules/availability/routes.js';
+import { createAppointmentRouter } from './modules/appointments/routes.js';
+import { createAdminRouter } from './modules/admin/routes.js';
 
 export function createApp({
   database,
@@ -34,7 +36,9 @@ export function createApp({
   app.use('/api/v1/patients', createPatientRouter(database, config));
   app.use('/api/v1/beneficiaries', createBeneficiaryRouter(database, config));
   app.use('/api/v1/admin/beneficiaries', createBeneficiaryAdminRouter(database, config));
+  app.use('/api/v1/admin', createAdminRouter(database, config));
   app.use('/api/v1/departments', createDepartmentRouter(database, config));
+  app.use('/api/v1/appointments', createAppointmentRouter(database, config));
   app.use(
     '/api/v1/doctors/:doctorId/availability',
     createAvailabilityRouter(database, config),

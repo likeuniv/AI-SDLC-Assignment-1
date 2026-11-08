@@ -25,6 +25,22 @@ function assertCanManageSchedule(actor, doctorId, config) {
   throw forbidden();
 }
 
+function assertCanViewSchedule(actor, doctorId, config) {
+  if (actor.role === 'DOCTOR' && actor.accountId === doctorId) {
+    return;
+  }
+  if (
+    actor.role === 'STAFF'
+    && (
+      config.hasPermission(actor.accountId, AVAILABILITY_PERMISSION)
+      || config.hasPermission(actor.accountId, 'availability:view')
+    )
+  ) {
+    return;
+  }
+  throw forbidden();
+}
+
 function mapDatabaseError(error) {
   if (
     error.code === 'SQLITE_CONSTRAINT_TRIGGER'
@@ -64,7 +80,7 @@ export function createAvailabilityService(database, config) {
         return pageResult(items, total, page, pageSize);
       }
 
-      assertCanManageSchedule(actor, doctorId, config);
+      assertCanViewSchedule(actor, doctorId, config);
       if (!repository.findDoctor.get(doctorId)) {
         throw resourceNotFound();
       }

@@ -22,10 +22,28 @@ export function createPatientRepository(database) {
       updated_at = ?
     WHERE account_id = ?
   `);
+  const countForStaff = database.prepare(`
+    SELECT COUNT(*) AS total FROM patient_profiles
+  `);
+  const listForStaff = database.prepare(`
+    SELECT patient_profiles.account_id AS patientAccountId,
+      accounts.full_name AS fullName,
+      patient_profiles.date_of_birth AS dateOfBirth
+    FROM patient_profiles
+    JOIN accounts ON accounts.id = patient_profiles.account_id
+    ORDER BY accounts.full_name COLLATE NOCASE, patient_profiles.account_id
+    LIMIT ? OFFSET ?
+  `);
 
   return Object.freeze({
     findByAccountId(accountId) {
       return findByAccountId.get(accountId);
+    },
+    listForStaff(limit, offset) {
+      return {
+        total: countForStaff.get().total,
+        items: listForStaff.all(limit, offset),
+      };
     },
     updateProfile(accountId, values, updatedAt) {
       return updateProfile.run(

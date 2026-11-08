@@ -67,6 +67,46 @@ export async function createHttpFixture(t, configOverrides = {}) {
         body: body === undefined ? undefined : typeof body === 'string' ? body : JSON.stringify(body),
       });
     },
+    async createPeer() {
+      const peerDatabase = createDatabase({ filename: join(directory, 'http.sqlite') });
+      runMigrations(peerDatabase);
+      const peerServer = createServer(createApp({ database: peerDatabase, config, logger }));
+      await new Promise((resolve, reject) => {
+        peerServer.once('error', reject);
+        peerServer.listen(0, '127.0.0.1', resolve);
+      });
+      const peerAddress = peerServer.address();
+      const peerBaseUrl = `http://127.0.0.1:${peerAddress.port}`;
+      t.after(async () => {
+        await new Promise((resolve) => {
+          peerServer.close(resolve);
+          peerServer.closeAllConnections();
+        });
+        peerDatabase.close();
+      });
+      return {
+        database: peerDatabase,
+        request(path, {
+          method = 'GET',
+          headers = {},
+          body,
+        } = {}) {
+          const requestHeaders = new Headers(headers);
+          if (body !== undefined) {
+            requestHeaders.set('Content-Type', 'application/json');
+          }
+          return fetch(`${peerBaseUrl}${path}`, {
+            method,
+            headers: requestHeaders,
+            body: body === undefined
+              ? undefined
+              : typeof body === 'string'
+                ? body
+                : JSON.stringify(body),
+          });
+        },
+      };
+    },
   };
 }
 

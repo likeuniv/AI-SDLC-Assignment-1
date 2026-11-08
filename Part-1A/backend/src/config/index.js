@@ -24,6 +24,12 @@ export function createConfig({
   departmentManagerAccountIds = [],
   doctorManagerAccountIds = [],
   availabilityManagerAccountIds = [],
+  availabilityViewerAccountIds = [],
+  appointmentBookerAccountIds = [],
+  appointmentCancellerAccountIds = [],
+  appointmentViewerAccountIds = [],
+  patientDirectoryViewerAccountIds = [],
+  adminDashboardAccountIds = [],
   now = () => new Date(),
 } = {}) {
   if (typeof hospitalTimeZone !== 'string' || hospitalTimeZone.trim() === '') {
@@ -87,6 +93,12 @@ export function createConfig({
     'department:manage': departmentManagerAccountIds,
     'doctor:manage': doctorManagerAccountIds,
     'availability:manage': availabilityManagerAccountIds,
+    'availability:view': availabilityViewerAccountIds,
+    'appointment:book': appointmentBookerAccountIds,
+    'appointment:cancel': appointmentCancellerAccountIds,
+    'appointment:view': appointmentViewerAccountIds,
+    'patient:view': patientDirectoryViewerAccountIds,
+    'admin:dashboard': adminDashboardAccountIds,
   };
   for (const [permission, accountIds] of Object.entries(permissionAccounts)) {
     if (
@@ -127,6 +139,12 @@ export function loadConfig(environment = process.env) {
   const departmentManagerIds = environment.DEPARTMENT_MANAGER_ACCOUNT_IDS;
   const doctorManagerIds = environment.DOCTOR_MANAGER_ACCOUNT_IDS;
   const availabilityManagerIds = environment.AVAILABILITY_MANAGER_ACCOUNT_IDS;
+  const availabilityViewerIds = environment.AVAILABILITY_VIEWER_ACCOUNT_IDS;
+  const appointmentBookerIds = environment.APPOINTMENT_BOOKER_ACCOUNT_IDS;
+  const appointmentCancellerIds = environment.APPOINTMENT_CANCELLER_ACCOUNT_IDS;
+  const appointmentViewerIds = environment.APPOINTMENT_VIEWER_ACCOUNT_IDS;
+  const patientDirectoryViewerIds = environment.PATIENT_DIRECTORY_VIEWER_ACCOUNT_IDS;
+  const adminDashboardIds = environment.ADMIN_DASHBOARD_ACCOUNT_IDS;
   const beneficiaryAuthorizationReviewerAccountIds = reviewerIds
     ? reviewerIds.split(',').map((value) => Number(value.trim()))
     : [];
@@ -138,6 +156,24 @@ export function loadConfig(environment = process.env) {
     : [];
   const availabilityManagerAccountIds = availabilityManagerIds
     ? availabilityManagerIds.split(',').map((value) => Number(value.trim()))
+    : [];
+  const availabilityViewerAccountIds = availabilityViewerIds
+    ? availabilityViewerIds.split(',').map((value) => Number(value.trim()))
+    : [];
+  const appointmentBookerAccountIds = appointmentBookerIds
+    ? appointmentBookerIds.split(',').map((value) => Number(value.trim()))
+    : [];
+  const appointmentCancellerAccountIds = appointmentCancellerIds
+    ? appointmentCancellerIds.split(',').map((value) => Number(value.trim()))
+    : [];
+  const appointmentViewerAccountIds = appointmentViewerIds
+    ? appointmentViewerIds.split(',').map((value) => Number(value.trim()))
+    : [];
+  const patientDirectoryViewerAccountIds = patientDirectoryViewerIds
+    ? patientDirectoryViewerIds.split(',').map((value) => Number(value.trim()))
+    : [];
+  const adminDashboardAccountIds = adminDashboardIds
+    ? adminDashboardIds.split(',').map((value) => Number(value.trim()))
     : [];
   return createConfig({
     hospitalTimeZone: environment.HOSPITAL_TIME_ZONE,
@@ -159,5 +195,11 @@ export function loadConfig(environment = process.env) {
     departmentManagerAccountIds,
     doctorManagerAccountIds,
     availabilityManagerAccountIds,
+    availabilityViewerAccountIds,
+    appointmentBookerAccountIds,
+    appointmentCancellerAccountIds,
+    appointmentViewerAccountIds,
+    patientDirectoryViewerAccountIds,
+    adminDashboardAccountIds,
   });
 }
