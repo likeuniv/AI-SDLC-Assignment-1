@@ -1,0 +1,12 @@
+
+> part-1a@1.0.0 lint
+> npm --prefix frontend run lint && npm --prefix backend run lint
+
+
+> frontend@0.0.0 lint
+> eslint .
+
+
+> backend@1.0.0 lint
+> eslint .
+

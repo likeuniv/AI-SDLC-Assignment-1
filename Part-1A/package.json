@@ -1,0 +1,20 @@
+{
+  "name": "part-1a",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test",
+    "lint": "npm --prefix frontend run lint && npm --prefix backend run lint",
+    "build": "npm --prefix frontend run build",
+    "coverage": "node --experimental-test-coverage --test",
+    "security": "semgrep scan --config p/default --metrics off ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=24 <25"
+  }
+}
