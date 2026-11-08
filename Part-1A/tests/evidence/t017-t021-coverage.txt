@@ -1,0 +1,119 @@
+
+> part-1a@1.0.0 coverage
+> node --experimental-test-coverage --test
+
+✔ backend/test/helpers/http-fixture.js (301.133667ms)
+✔ maps malformed structure to 400 and validly structured field errors to 422 (180.02129ms)
+✔ returns stable duplicate, unauthorized and privacy-safe not-found errors (698.904952ms)
+✔ 204 success has no body and body-bearing success uses the approved envelope (633.676187ms)
+✔ role denial is 403 and cannot be bypassed with client-supplied role (596.609417ms)
+✔ unexpected errors return generic 500 and logs omit exception details (17.760589ms)
+✔ central response helper emits the standard 204 response (6.412668ms)
+✔ registers a patient, creates the profile, and persists only a bcrypt hash (993.490492ms)
+✔ registration rejects duplicates and invalid fields with safe responses (655.784896ms)
+✔ unknown email and incorrect password return equivalent login errors (757.02681ms)
+✔ issues high-entropy HttpOnly SameSite session cookies and stores only token hashes (597.051988ms)
+✔ restores authenticated identity from the cookie and ignores client role spoofing (598.854464ms)
+✔ binds CSRF tokens to sessions and rotates/invalidate sessions on re-login (932.408329ms)
+✔ enforces CSRF Origin and token checks on cookie-authenticated writes (677.888274ms)
+✔ login rate limiting returns the approved 429 error envelope (1016.327257ms)
+✔ logout invalidates the session and expires its cookie (662.757024ms)
+✔ expired sessions cannot restore a session or obtain a CSRF token (614.083407ms)
+✔ beneficiary service creates minor and pending adult records and validates input (433.000775ms)
+✔ beneficiary HTTP endpoints create, list, read and update owner records (635.76767ms)
+✔ adult creation discloses only pending status and invalid input makes no changes (643.802068ms)
+✔ authorization decisions record both outcomes and reject terminal-state retries (643.198122ms)
+✔ authorization state and audit history roll back together on audit insertion failure (695.090405ms)
+✔ configures foreign keys, WAL, and a 5000 ms busy timeout on each file connection (16.879688ms)
+✔ uses the configured environment path for the database file (1.940411ms)
+✔ supports parameterized statements and committed transactions (2.77001ms)
+✔ rolls back a failed transaction (1.665862ms)
+✔ applies migrations in ascending order and does not reapply them (13.009744ms)
+✔ rolls back a failed migration without recording its version (4.398653ms)
+✔ detects an applied migration whose file is missing (3.960312ms)
+✔ rejects invalid and duplicate migration filenames (3.715691ms)
+✔ closes database connections cleanly (1.711876ms)
+✔ rejects overlapping availability inserts for the same doctor (22.484386ms)
+✔ rejects overlapping availability updates but allows adjacent slots (12.814802ms)
+✔ allows overlapping intervals for different doctors (258.214972ms)
+✔ rejects updates and deletes of authorization audit records (20.631318ms)
+✔ rejects invalid foreign keys, slot uniqueness and CHECK constraints (8.327991ms)
+✔ rolls back the complete transaction when an availability trigger rejects a write (7.869921ms)
+✔ reapplying migrations leaves schema and triggers unchanged (8.154076ms)
+✔ creates all T006 schema tables and primary keys (21.917487ms)
+✔ enforces account requirements and normalized email uniqueness (6.23275ms)
+✔ enforces patient profile one-to-one and patient account ownership (5.927359ms)
+✔ enforces beneficiary ownership, approved relationships, dates and nullable authorization status (8.633422ms)
+✔ accepts only the approved adult beneficiary authorization states (7.354371ms)
+✔ enforces doctor profiles belong uniquely to doctor accounts (4.463613ms)
+✔ enforces unique department and specialization names case-insensitively (7.8375ms)
+✔ enforces session token-hash uniqueness and account references (5.437979ms)
+✔ enforces unique doctor-department and doctor-specialization associations (7.184335ms)
+✔ enforces restrictive deletion for dependent profiles, beneficiaries, associations and sessions (7.218714ms)
+✔ creates required lookup indexes and remains repeatable (5.766425ms)
+✔ patient can read and update only permitted fields on their profile (981.755226ms)
+✔ profile read and update conceal cross-account access and validate fields (1067.836215ms)
+✔ requires a valid configured IANA timezone (19.820103ms)
+✔ converts an offset date-time only when its offset agrees with hospital timezone (1.72047ms)
+✔ rejects daylight-saving gaps and accepts repeated local times with explicit offsets (0.818975ms)
+✔ uses the injected clock and hospital-local date for calendar calculations (1.273198ms)
+✔ pending and rejected adult profiles return 422 while status remains available (784.445079ms)
+✔ authorized owner and minor can access profiles; beneficiary has no login account (651.734847ms)
+✔ beneficiary access is isolated to the managing patient account (1092.435955ms)
+✔ staff without beneficiary review permission receives 403 (570.979067ms)
+✔ adult eligibility changes on the hospital-local birthday boundary (1.464276ms)
+✔ authorization audit history is retained after terminal-state retries (644.854159ms)
+ℹ tests 61
+ℹ suites 0
+ℹ pass 61
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12748.892809
+ℹ start of coverage report
+ℹ -------------------------------------------------------------------------------------------------------------------
+ℹ file                   | line % | branch % | funcs % | uncovered lines
+ℹ -------------------------------------------------------------------------------------------------------------------
+ℹ backend                |        |          |         |
+ℹ  src                   |        |          |         |
+ℹ   app.js               |  95.00 |    75.00 |  100.00 | 21-22
+ℹ   config               |        |          |         |
+ℹ    index.js            |  74.07 |    65.00 |   66.67 | 5-6 10-11 35-36 38-39 41-42 88-89 113-135
+ℹ   db                   |        |          |         |
+ℹ    connection.js       |  61.33 |    53.33 |  100.00 | 16-17 37-38 43-44 49-50 54-74
+ℹ    migrate.js          |  92.73 |    85.19 |  100.00 | 16-17 24-25 36-37 47-48
+ℹ   middleware           |        |          |         |
+ℹ    authentication.js   |  87.50 |    70.00 |  100.00 | 13-14 19-20 22 55-56 71-73
+ℹ    csrf.js             | 100.00 |   100.00 |  100.00 |
+ℹ    error-handler.js    |  88.64 |    85.71 |  100.00 | 12-13 20-22
+ℹ    rate-limit.js       | 100.00 |    81.82 |   66.67 |
+ℹ    request-context.js  | 100.00 |   100.00 |  100.00 |
+ℹ   modules              |        |          |         |
+ℹ    auth                |        |          |         |
+ℹ     controller.js      |  96.23 |    91.67 |  100.00 | 36-37
+ℹ     repository.js      | 100.00 |   100.00 |  100.00 |
+ℹ     routes.js          | 100.00 |   100.00 |  100.00 |
+ℹ     service.js         | 100.00 |   100.00 |  100.00 |
+ℹ     validation.js      |  86.36 |    62.50 |  100.00 | 35-36 38-39 41-42
+ℹ    beneficiaries       |        |          |         |
+ℹ     controller.js      | 100.00 |   100.00 |  100.00 |
+ℹ     repository.js      | 100.00 |   100.00 |  100.00 |
+ℹ     routes.js          | 100.00 |   100.00 |  100.00 |
+ℹ     service.js         |  95.54 |    89.74 |  100.00 | 63-65 163-164 176-177 189-190
+ℹ     validation.js      |  91.19 |    77.59 |  100.00 | 40-41 59-60 75-76 92-93 99 106 151 154 161 178-179 181-182
+ℹ    patients            |        |          |         |
+ℹ     controller.js      | 100.00 |   100.00 |  100.00 |
+ℹ     repository.js      | 100.00 |   100.00 |  100.00 |
+ℹ     routes.js          | 100.00 |   100.00 |  100.00 |
+ℹ     service.js         |  83.78 |    76.92 |  100.00 | 17-18 27-28 32-33
+ℹ     validation.js      |  87.01 |    72.41 |  100.00 | 16-17 24-25 41-42 46 53 60 68
+ℹ   shared               |        |          |         |
+ℹ    errors.js           | 100.00 |   100.00 |  100.00 |
+ℹ    responses.js        | 100.00 |   100.00 |  100.00 |
+ℹ    time.js             |  88.51 |    73.68 |   84.62 | 39-40 45-46 81-82 87-88 101-102 113-114 118 123-124 136-137
+ℹ    validation.js       |  90.91 |    91.67 |  100.00 | 10-11
+ℹ -------------------------------------------------------------------------------------------------------------------
+ℹ all files              |  91.33 |    82.10 |   96.45 |
+ℹ -------------------------------------------------------------------------------------------------------------------
+ℹ end of coverage report

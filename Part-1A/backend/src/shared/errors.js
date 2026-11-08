@@ -32,6 +32,22 @@ export function duplicateResource() {
   return new HttpError(409, 'DUPLICATE_RESOURCE', 'A resource with these details already exists.');
 }
 
+export function beneficiaryStateConflict() {
+  return new HttpError(
+    409,
+    'BENEFICIARY_STATE_CONFLICT',
+    'The beneficiary authorization decision conflicts with the current state.',
+  );
+}
+
+export function beneficiaryNotAuthorized() {
+  return new HttpError(
+    422,
+    'BENEFICIARY_NOT_AUTHORIZED',
+    'This beneficiary is not authorized for the requested operation.',
+  );
+}
+
 export function rateLimitExceeded() {
   return new HttpError(429, 'RATE_LIMIT_EXCEEDED', 'Too many requests. Please try again later.');
 }

@@ -6,6 +6,11 @@ import { createErrorHandler } from './middleware/error-handler.js';
 import { requestContext } from './middleware/request-context.js';
 import { resourceNotFound } from './shared/errors.js';
 import { createAuthRouter } from './modules/auth/routes.js';
+import { createPatientRouter } from './modules/patients/routes.js';
+import {
+  createBeneficiaryAdminRouter,
+  createBeneficiaryRouter,
+} from './modules/beneficiaries/routes.js';
 
 export function createApp({
   database,
@@ -23,6 +28,9 @@ export function createApp({
   app.use(createCsrfProtection(config));
 
   app.use('/api/v1/auth', createAuthRouter(database, config));
+  app.use('/api/v1/patients', createPatientRouter(database, config));
+  app.use('/api/v1/beneficiaries', createBeneficiaryRouter(database, config));
+  app.use('/api/v1/admin/beneficiaries', createBeneficiaryAdminRouter(database, config));
 
   app.use((request, response, next) => {
     next(resourceNotFound());

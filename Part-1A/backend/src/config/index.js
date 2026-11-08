@@ -20,6 +20,7 @@ export function createConfig({
   sessionTtlSeconds = 8 * 60 * 60,
   loginRateLimit = { maxRequests: 10, windowMs: 15 * 60 * 1000 },
   registrationRateLimit = { maxRequests: 5, windowMs: 60 * 60 * 1000 },
+  beneficiaryAuthorizationReviewerAccountIds = [],
   now = () => new Date(),
 } = {}) {
   if (typeof hospitalTimeZone !== 'string' || hospitalTimeZone.trim() === '') {
@@ -78,6 +79,15 @@ export function createConfig({
       ),
     },
   };
+  if (
+    !Array.isArray(beneficiaryAuthorizationReviewerAccountIds)
+    || beneficiaryAuthorizationReviewerAccountIds.some(
+      (accountId) => !Number.isSafeInteger(accountId) || accountId < 1,
+    )
+  ) {
+    throw new TypeError('Beneficiary authorization reviewer account IDs must be positive integers.');
+  }
+  const reviewerAccountIds = new Set(beneficiaryAuthorizationReviewerAccountIds);
 
   return Object.freeze({
     hospitalTimeZone,
@@ -91,11 +101,19 @@ export function createConfig({
       login: Object.freeze(limits.login),
       registration: Object.freeze(limits.registration),
     }),
+    hasPermission(accountId, permission) {
+      return permission === 'beneficiary:review-authorization'
+        && reviewerAccountIds.has(accountId);
+    },
     now,
   });
 }
 
 export function loadConfig(environment = process.env) {
+  const reviewerIds = environment.BENEFICIARY_AUTHORIZATION_REVIEWER_IDS;
+  const beneficiaryAuthorizationReviewerAccountIds = reviewerIds
+    ? reviewerIds.split(',').map((value) => Number(value.trim()))
+    : [];
   return createConfig({
     hospitalTimeZone: environment.HOSPITAL_TIME_ZONE,
     applicationOrigin: environment.APPLICATION_ORIGIN ?? 'http://localhost:5173',
@@ -112,5 +130,6 @@ export function loadConfig(environment = process.env) {
       maxRequests: environment.REGISTRATION_RATE_LIMIT_MAX ?? 5,
       windowMs: environment.REGISTRATION_RATE_LIMIT_WINDOW_MS ?? 60 * 60 * 1000,
     },
+    beneficiaryAuthorizationReviewerAccountIds,
   });
 }

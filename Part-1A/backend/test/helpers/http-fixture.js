@@ -1,3 +1,4 @@
+import { createHash, randomBytes } from 'node:crypto';
 import { createServer } from 'node:http';
 import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -99,4 +100,40 @@ export function cookieFrom(response, name = 'hms_session') {
     throw new Error('Response did not contain the expected session cookie.');
   }
   return { header: cookie, token: cookie.slice(prefix.length) };
+}
+
+export function createAccountSession(fixture, { accountId, role }) {
+  const id = accountId ?? fixture.database.prepare(`
+    INSERT INTO accounts (full_name, email_normalized, password_hash, role)
+    VALUES (?, ?, ?, ?)
+  `).run(
+    `${role} Fixture Account`,
+    `${role.toLowerCase()}-${randomBytes(6).toString('hex')}@example.test`,
+    `$2b$12$${'a'.repeat(53)}`,
+    role,
+  ).lastInsertRowid;
+  if (accountId !== undefined) {
+    fixture.database.prepare(`
+      INSERT INTO accounts (id, full_name, email_normalized, password_hash, role)
+      VALUES (?, ?, ?, ?, ?)
+    `).run(
+      accountId,
+      `${role} Fixture Account`,
+      `${role.toLowerCase()}-${accountId}@example.test`,
+      `$2b$12$${'a'.repeat(53)}`,
+      role,
+    );
+  }
+  const token = randomBytes(32).toString('base64url');
+  const now = fixture.config.now();
+  fixture.database.prepare(`
+    INSERT INTO sessions (account_id, token_hash, created_at, expires_at)
+    VALUES (?, ?, ?, ?)
+  `).run(
+    id,
+    createHash('sha256').update(token).digest('hex'),
+    now.toISOString(),
+    new Date(now.getTime() + 60 * 60 * 1000).toISOString(),
+  );
+  return { accountId: id, token, cookie: `hms_session=${token}` };
 }
