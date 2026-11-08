@@ -1,0 +1,177 @@
+running 1074 rules from 1 config remote-registry_0
+Rules:
+<SKIPPED DATA (too many entries; use --max-log-list-entries)>
+
+
+┌─────────────┐
+│ Scan Status │
+└─────────────┘
+  Scanning 126 files tracked by git with 1074 Code rules:
+
+  Language      Rules   Files          Origin      Rules
+ ─────────────────────────────        ───────────────────
+  <multilang>      60     126          Community    1074
+  js              153      76
+  json              4      11
+  bash              4       6
+  yaml             35       1
+  html              1       1
+
+SCA findings adjustment: No SCA rules to adjust
+[WARN] Syntax error at line .specify/scripts/bash/create-new-feature.sh:124:
+ `10#` was unexpected
+
+========================================
+Files skipped:
+========================================
+
+  Always skipped by Semgrep:
+
+   • <none>
+
+  Skipped by .gitignore:
+  (Disable by passing --no-git-ignore)
+
+   • <all files not listed by `git ls-files` were skipped>
+
+  Skipped by .semgrepignore:
+  - https://semgrep.dev/docs/ignoring-files-folders-code/#understand-semgrep-defaults
+
+   • backend/test/helpers/http-fixture.js
+   • backend/test/integration/api-errors.test.js
+   • backend/test/integration/appointments.test.js
+   • backend/test/integration/auth.test.js
+   • backend/test/integration/availability.test.js
+   • backend/test/integration/beneficiaries.test.js
+   • backend/test/integration/db-foundation.test.js
+   • backend/test/integration/db-integrity.test.js
+   • backend/test/integration/db-schema.test.js
+   • backend/test/integration/departments.test.js
+   • backend/test/integration/doctors.test.js
+   • backend/test/integration/patients.test.js
+   • backend/test/integration/time.test.js
+   • backend/test/security/authorization-matrix.test.js
+   • backend/test/security/beneficiary-access.test.js
+   • backend/test/unit/appointments.test.js
+   • frontend/test/app.test.js
+   • tests/evidence/authorization-matrix-eslint.txt
+   • tests/evidence/authorization-matrix-full-backend.txt
+   • tests/evidence/authorization-matrix-targeted.txt
+   • tests/evidence/authorization-matrix.csv
+   • tests/evidence/coverage-initial.txt
+   • tests/evidence/lint-db-integrity.txt
+   • tests/evidence/lint-initial.txt
+   • tests/evidence/phase6-coverage.txt
+   • tests/evidence/phase6-full-tests.txt
+   • tests/evidence/phase6-lint.txt
+   • tests/evidence/phase6-semgrep-availability.txt
+   • tests/evidence/phase6-semgrep.txt
+   • tests/evidence/phase6-targeted-tests.txt
+   • tests/evidence/phase6-timezone-tests.txt
+   • tests/evidence/phase6-trigger-tests.txt
+   • tests/evidence/phase7-coverage.txt
+   • tests/evidence/phase7-full-tests.txt
+   • tests/evidence/phase7-lint.txt
+   • tests/evidence/phase7-semgrep-new.txt
+   • tests/evidence/phase7-semgrep.txt
+   • tests/evidence/phase7-targeted-tests.txt
+   • tests/evidence/phase8-backend-coverage.txt
+   • tests/evidence/phase8-backend-eslint.txt
+   • tests/evidence/phase8-backend-tests.txt
+   • tests/evidence/phase8-coverage.txt
+   • tests/evidence/phase8-eslint.txt
+   • tests/evidence/phase8-frontend-build.txt
+   • tests/evidence/phase8-frontend-coverage.txt
+   • tests/evidence/phase8-frontend-eslint.txt
+   • tests/evidence/phase8-frontend-tests.txt
+   • tests/evidence/phase8-full-suite.txt
+   • tests/evidence/phase8-semgrep-frontend.txt
+   • tests/evidence/phase8-semgrep.txt
+   • tests/evidence/phase9-benchmark-command.txt
+   • tests/evidence/phase9-benchmark-results.json
+   • tests/evidence/phase9-coverage.txt
+   • tests/evidence/phase9-eslint.txt
+   • tests/evidence/phase9-fixture-manifest.json
+   • tests/evidence/phase9-frontend-build.txt
+   • tests/evidence/phase9-full-suite.txt
+   • tests/evidence/phase9-harness-tests.txt
+   • tests/evidence/phase9-preflight-command.txt
+   • tests/evidence/phase9-preflight-results.json
+   • tests/evidence/phase9-semgrep-harness.txt
+   • tests/evidence/phase9-semgrep.txt
+   • tests/evidence/semgrep-initial.txt
+   • tests/evidence/t011-t016-coverage-final.txt
+   • tests/evidence/t011-t016-coverage.txt
+   • tests/evidence/t011-t016-lint-final.txt
+   • tests/evidence/t011-t016-lint.txt
+   • tests/evidence/t011-t016-semgrep-final.txt
+   • tests/evidence/t011-t016-semgrep.txt
+   • tests/evidence/t011-t016-test-final.txt
+   • tests/evidence/t011-t016-test.txt
+   • tests/evidence/t017-t021-coverage.txt
+   • tests/evidence/t017-t021-lint.txt
+   • tests/evidence/t017-t021-semgrep.txt
+   • tests/evidence/t017-t021-test.txt
+   • tests/evidence/t051-semgrep-verbose.txt
+   • tests/evidence/t051-semgrep.txt
+   • tests/evidence/test-db-integrity.txt
+   • tests/evidence/test-initial.txt
+   • tests/harness/api.js
+   • tests/harness/benchmark.js
+   • tests/harness/benchmark.test.js
+   • tests/harness/cli.js
+   • tests/harness/fixtures/generator.js
+   • tests/harness/fixtures/generator.test.js
+   • tests/harness/fixtures/seed.js
+   • tests/harness/fixtures/time.js
+   • tests/harness/package.json
+   • tests/harness/preflight.js
+   • tests/harness/preflight.test.js
+   • tests/harness/runtime.js
+
+  Skipped by --include patterns:
+
+   • <none>
+
+  Skipped by --exclude patterns:
+
+   • <none>
+
+  Files that couldn't be accessed:
+
+   • <none>
+
+  Skipped by limiting to files smaller than 1000000 bytes:
+  (Adjust with the --max-target-bytes flag)
+
+   • <none>
+
+  Partially analyzed due to parsing or internal Semgrep errors
+
+   • .specify/scripts/bash/create-new-feature.sh (~0.6% of lines always skipped)
+
+     The following lines were skipped for all analysis:
+
+     • lines 124-124 due to exception "PartialParsing" raised during analysis
+     • lines 382-382 due to exception "PartialParsing" raised during analysis
+     • lines 404-404 due to exception "PartialParsing" raised during analysis
+
+
+
+┌──────────────┐
+│ Scan Summary │
+└──────────────┘
+✅ Scan completed successfully.
+ • Findings: 0 (0 blocking)
+ • Rules run: 254
+ • Targets scanned: 126
+ • Parsed lines: ~99.9%
+ • Scan skipped:
+   ◦ Files matching .semgrepignore patterns: 91
+ • Scan was limited to files tracked by git
+Ran 254 rules on 126 files: 0 findings.
+(need more rules? `semgrep login` for additional free Semgrep Registry rules)
+
+If Semgrep missed a finding, please send us feedback to let us know!
+See https://semgrep.dev/docs/reporting-false-negatives/
+Not sending pseudonymous metrics since metrics are configured to OFF, registry usage is True, and login status is False
