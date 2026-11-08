@@ -1,0 +1,4943 @@
+{
+  "command": "HOSPITAL_TIME_ZONE=<configured> node tests/harness/cli.js benchmark",
+  "exitStatus": 0,
+  "runAtUtc": "2026-11-08T14:14:25.856Z",
+  "nodeVersion": "v24.22.2",
+  "runtimeVersions": {
+    "node": "24.22.2",
+    "v8": "13.6.233.17-node.63",
+    "sqlite": "3.53.4"
+  },
+  "environment": {
+    "os": "linux 7.0.0-43-generic",
+    "architecture": "x64",
+    "cpuModel": "Intel(R) Core(TM) i7-6820HQ CPU @ 2.70GHz",
+    "cpuCount": 3,
+    "totalMemoryBytes": 7785050112
+  },
+  "seed": 20261107,
+  "generatorRevision": "phase9-fixture-v1",
+  "manifestSha256": "da595652dfef3b6e610abdef3fc4cee200d6bd32f7a4d48137c20568410907f8",
+  "benchmarkClockAnchor": "2026-11-07T00:00:00.000Z",
+  "hospitalTimeZone": "America/New_York",
+  "dateOffsetRules": {
+    "referenceInstant": "2026-11-07T00:00:00.000Z",
+    "localCalendarReference": "2026-11-06",
+    "beneficiaryBirthDates": "Hospital-local anchor date minus seeded whole-year ages; minors 1-17, adults 18-70.",
+    "availabilityStart": "UTC anchor plus 7 days plus 2 hours per slot index.",
+    "availabilityDuration": "30 minutes per slot; per-doctor intervals are non-overlapping.",
+    "appointmentDate": "Appointment slots inherit their deterministic availability UTC instants.",
+    "createdUpdatedAt": "Fixed benchmark clock anchor for seeded database timestamps."
+  },
+  "fixtureCounts": {
+    "patients": 200,
+    "beneficiaries": {
+      "total": 100,
+      "minor": 40,
+      "pendingAdult": 20,
+      "authorizedAdult": 20,
+      "rejectedAdult": 20
+    },
+    "doctors": 20,
+    "departments": 10,
+    "availabilitySlots": {
+      "total": 300,
+      "unbooked": 200,
+      "futureBookedCancellationTargets": 100
+    },
+    "appointments": {
+      "BOOKED": 100,
+      "CANCELLED": 200,
+      "COMPLETED": 200
+    },
+    "authorizationAudits": 40
+  },
+  "protocol": {
+    "database": "fresh isolated SQLite database populated from the deterministic fixture per operation",
+    "warmupRequestsPerOperation": 10,
+    "measuredSamplesPerOperation": 100,
+    "maximumConcurrentClients": 3,
+    "deterministicBatches": true,
+    "automaticRetries": 0,
+    "measuredDuration": "Client-observed request and response-envelope parsing; setup/reset excluded.",
+    "percentile": "Nearest-rank: sorted[ceil(p*n)-1], 1-based rank.",
+    "sameActorAndReadParameters": true,
+    "pageSize": 20
+  },
+  "operations": [
+    {
+      "operation": "doctorSearch",
+      "endpoint": "/api/v1/doctors",
+      "actorRole": "PATIENT",
+      "query": "/api/v1/doctors?name=Fixture%20Doctor&page=1&pageSize=20",
+      "pageSize": 20,
+      "expectedStatus": 200,
+      "expectedResultCount": 20,
+      "sqliteVersion": "3.53.4",
+      "stableSortOrder": "professionalName ASC, accountId ASC",
+      "warmupRequestCount": 10,
+      "warmupResults": [
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        }
+      ],
+      "measuredSampleCount": 100,
+      "maximumConcurrentRequests": 3,
+      "concurrencyLimit": 3,
+      "resetAfterWarmupAndBeforeMeasurement": false,
+      "resetIncludedInMeasurement": false,
+      "distinctMutationTargets": null,
+      "durationMs": {
+        "min": 3.062,
+        "p50": 4.721,
+        "p95": 5.986,
+        "p99": 6.829,
+        "max": 7.075,
+        "nearestRank": true
+      },
+      "failures": [],
+      "accepted": true,
+      "samples": [
+        {
+          "sample": 1,
+          "targetIndex": 0,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.597
+        },
+        {
+          "sample": 2,
+          "targetIndex": 1,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.748
+        },
+        {
+          "sample": 3,
+          "targetIndex": 2,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.149
+        },
+        {
+          "sample": 4,
+          "targetIndex": 3,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.148
+        },
+        {
+          "sample": 5,
+          "targetIndex": 4,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.153
+        },
+        {
+          "sample": 6,
+          "targetIndex": 5,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.343
+        },
+        {
+          "sample": 7,
+          "targetIndex": 6,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.445
+        },
+        {
+          "sample": 8,
+          "targetIndex": 7,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.345
+        },
+        {
+          "sample": 9,
+          "targetIndex": 8,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.963
+        },
+        {
+          "sample": 10,
+          "targetIndex": 9,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.733
+        },
+        {
+          "sample": 11,
+          "targetIndex": 10,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.858
+        },
+        {
+          "sample": 12,
+          "targetIndex": 11,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.466
+        },
+        {
+          "sample": 13,
+          "targetIndex": 12,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.329
+        },
+        {
+          "sample": 14,
+          "targetIndex": 13,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.271
+        },
+        {
+          "sample": 15,
+          "targetIndex": 14,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.406
+        },
+        {
+          "sample": 16,
+          "targetIndex": 15,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.342
+        },
+        {
+          "sample": 17,
+          "targetIndex": 16,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.883
+        },
+        {
+          "sample": 18,
+          "targetIndex": 17,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.199
+        },
+        {
+          "sample": 19,
+          "targetIndex": 18,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.794
+        },
+        {
+          "sample": 20,
+          "targetIndex": 19,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.932
+        },
+        {
+          "sample": 21,
+          "targetIndex": 20,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.411
+        },
+        {
+          "sample": 22,
+          "targetIndex": 21,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.908
+        },
+        {
+          "sample": 23,
+          "targetIndex": 22,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.403
+        },
+        {
+          "sample": 24,
+          "targetIndex": 23,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.721
+        },
+        {
+          "sample": 25,
+          "targetIndex": 24,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.466
+        },
+        {
+          "sample": 26,
+          "targetIndex": 25,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.543
+        },
+        {
+          "sample": 27,
+          "targetIndex": 26,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.94
+        },
+        {
+          "sample": 28,
+          "targetIndex": 27,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.952
+        },
+        {
+          "sample": 29,
+          "targetIndex": 28,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.741
+        },
+        {
+          "sample": 30,
+          "targetIndex": 29,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.075
+        },
+        {
+          "sample": 31,
+          "targetIndex": 30,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.661
+        },
+        {
+          "sample": 32,
+          "targetIndex": 31,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.818
+        },
+        {
+          "sample": 33,
+          "targetIndex": 32,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.892
+        },
+        {
+          "sample": 34,
+          "targetIndex": 33,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.177
+        },
+        {
+          "sample": 35,
+          "targetIndex": 34,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.358
+        },
+        {
+          "sample": 36,
+          "targetIndex": 35,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.618
+        },
+        {
+          "sample": 37,
+          "targetIndex": 36,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.789
+        },
+        {
+          "sample": 38,
+          "targetIndex": 37,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.884
+        },
+        {
+          "sample": 39,
+          "targetIndex": 38,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.929
+        },
+        {
+          "sample": 40,
+          "targetIndex": 39,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.563
+        },
+        {
+          "sample": 41,
+          "targetIndex": 40,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.192
+        },
+        {
+          "sample": 42,
+          "targetIndex": 41,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.502
+        },
+        {
+          "sample": 43,
+          "targetIndex": 42,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.368
+        },
+        {
+          "sample": 44,
+          "targetIndex": 43,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.494
+        },
+        {
+          "sample": 45,
+          "targetIndex": 44,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.643
+        },
+        {
+          "sample": 46,
+          "targetIndex": 45,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.791
+        },
+        {
+          "sample": 47,
+          "targetIndex": 46,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.729
+        },
+        {
+          "sample": 48,
+          "targetIndex": 47,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.105
+        },
+        {
+          "sample": 49,
+          "targetIndex": 48,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.917
+        },
+        {
+          "sample": 50,
+          "targetIndex": 49,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.986
+        },
+        {
+          "sample": 51,
+          "targetIndex": 50,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.829
+        },
+        {
+          "sample": 52,
+          "targetIndex": 51,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.625
+        },
+        {
+          "sample": 53,
+          "targetIndex": 52,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.888
+        },
+        {
+          "sample": 54,
+          "targetIndex": 53,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.131
+        },
+        {
+          "sample": 55,
+          "targetIndex": 54,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.48
+        },
+        {
+          "sample": 56,
+          "targetIndex": 55,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.257
+        },
+        {
+          "sample": 57,
+          "targetIndex": 56,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.267
+        },
+        {
+          "sample": 58,
+          "targetIndex": 57,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.525
+        },
+        {
+          "sample": 59,
+          "targetIndex": 58,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.608
+        },
+        {
+          "sample": 60,
+          "targetIndex": 59,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.818
+        },
+        {
+          "sample": 61,
+          "targetIndex": 60,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.085
+        },
+        {
+          "sample": 62,
+          "targetIndex": 61,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.512
+        },
+        {
+          "sample": 63,
+          "targetIndex": 62,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.677
+        },
+        {
+          "sample": 64,
+          "targetIndex": 63,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.062
+        },
+        {
+          "sample": 65,
+          "targetIndex": 64,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.439
+        },
+        {
+          "sample": 66,
+          "targetIndex": 65,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.603
+        },
+        {
+          "sample": 67,
+          "targetIndex": 66,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.668
+        },
+        {
+          "sample": 68,
+          "targetIndex": 67,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.765
+        },
+        {
+          "sample": 69,
+          "targetIndex": 68,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.893
+        },
+        {
+          "sample": 70,
+          "targetIndex": 69,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.26
+        },
+        {
+          "sample": 71,
+          "targetIndex": 70,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.357
+        },
+        {
+          "sample": 72,
+          "targetIndex": 71,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.494
+        },
+        {
+          "sample": 73,
+          "targetIndex": 72,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.261
+        },
+        {
+          "sample": 74,
+          "targetIndex": 73,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.469
+        },
+        {
+          "sample": 75,
+          "targetIndex": 74,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.567
+        },
+        {
+          "sample": 76,
+          "targetIndex": 75,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.079
+        },
+        {
+          "sample": 77,
+          "targetIndex": 76,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.205
+        },
+        {
+          "sample": 78,
+          "targetIndex": 77,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.325
+        },
+        {
+          "sample": 79,
+          "targetIndex": 78,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.468
+        },
+        {
+          "sample": 80,
+          "targetIndex": 79,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.364
+        },
+        {
+          "sample": 81,
+          "targetIndex": 80,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.485
+        },
+        {
+          "sample": 82,
+          "targetIndex": 81,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.747
+        },
+        {
+          "sample": 83,
+          "targetIndex": 82,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.685
+        },
+        {
+          "sample": 84,
+          "targetIndex": 83,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.733
+        },
+        {
+          "sample": 85,
+          "targetIndex": 84,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.755
+        },
+        {
+          "sample": 86,
+          "targetIndex": 85,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.207
+        },
+        {
+          "sample": 87,
+          "targetIndex": 86,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.764
+        },
+        {
+          "sample": 88,
+          "targetIndex": 87,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.871
+        },
+        {
+          "sample": 89,
+          "targetIndex": 88,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.501
+        },
+        {
+          "sample": 90,
+          "targetIndex": 89,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.929
+        },
+        {
+          "sample": 91,
+          "targetIndex": 90,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.367
+        },
+        {
+          "sample": 92,
+          "targetIndex": 91,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.719
+        },
+        {
+          "sample": 93,
+          "targetIndex": 92,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.867
+        },
+        {
+          "sample": 94,
+          "targetIndex": 93,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.508
+        },
+        {
+          "sample": 95,
+          "targetIndex": 94,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.909
+        },
+        {
+          "sample": 96,
+          "targetIndex": 95,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.323
+        },
+        {
+          "sample": 97,
+          "targetIndex": 96,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.484
+        },
+        {
+          "sample": 98,
+          "targetIndex": 97,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.166
+        },
+        {
+          "sample": 99,
+          "targetIndex": 98,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.299
+        },
+        {
+          "sample": 100,
+          "targetIndex": 99,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.778
+        }
+      ],
+      "latencyLimitMs": 1000,
+      "latencyTargetPassed": true
+    },
+    {
+      "operation": "paginatedPatientReads",
+      "endpoint": "/api/v1/admin/patients",
+      "actorRole": "STAFF",
+      "query": "/api/v1/admin/patients?page=1&pageSize=20",
+      "pageSize": 20,
+      "expectedStatus": 200,
+      "expectedResultCount": 200,
+      "sqliteVersion": "3.53.4",
+      "stableSortOrder": "fullName ASC, patientAccountId ASC",
+      "warmupRequestCount": 10,
+      "warmupResults": [
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        }
+      ],
+      "measuredSampleCount": 100,
+      "maximumConcurrentRequests": 3,
+      "concurrencyLimit": 3,
+      "resetAfterWarmupAndBeforeMeasurement": false,
+      "resetIncludedInMeasurement": false,
+      "distinctMutationTargets": null,
+      "durationMs": {
+        "min": 0.903,
+        "p50": 3.004,
+        "p95": 4.348,
+        "p99": 4.832,
+        "max": 5.168,
+        "nearestRank": true
+      },
+      "failures": [],
+      "accepted": true,
+      "samples": [
+        {
+          "sample": 1,
+          "targetIndex": 0,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.071
+        },
+        {
+          "sample": 2,
+          "targetIndex": 1,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.186
+        },
+        {
+          "sample": 3,
+          "targetIndex": 2,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.298
+        },
+        {
+          "sample": 4,
+          "targetIndex": 3,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.956
+        },
+        {
+          "sample": 5,
+          "targetIndex": 4,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.186
+        },
+        {
+          "sample": 6,
+          "targetIndex": 5,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.832
+        },
+        {
+          "sample": 7,
+          "targetIndex": 6,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.205
+        },
+        {
+          "sample": 8,
+          "targetIndex": 7,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.695
+        },
+        {
+          "sample": 9,
+          "targetIndex": 8,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.827
+        },
+        {
+          "sample": 10,
+          "targetIndex": 9,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.518
+        },
+        {
+          "sample": 11,
+          "targetIndex": 10,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.57
+        },
+        {
+          "sample": 12,
+          "targetIndex": 11,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.217
+        },
+        {
+          "sample": 13,
+          "targetIndex": 12,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.125
+        },
+        {
+          "sample": 14,
+          "targetIndex": 13,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.247
+        },
+        {
+          "sample": 15,
+          "targetIndex": 14,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.016
+        },
+        {
+          "sample": 16,
+          "targetIndex": 15,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.836
+        },
+        {
+          "sample": 17,
+          "targetIndex": 16,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.272
+        },
+        {
+          "sample": 18,
+          "targetIndex": 17,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.438
+        },
+        {
+          "sample": 19,
+          "targetIndex": 18,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.8
+        },
+        {
+          "sample": 20,
+          "targetIndex": 19,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.842
+        },
+        {
+          "sample": 21,
+          "targetIndex": 20,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.943
+        },
+        {
+          "sample": 22,
+          "targetIndex": 21,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 1.978
+        },
+        {
+          "sample": 23,
+          "targetIndex": 22,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.013
+        },
+        {
+          "sample": 24,
+          "targetIndex": 23,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.087
+        },
+        {
+          "sample": 25,
+          "targetIndex": 24,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.765
+        },
+        {
+          "sample": 26,
+          "targetIndex": 25,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.815
+        },
+        {
+          "sample": 27,
+          "targetIndex": 26,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.962
+        },
+        {
+          "sample": 28,
+          "targetIndex": 27,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.895
+        },
+        {
+          "sample": 29,
+          "targetIndex": 28,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.965
+        },
+        {
+          "sample": 30,
+          "targetIndex": 29,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.146
+        },
+        {
+          "sample": 31,
+          "targetIndex": 30,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.15
+        },
+        {
+          "sample": 32,
+          "targetIndex": 31,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.079
+        },
+        {
+          "sample": 33,
+          "targetIndex": 32,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.363
+        },
+        {
+          "sample": 34,
+          "targetIndex": 33,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.699
+        },
+        {
+          "sample": 35,
+          "targetIndex": 34,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.855
+        },
+        {
+          "sample": 36,
+          "targetIndex": 35,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.168
+        },
+        {
+          "sample": 37,
+          "targetIndex": 36,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.617
+        },
+        {
+          "sample": 38,
+          "targetIndex": 37,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.496
+        },
+        {
+          "sample": 39,
+          "targetIndex": 38,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.741
+        },
+        {
+          "sample": 40,
+          "targetIndex": 39,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.71
+        },
+        {
+          "sample": 41,
+          "targetIndex": 40,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.445
+        },
+        {
+          "sample": 42,
+          "targetIndex": 41,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.516
+        },
+        {
+          "sample": 43,
+          "targetIndex": 42,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.4
+        },
+        {
+          "sample": 44,
+          "targetIndex": 43,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.54
+        },
+        {
+          "sample": 45,
+          "targetIndex": 44,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.786
+        },
+        {
+          "sample": 46,
+          "targetIndex": 45,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.668
+        },
+        {
+          "sample": 47,
+          "targetIndex": 46,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.639
+        },
+        {
+          "sample": 48,
+          "targetIndex": 47,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.606
+        },
+        {
+          "sample": 49,
+          "targetIndex": 48,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 1.886
+        },
+        {
+          "sample": 50,
+          "targetIndex": 49,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.02
+        },
+        {
+          "sample": 51,
+          "targetIndex": 50,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.151
+        },
+        {
+          "sample": 52,
+          "targetIndex": 51,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.908
+        },
+        {
+          "sample": 53,
+          "targetIndex": 52,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.056
+        },
+        {
+          "sample": 54,
+          "targetIndex": 53,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.186
+        },
+        {
+          "sample": 55,
+          "targetIndex": 54,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.137
+        },
+        {
+          "sample": 56,
+          "targetIndex": 55,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.291
+        },
+        {
+          "sample": 57,
+          "targetIndex": 56,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.452
+        },
+        {
+          "sample": 58,
+          "targetIndex": 57,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.741
+        },
+        {
+          "sample": 59,
+          "targetIndex": 58,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.35
+        },
+        {
+          "sample": 60,
+          "targetIndex": 59,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.779
+        },
+        {
+          "sample": 61,
+          "targetIndex": 60,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.052
+        },
+        {
+          "sample": 62,
+          "targetIndex": 61,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.088
+        },
+        {
+          "sample": 63,
+          "targetIndex": 62,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.199
+        },
+        {
+          "sample": 64,
+          "targetIndex": 63,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.317
+        },
+        {
+          "sample": 65,
+          "targetIndex": 64,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.45
+        },
+        {
+          "sample": 66,
+          "targetIndex": 65,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.586
+        },
+        {
+          "sample": 67,
+          "targetIndex": 66,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.27
+        },
+        {
+          "sample": 68,
+          "targetIndex": 67,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.455
+        },
+        {
+          "sample": 69,
+          "targetIndex": 68,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.286
+        },
+        {
+          "sample": 70,
+          "targetIndex": 69,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.433
+        },
+        {
+          "sample": 71,
+          "targetIndex": 70,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.095
+        },
+        {
+          "sample": 72,
+          "targetIndex": 71,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.431
+        },
+        {
+          "sample": 73,
+          "targetIndex": 72,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.766
+        },
+        {
+          "sample": 74,
+          "targetIndex": 73,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.053
+        },
+        {
+          "sample": 75,
+          "targetIndex": 74,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.201
+        },
+        {
+          "sample": 76,
+          "targetIndex": 75,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.391
+        },
+        {
+          "sample": 77,
+          "targetIndex": 76,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.019
+        },
+        {
+          "sample": 78,
+          "targetIndex": 77,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.102
+        },
+        {
+          "sample": 79,
+          "targetIndex": 78,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.157
+        },
+        {
+          "sample": 80,
+          "targetIndex": 79,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.124
+        },
+        {
+          "sample": 81,
+          "targetIndex": 80,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.237
+        },
+        {
+          "sample": 82,
+          "targetIndex": 81,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.405
+        },
+        {
+          "sample": 83,
+          "targetIndex": 82,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.483
+        },
+        {
+          "sample": 84,
+          "targetIndex": 83,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.873
+        },
+        {
+          "sample": 85,
+          "targetIndex": 84,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.311
+        },
+        {
+          "sample": 86,
+          "targetIndex": 85,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.49
+        },
+        {
+          "sample": 87,
+          "targetIndex": 86,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.167
+        },
+        {
+          "sample": 88,
+          "targetIndex": 87,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.014
+        },
+        {
+          "sample": 89,
+          "targetIndex": 88,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.335
+        },
+        {
+          "sample": 90,
+          "targetIndex": 89,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.348
+        },
+        {
+          "sample": 91,
+          "targetIndex": 90,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.956
+        },
+        {
+          "sample": 92,
+          "targetIndex": 91,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.004
+        },
+        {
+          "sample": 93,
+          "targetIndex": 92,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.397
+        },
+        {
+          "sample": 94,
+          "targetIndex": 93,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.69
+        },
+        {
+          "sample": 95,
+          "targetIndex": 94,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.018
+        },
+        {
+          "sample": 96,
+          "targetIndex": 95,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.182
+        },
+        {
+          "sample": 97,
+          "targetIndex": 96,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.411
+        },
+        {
+          "sample": 98,
+          "targetIndex": 97,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.499
+        },
+        {
+          "sample": 99,
+          "targetIndex": 98,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.62
+        },
+        {
+          "sample": 100,
+          "targetIndex": 99,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 0.903
+        }
+      ],
+      "latencyLimitMs": 1000,
+      "latencyTargetPassed": true
+    },
+    {
+      "operation": "paginatedAppointmentReads",
+      "endpoint": "/api/v1/admin/appointments",
+      "actorRole": "STAFF",
+      "query": "/api/v1/admin/appointments?page=1&pageSize=20",
+      "pageSize": 20,
+      "expectedStatus": 200,
+      "expectedResultCount": 500,
+      "sqliteVersion": "3.53.4",
+      "stableSortOrder": "startAt DESC, appointmentId DESC",
+      "warmupRequestCount": 10,
+      "warmupResults": [
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        }
+      ],
+      "measuredSampleCount": 100,
+      "maximumConcurrentRequests": 3,
+      "concurrencyLimit": 3,
+      "resetAfterWarmupAndBeforeMeasurement": false,
+      "resetIncludedInMeasurement": false,
+      "distinctMutationTargets": null,
+      "durationMs": {
+        "min": 2.454,
+        "p50": 7.234,
+        "p95": 11.876,
+        "p99": 12.727,
+        "max": 12.866,
+        "nearestRank": true
+      },
+      "failures": [],
+      "accepted": true,
+      "samples": [
+        {
+          "sample": 1,
+          "targetIndex": 0,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 11.876
+        },
+        {
+          "sample": 2,
+          "targetIndex": 1,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 12.208
+        },
+        {
+          "sample": 3,
+          "targetIndex": 2,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 12.605
+        },
+        {
+          "sample": 4,
+          "targetIndex": 3,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.966
+        },
+        {
+          "sample": 5,
+          "targetIndex": 4,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.575
+        },
+        {
+          "sample": 6,
+          "targetIndex": 5,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.713
+        },
+        {
+          "sample": 7,
+          "targetIndex": 6,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 10.574
+        },
+        {
+          "sample": 8,
+          "targetIndex": 7,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 11.426
+        },
+        {
+          "sample": 9,
+          "targetIndex": 8,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 11.384
+        },
+        {
+          "sample": 10,
+          "targetIndex": 9,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.299
+        },
+        {
+          "sample": 11,
+          "targetIndex": 10,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.395
+        },
+        {
+          "sample": 12,
+          "targetIndex": 11,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.744
+        },
+        {
+          "sample": 13,
+          "targetIndex": 12,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 9.261
+        },
+        {
+          "sample": 14,
+          "targetIndex": 13,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 10.06
+        },
+        {
+          "sample": 15,
+          "targetIndex": 14,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 10.216
+        },
+        {
+          "sample": 16,
+          "targetIndex": 15,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 12.46
+        },
+        {
+          "sample": 17,
+          "targetIndex": 16,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 12.727
+        },
+        {
+          "sample": 18,
+          "targetIndex": 17,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 12.866
+        },
+        {
+          "sample": 19,
+          "targetIndex": 18,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.07
+        },
+        {
+          "sample": 20,
+          "targetIndex": 19,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.455
+        },
+        {
+          "sample": 21,
+          "targetIndex": 20,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.539
+        },
+        {
+          "sample": 22,
+          "targetIndex": 21,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.133
+        },
+        {
+          "sample": 23,
+          "targetIndex": 22,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.237
+        },
+        {
+          "sample": 24,
+          "targetIndex": 23,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.776
+        },
+        {
+          "sample": 25,
+          "targetIndex": 24,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.664
+        },
+        {
+          "sample": 26,
+          "targetIndex": 25,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.87
+        },
+        {
+          "sample": 27,
+          "targetIndex": 26,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.006
+        },
+        {
+          "sample": 28,
+          "targetIndex": 27,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.234
+        },
+        {
+          "sample": 29,
+          "targetIndex": 28,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.211
+        },
+        {
+          "sample": 30,
+          "targetIndex": 29,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.921
+        },
+        {
+          "sample": 31,
+          "targetIndex": 30,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.138
+        },
+        {
+          "sample": 32,
+          "targetIndex": 31,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.41
+        },
+        {
+          "sample": 33,
+          "targetIndex": 32,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.952
+        },
+        {
+          "sample": 34,
+          "targetIndex": 33,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.195
+        },
+        {
+          "sample": 35,
+          "targetIndex": 34,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.66
+        },
+        {
+          "sample": 36,
+          "targetIndex": 35,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.833
+        },
+        {
+          "sample": 37,
+          "targetIndex": 36,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.083
+        },
+        {
+          "sample": 38,
+          "targetIndex": 37,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.265
+        },
+        {
+          "sample": 39,
+          "targetIndex": 38,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.717
+        },
+        {
+          "sample": 40,
+          "targetIndex": 39,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.553
+        },
+        {
+          "sample": 41,
+          "targetIndex": 40,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.642
+        },
+        {
+          "sample": 42,
+          "targetIndex": 41,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.79
+        },
+        {
+          "sample": 43,
+          "targetIndex": 42,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.058
+        },
+        {
+          "sample": 44,
+          "targetIndex": 43,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.18
+        },
+        {
+          "sample": 45,
+          "targetIndex": 44,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.329
+        },
+        {
+          "sample": 46,
+          "targetIndex": 45,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.431
+        },
+        {
+          "sample": 47,
+          "targetIndex": 46,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.557
+        },
+        {
+          "sample": 48,
+          "targetIndex": 47,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.698
+        },
+        {
+          "sample": 49,
+          "targetIndex": 48,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.465
+        },
+        {
+          "sample": 50,
+          "targetIndex": 49,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.693
+        },
+        {
+          "sample": 51,
+          "targetIndex": 50,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.521
+        },
+        {
+          "sample": 52,
+          "targetIndex": 51,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.517
+        },
+        {
+          "sample": 53,
+          "targetIndex": 52,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.14
+        },
+        {
+          "sample": 54,
+          "targetIndex": 53,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.289
+        },
+        {
+          "sample": 55,
+          "targetIndex": 54,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.229
+        },
+        {
+          "sample": 56,
+          "targetIndex": 55,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.78
+        },
+        {
+          "sample": 57,
+          "targetIndex": 56,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.85
+        },
+        {
+          "sample": 58,
+          "targetIndex": 57,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.172
+        },
+        {
+          "sample": 59,
+          "targetIndex": 58,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.283
+        },
+        {
+          "sample": 60,
+          "targetIndex": 59,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.427
+        },
+        {
+          "sample": 61,
+          "targetIndex": 60,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.076
+        },
+        {
+          "sample": 62,
+          "targetIndex": 61,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.176
+        },
+        {
+          "sample": 63,
+          "targetIndex": 62,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.244
+        },
+        {
+          "sample": 64,
+          "targetIndex": 63,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.289
+        },
+        {
+          "sample": 65,
+          "targetIndex": 64,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.374
+        },
+        {
+          "sample": 66,
+          "targetIndex": 65,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.491
+        },
+        {
+          "sample": 67,
+          "targetIndex": 66,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.431
+        },
+        {
+          "sample": 68,
+          "targetIndex": 67,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.506
+        },
+        {
+          "sample": 69,
+          "targetIndex": 68,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 9.09
+        },
+        {
+          "sample": 70,
+          "targetIndex": 69,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.013
+        },
+        {
+          "sample": 71,
+          "targetIndex": 70,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.096
+        },
+        {
+          "sample": 72,
+          "targetIndex": 71,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.895
+        },
+        {
+          "sample": 73,
+          "targetIndex": 72,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.683
+        },
+        {
+          "sample": 74,
+          "targetIndex": 73,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.784
+        },
+        {
+          "sample": 75,
+          "targetIndex": 74,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.978
+        },
+        {
+          "sample": 76,
+          "targetIndex": 75,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.572
+        },
+        {
+          "sample": 77,
+          "targetIndex": 76,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.701
+        },
+        {
+          "sample": 78,
+          "targetIndex": 77,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.845
+        },
+        {
+          "sample": 79,
+          "targetIndex": 78,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.746
+        },
+        {
+          "sample": 80,
+          "targetIndex": 79,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.834
+        },
+        {
+          "sample": 81,
+          "targetIndex": 80,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.981
+        },
+        {
+          "sample": 82,
+          "targetIndex": 81,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.968
+        },
+        {
+          "sample": 83,
+          "targetIndex": 82,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.092
+        },
+        {
+          "sample": 84,
+          "targetIndex": 83,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.481
+        },
+        {
+          "sample": 85,
+          "targetIndex": 84,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.737
+        },
+        {
+          "sample": 86,
+          "targetIndex": 85,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.875
+        },
+        {
+          "sample": 87,
+          "targetIndex": 86,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.343
+        },
+        {
+          "sample": 88,
+          "targetIndex": 87,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.681
+        },
+        {
+          "sample": 89,
+          "targetIndex": 88,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.641
+        },
+        {
+          "sample": 90,
+          "targetIndex": 89,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 9.204
+        },
+        {
+          "sample": 91,
+          "targetIndex": 90,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.768
+        },
+        {
+          "sample": 92,
+          "targetIndex": 91,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.863
+        },
+        {
+          "sample": 93,
+          "targetIndex": 92,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.978
+        },
+        {
+          "sample": 94,
+          "targetIndex": 93,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.049
+        },
+        {
+          "sample": 95,
+          "targetIndex": 94,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.443
+        },
+        {
+          "sample": 96,
+          "targetIndex": 95,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.742
+        },
+        {
+          "sample": 97,
+          "targetIndex": 96,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.691
+        },
+        {
+          "sample": 98,
+          "targetIndex": 97,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.117
+        },
+        {
+          "sample": 99,
+          "targetIndex": 98,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.31
+        },
+        {
+          "sample": 100,
+          "targetIndex": 99,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.454
+        }
+      ],
+      "latencyLimitMs": 1000,
+      "latencyTargetPassed": true
+    },
+    {
+      "operation": "appointmentBooking",
+      "endpoint": "/api/v1/appointments",
+      "actorRole": "PATIENT",
+      "query": null,
+      "pageSize": null,
+      "expectedStatus": 201,
+      "expectedResultCount": null,
+      "sqliteVersion": "3.53.4",
+      "stableSortOrder": null,
+      "warmupRequestCount": 10,
+      "warmupResults": [
+        {
+          "status": 201,
+          "code": null
+        },
+        {
+          "status": 201,
+          "code": null
+        },
+        {
+          "status": 201,
+          "code": null
+        },
+        {
+          "status": 201,
+          "code": null
+        },
+        {
+          "status": 201,
+          "code": null
+        },
+        {
+          "status": 201,
+          "code": null
+        },
+        {
+          "status": 201,
+          "code": null
+        },
+        {
+          "status": 201,
+          "code": null
+        },
+        {
+          "status": 201,
+          "code": null
+        },
+        {
+          "status": 201,
+          "code": null
+        }
+      ],
+      "measuredSampleCount": 100,
+      "maximumConcurrentRequests": 3,
+      "concurrencyLimit": 3,
+      "resetAfterWarmupAndBeforeMeasurement": true,
+      "resetIncludedInMeasurement": false,
+      "distinctMutationTargets": 100,
+      "durationMs": {
+        "min": 1.6,
+        "p50": 5.231,
+        "p95": 9.834,
+        "p99": 11.206,
+        "max": 16.518,
+        "nearestRank": true
+      },
+      "failures": [],
+      "accepted": true,
+      "samples": [
+        {
+          "sample": 1,
+          "targetIndex": 0,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.018
+        },
+        {
+          "sample": 2,
+          "targetIndex": 1,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.965
+        },
+        {
+          "sample": 3,
+          "targetIndex": 2,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 9.212
+        },
+        {
+          "sample": 4,
+          "targetIndex": 3,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.672
+        },
+        {
+          "sample": 5,
+          "targetIndex": 4,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.492
+        },
+        {
+          "sample": 6,
+          "targetIndex": 5,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.225
+        },
+        {
+          "sample": 7,
+          "targetIndex": 6,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.755
+        },
+        {
+          "sample": 8,
+          "targetIndex": 7,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.73
+        },
+        {
+          "sample": 9,
+          "targetIndex": 8,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.58
+        },
+        {
+          "sample": 10,
+          "targetIndex": 9,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.252
+        },
+        {
+          "sample": 11,
+          "targetIndex": 10,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.217
+        },
+        {
+          "sample": 12,
+          "targetIndex": 11,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.1
+        },
+        {
+          "sample": 13,
+          "targetIndex": 12,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.566
+        },
+        {
+          "sample": 14,
+          "targetIndex": 13,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.259
+        },
+        {
+          "sample": 15,
+          "targetIndex": 14,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.279
+        },
+        {
+          "sample": 16,
+          "targetIndex": 15,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.778
+        },
+        {
+          "sample": 17,
+          "targetIndex": 16,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.815
+        },
+        {
+          "sample": 18,
+          "targetIndex": 17,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.814
+        },
+        {
+          "sample": 19,
+          "targetIndex": 18,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.915
+        },
+        {
+          "sample": 20,
+          "targetIndex": 19,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.614
+        },
+        {
+          "sample": 21,
+          "targetIndex": 20,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.523
+        },
+        {
+          "sample": 22,
+          "targetIndex": 21,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.057
+        },
+        {
+          "sample": 23,
+          "targetIndex": 22,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.043
+        },
+        {
+          "sample": 24,
+          "targetIndex": 23,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.095
+        },
+        {
+          "sample": 25,
+          "targetIndex": 24,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.323
+        },
+        {
+          "sample": 26,
+          "targetIndex": 25,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.245
+        },
+        {
+          "sample": 27,
+          "targetIndex": 26,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.922
+        },
+        {
+          "sample": 28,
+          "targetIndex": 27,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.997
+        },
+        {
+          "sample": 29,
+          "targetIndex": 28,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.667
+        },
+        {
+          "sample": 30,
+          "targetIndex": 29,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.818
+        },
+        {
+          "sample": 31,
+          "targetIndex": 30,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.745
+        },
+        {
+          "sample": 32,
+          "targetIndex": 31,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.678
+        },
+        {
+          "sample": 33,
+          "targetIndex": 32,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.707
+        },
+        {
+          "sample": 34,
+          "targetIndex": 33,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.366
+        },
+        {
+          "sample": 35,
+          "targetIndex": 34,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.98
+        },
+        {
+          "sample": 36,
+          "targetIndex": 35,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.803
+        },
+        {
+          "sample": 37,
+          "targetIndex": 36,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.631
+        },
+        {
+          "sample": 38,
+          "targetIndex": 37,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.606
+        },
+        {
+          "sample": 39,
+          "targetIndex": 38,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.645
+        },
+        {
+          "sample": 40,
+          "targetIndex": 39,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.923
+        },
+        {
+          "sample": 41,
+          "targetIndex": 40,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.335
+        },
+        {
+          "sample": 42,
+          "targetIndex": 41,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.187
+        },
+        {
+          "sample": 43,
+          "targetIndex": 42,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 9.885
+        },
+        {
+          "sample": 44,
+          "targetIndex": 43,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 9.834
+        },
+        {
+          "sample": 45,
+          "targetIndex": 44,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 10.036
+        },
+        {
+          "sample": 46,
+          "targetIndex": 45,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.16
+        },
+        {
+          "sample": 47,
+          "targetIndex": 46,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 7.944
+        },
+        {
+          "sample": 48,
+          "targetIndex": 47,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.03
+        },
+        {
+          "sample": 49,
+          "targetIndex": 48,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.266
+        },
+        {
+          "sample": 50,
+          "targetIndex": 49,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.241
+        },
+        {
+          "sample": 51,
+          "targetIndex": 50,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.231
+        },
+        {
+          "sample": 52,
+          "targetIndex": 51,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.131
+        },
+        {
+          "sample": 53,
+          "targetIndex": 52,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.362
+        },
+        {
+          "sample": 54,
+          "targetIndex": 53,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.393
+        },
+        {
+          "sample": 55,
+          "targetIndex": 54,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.447
+        },
+        {
+          "sample": 56,
+          "targetIndex": 55,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.573
+        },
+        {
+          "sample": 57,
+          "targetIndex": 56,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.656
+        },
+        {
+          "sample": 58,
+          "targetIndex": 57,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.731
+        },
+        {
+          "sample": 59,
+          "targetIndex": 58,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.78
+        },
+        {
+          "sample": 60,
+          "targetIndex": 59,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.634
+        },
+        {
+          "sample": 61,
+          "targetIndex": 60,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.828
+        },
+        {
+          "sample": 62,
+          "targetIndex": 61,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.705
+        },
+        {
+          "sample": 63,
+          "targetIndex": 62,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 8.723
+        },
+        {
+          "sample": 64,
+          "targetIndex": 63,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.084
+        },
+        {
+          "sample": 65,
+          "targetIndex": 64,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.675
+        },
+        {
+          "sample": 66,
+          "targetIndex": 65,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.735
+        },
+        {
+          "sample": 67,
+          "targetIndex": 66,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.521
+        },
+        {
+          "sample": 68,
+          "targetIndex": 67,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.516
+        },
+        {
+          "sample": 69,
+          "targetIndex": 68,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.595
+        },
+        {
+          "sample": 70,
+          "targetIndex": 69,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.658
+        },
+        {
+          "sample": 71,
+          "targetIndex": 70,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.706
+        },
+        {
+          "sample": 72,
+          "targetIndex": 71,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.782
+        },
+        {
+          "sample": 73,
+          "targetIndex": 72,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.04
+        },
+        {
+          "sample": 74,
+          "targetIndex": 73,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.097
+        },
+        {
+          "sample": 75,
+          "targetIndex": 74,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.437
+        },
+        {
+          "sample": 76,
+          "targetIndex": 75,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.082
+        },
+        {
+          "sample": 77,
+          "targetIndex": 76,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.044
+        },
+        {
+          "sample": 78,
+          "targetIndex": 77,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.962
+        },
+        {
+          "sample": 79,
+          "targetIndex": 78,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.749
+        },
+        {
+          "sample": 80,
+          "targetIndex": 79,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.969
+        },
+        {
+          "sample": 81,
+          "targetIndex": 80,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.078
+        },
+        {
+          "sample": 82,
+          "targetIndex": 81,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.736
+        },
+        {
+          "sample": 83,
+          "targetIndex": 82,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.155
+        },
+        {
+          "sample": 84,
+          "targetIndex": 83,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.229
+        },
+        {
+          "sample": 85,
+          "targetIndex": 84,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.854
+        },
+        {
+          "sample": 86,
+          "targetIndex": 85,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.817
+        },
+        {
+          "sample": 87,
+          "targetIndex": 86,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.853
+        },
+        {
+          "sample": 88,
+          "targetIndex": 87,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.504
+        },
+        {
+          "sample": 89,
+          "targetIndex": 88,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.614
+        },
+        {
+          "sample": 90,
+          "targetIndex": 89,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 6.56
+        },
+        {
+          "sample": 91,
+          "targetIndex": 90,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.591
+        },
+        {
+          "sample": 92,
+          "targetIndex": 91,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.591
+        },
+        {
+          "sample": 93,
+          "targetIndex": 92,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.631
+        },
+        {
+          "sample": 94,
+          "targetIndex": 93,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.958
+        },
+        {
+          "sample": 95,
+          "targetIndex": 94,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.888
+        },
+        {
+          "sample": 96,
+          "targetIndex": 95,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.924
+        },
+        {
+          "sample": 97,
+          "targetIndex": 96,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 16.518
+        },
+        {
+          "sample": 98,
+          "targetIndex": 97,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 11.206
+        },
+        {
+          "sample": 99,
+          "targetIndex": 98,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 11.042
+        },
+        {
+          "sample": 100,
+          "targetIndex": 99,
+          "status": 201,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 1.6
+        }
+      ],
+      "latencyLimitMs": 2000,
+      "latencyTargetPassed": true
+    },
+    {
+      "operation": "appointmentCancellation",
+      "endpoint": "/api/v1/appointments/:appointmentId/cancellation",
+      "actorRole": "PATIENT",
+      "query": null,
+      "pageSize": null,
+      "expectedStatus": 200,
+      "expectedResultCount": null,
+      "sqliteVersion": "3.53.4",
+      "stableSortOrder": null,
+      "warmupRequestCount": 10,
+      "warmupResults": [
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 200,
+          "code": null
+        }
+      ],
+      "measuredSampleCount": 100,
+      "maximumConcurrentRequests": 3,
+      "concurrencyLimit": 3,
+      "resetAfterWarmupAndBeforeMeasurement": true,
+      "resetIncludedInMeasurement": false,
+      "distinctMutationTargets": 100,
+      "durationMs": {
+        "min": 1.458,
+        "p50": 2.598,
+        "p95": 4.954,
+        "p99": 9.722,
+        "max": 9.847,
+        "nearestRank": true
+      },
+      "failures": [],
+      "accepted": true,
+      "samples": [
+        {
+          "sample": 1,
+          "targetIndex": 0,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.838
+        },
+        {
+          "sample": 2,
+          "targetIndex": 1,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.06
+        },
+        {
+          "sample": 3,
+          "targetIndex": 2,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.871
+        },
+        {
+          "sample": 4,
+          "targetIndex": 3,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.407
+        },
+        {
+          "sample": 5,
+          "targetIndex": 4,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.463
+        },
+        {
+          "sample": 6,
+          "targetIndex": 5,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.928
+        },
+        {
+          "sample": 7,
+          "targetIndex": 6,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.535
+        },
+        {
+          "sample": 8,
+          "targetIndex": 7,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.751
+        },
+        {
+          "sample": 9,
+          "targetIndex": 8,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.954
+        },
+        {
+          "sample": 10,
+          "targetIndex": 9,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.184
+        },
+        {
+          "sample": 11,
+          "targetIndex": 10,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.213
+        },
+        {
+          "sample": 12,
+          "targetIndex": 11,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.289
+        },
+        {
+          "sample": 13,
+          "targetIndex": 12,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.254
+        },
+        {
+          "sample": 14,
+          "targetIndex": 13,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 9.722
+        },
+        {
+          "sample": 15,
+          "targetIndex": 14,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 9.847
+        },
+        {
+          "sample": 16,
+          "targetIndex": 15,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.013
+        },
+        {
+          "sample": 17,
+          "targetIndex": 16,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.043
+        },
+        {
+          "sample": 18,
+          "targetIndex": 17,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.12
+        },
+        {
+          "sample": 19,
+          "targetIndex": 18,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.367
+        },
+        {
+          "sample": 20,
+          "targetIndex": 19,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.977
+        },
+        {
+          "sample": 21,
+          "targetIndex": 20,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 5.075
+        },
+        {
+          "sample": 22,
+          "targetIndex": 21,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.803
+        },
+        {
+          "sample": 23,
+          "targetIndex": 22,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.87
+        },
+        {
+          "sample": 24,
+          "targetIndex": 23,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.964
+        },
+        {
+          "sample": 25,
+          "targetIndex": 24,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.214
+        },
+        {
+          "sample": 26,
+          "targetIndex": 25,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.219
+        },
+        {
+          "sample": 27,
+          "targetIndex": 26,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.291
+        },
+        {
+          "sample": 28,
+          "targetIndex": 27,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2
+        },
+        {
+          "sample": 29,
+          "targetIndex": 28,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.057
+        },
+        {
+          "sample": 30,
+          "targetIndex": 29,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.153
+        },
+        {
+          "sample": 31,
+          "targetIndex": 30,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.165
+        },
+        {
+          "sample": 32,
+          "targetIndex": 31,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.152
+        },
+        {
+          "sample": 33,
+          "targetIndex": 32,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.21
+        },
+        {
+          "sample": 34,
+          "targetIndex": 33,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.08
+        },
+        {
+          "sample": 35,
+          "targetIndex": 34,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.154
+        },
+        {
+          "sample": 36,
+          "targetIndex": 35,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.233
+        },
+        {
+          "sample": 37,
+          "targetIndex": 36,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.277
+        },
+        {
+          "sample": 38,
+          "targetIndex": 37,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.293
+        },
+        {
+          "sample": 39,
+          "targetIndex": 38,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.464
+        },
+        {
+          "sample": 40,
+          "targetIndex": 39,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.086
+        },
+        {
+          "sample": 41,
+          "targetIndex": 40,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.095
+        },
+        {
+          "sample": 42,
+          "targetIndex": 41,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.185
+        },
+        {
+          "sample": 43,
+          "targetIndex": 42,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 1.982
+        },
+        {
+          "sample": 44,
+          "targetIndex": 43,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.03
+        },
+        {
+          "sample": 45,
+          "targetIndex": 44,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.711
+        },
+        {
+          "sample": 46,
+          "targetIndex": 45,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.809
+        },
+        {
+          "sample": 47,
+          "targetIndex": 46,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.945
+        },
+        {
+          "sample": 48,
+          "targetIndex": 47,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.042
+        },
+        {
+          "sample": 49,
+          "targetIndex": 48,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.666
+        },
+        {
+          "sample": 50,
+          "targetIndex": 49,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.472
+        },
+        {
+          "sample": 51,
+          "targetIndex": 50,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.576
+        },
+        {
+          "sample": 52,
+          "targetIndex": 51,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.904
+        },
+        {
+          "sample": 53,
+          "targetIndex": 52,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.298
+        },
+        {
+          "sample": 54,
+          "targetIndex": 53,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.28
+        },
+        {
+          "sample": 55,
+          "targetIndex": 54,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.58
+        },
+        {
+          "sample": 56,
+          "targetIndex": 55,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.598
+        },
+        {
+          "sample": 57,
+          "targetIndex": 56,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.656
+        },
+        {
+          "sample": 58,
+          "targetIndex": 57,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.708
+        },
+        {
+          "sample": 59,
+          "targetIndex": 58,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.699
+        },
+        {
+          "sample": 60,
+          "targetIndex": 59,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 4.787
+        },
+        {
+          "sample": 61,
+          "targetIndex": 60,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.719
+        },
+        {
+          "sample": 62,
+          "targetIndex": 61,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.291
+        },
+        {
+          "sample": 63,
+          "targetIndex": 62,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.331
+        },
+        {
+          "sample": 64,
+          "targetIndex": 63,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.832
+        },
+        {
+          "sample": 65,
+          "targetIndex": 64,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.881
+        },
+        {
+          "sample": 66,
+          "targetIndex": 65,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.954
+        },
+        {
+          "sample": 67,
+          "targetIndex": 66,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.022
+        },
+        {
+          "sample": 68,
+          "targetIndex": 67,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.063
+        },
+        {
+          "sample": 69,
+          "targetIndex": 68,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.135
+        },
+        {
+          "sample": 70,
+          "targetIndex": 69,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.026
+        },
+        {
+          "sample": 71,
+          "targetIndex": 70,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.083
+        },
+        {
+          "sample": 72,
+          "targetIndex": 71,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.201
+        },
+        {
+          "sample": 73,
+          "targetIndex": 72,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.034
+        },
+        {
+          "sample": 74,
+          "targetIndex": 73,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.121
+        },
+        {
+          "sample": 75,
+          "targetIndex": 74,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.228
+        },
+        {
+          "sample": 76,
+          "targetIndex": 75,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.017
+        },
+        {
+          "sample": 77,
+          "targetIndex": 76,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.004
+        },
+        {
+          "sample": 78,
+          "targetIndex": 77,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.083
+        },
+        {
+          "sample": 79,
+          "targetIndex": 78,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 1.772
+        },
+        {
+          "sample": 80,
+          "targetIndex": 79,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 1.777
+        },
+        {
+          "sample": 81,
+          "targetIndex": 80,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 1.848
+        },
+        {
+          "sample": 82,
+          "targetIndex": 81,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 1.767
+        },
+        {
+          "sample": 83,
+          "targetIndex": 82,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 1.829
+        },
+        {
+          "sample": 84,
+          "targetIndex": 83,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 1.93
+        },
+        {
+          "sample": 85,
+          "targetIndex": 84,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 1.634
+        },
+        {
+          "sample": 86,
+          "targetIndex": 85,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 1.738
+        },
+        {
+          "sample": 87,
+          "targetIndex": 86,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 1.842
+        },
+        {
+          "sample": 88,
+          "targetIndex": 87,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.956
+        },
+        {
+          "sample": 89,
+          "targetIndex": 88,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.035
+        },
+        {
+          "sample": 90,
+          "targetIndex": 89,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 3.445
+        },
+        {
+          "sample": 91,
+          "targetIndex": 90,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.667
+        },
+        {
+          "sample": 92,
+          "targetIndex": 91,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.699
+        },
+        {
+          "sample": 93,
+          "targetIndex": 92,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.765
+        },
+        {
+          "sample": 94,
+          "targetIndex": 93,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.315
+        },
+        {
+          "sample": 95,
+          "targetIndex": 94,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.256
+        },
+        {
+          "sample": 96,
+          "targetIndex": 95,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.305
+        },
+        {
+          "sample": 97,
+          "targetIndex": 96,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.267
+        },
+        {
+          "sample": 98,
+          "targetIndex": 97,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.455
+        },
+        {
+          "sample": 99,
+          "targetIndex": 98,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 2.942
+        },
+        {
+          "sample": 100,
+          "targetIndex": 99,
+          "status": 200,
+          "success": true,
+          "resultCountMatches": true,
+          "writeStateMatches": true,
+          "durationMs": 1.458
+        }
+      ],
+      "latencyLimitMs": 2000,
+      "latencyTargetPassed": true
+    }
+  ],
+  "measuredFailureCount": 0,
+  "allSamplesSucceeded": true,
+  "allLatencyTargetsPassed": true,
+  "accepted": true
+}

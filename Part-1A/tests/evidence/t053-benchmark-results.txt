@@ -1,0 +1,53 @@
+
+> part-1a@1.0.0 harness:benchmark
+> node tests/harness/cli.js benchmark
+
+{
+  "command": "HOSPITAL_TIME_ZONE=<configured> node tests/harness/cli.js benchmark",
+  "exitStatus": 0,
+  "manifestSha256": "da595652dfef3b6e610abdef3fc4cee200d6bd32f7a4d48137c20568410907f8",
+  "measuredFailureCount": 0,
+  "operations": [
+    {
+      "operation": "doctorSearch",
+      "warmupRequestCount": 10,
+      "measuredSampleCount": 100,
+      "p95Ms": 5.986,
+      "latencyLimitMs": 1000,
+      "accepted": true
+    },
+    {
+      "operation": "paginatedPatientReads",
+      "warmupRequestCount": 10,
+      "measuredSampleCount": 100,
+      "p95Ms": 4.348,
+      "latencyLimitMs": 1000,
+      "accepted": true
+    },
+    {
+      "operation": "paginatedAppointmentReads",
+      "warmupRequestCount": 10,
+      "measuredSampleCount": 100,
+      "p95Ms": 11.876,
+      "latencyLimitMs": 1000,
+      "accepted": true
+    },
+    {
+      "operation": "appointmentBooking",
+      "warmupRequestCount": 10,
+      "measuredSampleCount": 100,
+      "p95Ms": 9.834,
+      "latencyLimitMs": 2000,
+      "accepted": true
+    },
+    {
+      "operation": "appointmentCancellation",
+      "warmupRequestCount": 10,
+      "measuredSampleCount": 100,
+      "p95Ms": 4.954,
+      "latencyLimitMs": 2000,
+      "accepted": true
+    }
+  ],
+  "evidenceFile": "tests/evidence/phase9-benchmark-results.json"
+}
