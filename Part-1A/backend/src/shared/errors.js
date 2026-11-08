@@ -32,6 +32,10 @@ export function duplicateResource() {
   return new HttpError(409, 'DUPLICATE_RESOURCE', 'A resource with these details already exists.');
 }
 
+export function resourceInUse() {
+  return new HttpError(409, 'RESOURCE_IN_USE', 'The resource is in use and cannot be changed.');
+}
+
 export function beneficiaryStateConflict() {
   return new HttpError(
     409,

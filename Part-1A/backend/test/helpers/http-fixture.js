@@ -103,27 +103,22 @@ export function cookieFrom(response, name = 'hms_session') {
 }
 
 export function createAccountSession(fixture, { accountId, role }) {
-  const id = accountId ?? fixture.database.prepare(`
-    INSERT INTO accounts (full_name, email_normalized, password_hash, role)
-    VALUES (?, ?, ?, ?)
+  const existing = accountId === undefined
+    ? undefined
+    : fixture.database.prepare('SELECT role FROM accounts WHERE id = ?').get(accountId);
+  if (existing && existing.role !== role) {
+    throw new Error('The requested fixture account has a different role.');
+  }
+  const id = existing ? accountId : fixture.database.prepare(`
+    INSERT INTO accounts (id, full_name, email_normalized, password_hash, role)
+    VALUES (?, ?, ?, ?, ?)
   `).run(
+    accountId ?? null,
     `${role} Fixture Account`,
     `${role.toLowerCase()}-${randomBytes(6).toString('hex')}@example.test`,
     `$2b$12$${'a'.repeat(53)}`,
     role,
   ).lastInsertRowid;
-  if (accountId !== undefined) {
-    fixture.database.prepare(`
-      INSERT INTO accounts (id, full_name, email_normalized, password_hash, role)
-      VALUES (?, ?, ?, ?, ?)
-    `).run(
-      accountId,
-      `${role} Fixture Account`,
-      `${role.toLowerCase()}-${accountId}@example.test`,
-      `$2b$12$${'a'.repeat(53)}`,
-      role,
-    );
-  }
   const token = randomBytes(32).toString('base64url');
   const now = fixture.config.now();
   fixture.database.prepare(`

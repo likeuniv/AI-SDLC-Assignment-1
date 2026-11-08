@@ -21,6 +21,8 @@ export function createConfig({
   loginRateLimit = { maxRequests: 10, windowMs: 15 * 60 * 1000 },
   registrationRateLimit = { maxRequests: 5, windowMs: 60 * 60 * 1000 },
   beneficiaryAuthorizationReviewerAccountIds = [],
+  departmentManagerAccountIds = [],
+  doctorManagerAccountIds = [],
   now = () => new Date(),
 } = {}) {
   if (typeof hospitalTimeZone !== 'string' || hospitalTimeZone.trim() === '') {
@@ -79,15 +81,25 @@ export function createConfig({
       ),
     },
   };
-  if (
-    !Array.isArray(beneficiaryAuthorizationReviewerAccountIds)
-    || beneficiaryAuthorizationReviewerAccountIds.some(
-      (accountId) => !Number.isSafeInteger(accountId) || accountId < 1,
-    )
-  ) {
-    throw new TypeError('Beneficiary authorization reviewer account IDs must be positive integers.');
+  const permissionAccounts = {
+    'beneficiary:review-authorization': beneficiaryAuthorizationReviewerAccountIds,
+    'department:manage': departmentManagerAccountIds,
+    'doctor:manage': doctorManagerAccountIds,
+  };
+  for (const [permission, accountIds] of Object.entries(permissionAccounts)) {
+    if (
+      !Array.isArray(accountIds)
+      || accountIds.some((accountId) => !Number.isSafeInteger(accountId) || accountId < 1)
+    ) {
+      throw new TypeError(`Configured ${permission} account IDs must be positive integers.`);
+    }
   }
-  const reviewerAccountIds = new Set(beneficiaryAuthorizationReviewerAccountIds);
+  const permissionAccountSets = new Map(
+    Object.entries(permissionAccounts).map(([permission, accountIds]) => [
+      permission,
+      new Set(accountIds),
+    ]),
+  );
 
   return Object.freeze({
     hospitalTimeZone,
@@ -102,8 +114,7 @@ export function createConfig({
       registration: Object.freeze(limits.registration),
     }),
     hasPermission(accountId, permission) {
-      return permission === 'beneficiary:review-authorization'
-        && reviewerAccountIds.has(accountId);
+      return permissionAccountSets.get(permission)?.has(accountId) ?? false;
     },
     now,
   });
@@ -111,8 +122,16 @@ export function createConfig({
 
 export function loadConfig(environment = process.env) {
   const reviewerIds = environment.BENEFICIARY_AUTHORIZATION_REVIEWER_IDS;
+  const departmentManagerIds = environment.DEPARTMENT_MANAGER_ACCOUNT_IDS;
+  const doctorManagerIds = environment.DOCTOR_MANAGER_ACCOUNT_IDS;
   const beneficiaryAuthorizationReviewerAccountIds = reviewerIds
     ? reviewerIds.split(',').map((value) => Number(value.trim()))
+    : [];
+  const departmentManagerAccountIds = departmentManagerIds
+    ? departmentManagerIds.split(',').map((value) => Number(value.trim()))
+    : [];
+  const doctorManagerAccountIds = doctorManagerIds
+    ? doctorManagerIds.split(',').map((value) => Number(value.trim()))
     : [];
   return createConfig({
     hospitalTimeZone: environment.HOSPITAL_TIME_ZONE,
@@ -131,5 +150,7 @@ export function loadConfig(environment = process.env) {
       windowMs: environment.REGISTRATION_RATE_LIMIT_WINDOW_MS ?? 60 * 60 * 1000,
     },
     beneficiaryAuthorizationReviewerAccountIds,
+    departmentManagerAccountIds,
+    doctorManagerAccountIds,
   });
 }

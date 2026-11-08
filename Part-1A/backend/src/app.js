@@ -11,6 +11,8 @@ import {
   createBeneficiaryAdminRouter,
   createBeneficiaryRouter,
 } from './modules/beneficiaries/routes.js';
+import { createDepartmentRouter } from './modules/departments/routes.js';
+import { createDoctorRouter } from './modules/doctors/routes.js';
 
 export function createApp({
   database,
@@ -31,6 +33,8 @@ export function createApp({
   app.use('/api/v1/patients', createPatientRouter(database, config));
   app.use('/api/v1/beneficiaries', createBeneficiaryRouter(database, config));
   app.use('/api/v1/admin/beneficiaries', createBeneficiaryAdminRouter(database, config));
+  app.use('/api/v1/departments', createDepartmentRouter(database, config));
+  app.use('/api/v1/doctors', createDoctorRouter(database, config));
 
   app.use((request, response, next) => {
     next(resourceNotFound());
