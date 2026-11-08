@@ -1,0 +1,92 @@
+
+> backend@1.0.0 test
+> node --test --experimental-test-coverage
+
+✔ test/helpers/http-fixture.js (590.191195ms)
+✔ maps malformed structure to 400 and validly structured field errors to 422 (400.220215ms)
+✔ returns stable duplicate, unauthorized and privacy-safe not-found errors (1027.996117ms)
+✔ 204 success has no body and body-bearing success uses the approved envelope (1338.533509ms)
+✔ role denial is 403 and cannot be bypassed with client-supplied role (998.807719ms)
+✔ unexpected errors return generic 500 and logs omit exception details (37.498993ms)
+✔ central response helper emits the standard 204 response (66.650691ms)
+✔ registers a patient, creates the profile, and persists only a bcrypt hash (1079.185709ms)
+✔ registration rejects duplicates and invalid fields with safe responses (1485.075874ms)
+✔ unknown email and incorrect password return equivalent login errors (1021.156046ms)
+✔ issues high-entropy HttpOnly SameSite session cookies and stores only token hashes (1556.570846ms)
+✔ restores authenticated identity from the cookie and ignores client role spoofing (1201.960467ms)
+✔ binds CSRF tokens to sessions and rotates/invalidate sessions on re-login (1864.03038ms)
+✔ enforces CSRF on cookie-authenticated writes but not read-only requests (1790.426677ms)
+✔ logout invalidates the session and expires its cookie (1653.283017ms)
+✔ expired sessions cannot restore a session or obtain a CSRF token (882.460504ms)
+✔ configures foreign keys, WAL, and a 5000 ms busy timeout on each file connection (35.7227ms)
+✔ uses the configured environment path for the database file (4.972544ms)
+✔ supports parameterized statements and committed transactions (8.271489ms)
+✔ rolls back a failed transaction (5.019036ms)
+✔ applies migrations in ascending order and does not reapply them (12.200033ms)
+✔ rolls back a failed migration without recording its version (15.184128ms)
+✔ detects an applied migration whose file is missing (5.145297ms)
+✔ rejects invalid and duplicate migration filenames (4.991593ms)
+✔ closes database connections cleanly (3.308873ms)
+✔ rejects overlapping availability inserts for the same doctor (50.194969ms)
+✔ rejects overlapping availability updates but allows adjacent slots (16.778921ms)
+✔ allows overlapping intervals for different doctors (7.347657ms)
+✔ rejects updates and deletes of authorization audit records (21.86203ms)
+✔ rejects invalid foreign keys, slot uniqueness and CHECK constraints (12.486494ms)
+✔ rolls back the complete transaction when an availability trigger rejects a write (14.564376ms)
+✔ reapplying migrations leaves schema and triggers unchanged (12.997728ms)
+✔ creates all T006 schema tables and primary keys (42.610907ms)
+✔ enforces account requirements and normalized email uniqueness (247.758483ms)
+✔ enforces patient profile one-to-one and patient account ownership (55.134211ms)
+✔ enforces beneficiary ownership, approved relationships, dates and nullable authorization status (22.616424ms)
+✔ accepts only the approved adult beneficiary authorization states (10.181098ms)
+✔ enforces doctor profiles belong uniquely to doctor accounts (12.411667ms)
+✔ enforces unique department and specialization names case-insensitively (41.235971ms)
+✔ enforces session token-hash uniqueness and account references (20.522686ms)
+✔ enforces unique doctor-department and doctor-specialization associations (9.814241ms)
+✔ enforces restrictive deletion for dependent profiles, beneficiaries, associations and sessions (14.323142ms)
+✔ creates required lookup indexes and remains repeatable (7.56381ms)
+✔ requires a valid configured IANA timezone (39.206264ms)
+✔ converts an offset date-time only when its offset agrees with hospital timezone (2.89316ms)
+✔ rejects daylight-saving gaps and accepts repeated local times with explicit offsets (9.492056ms)
+✔ uses the injected clock and hospital-local date for calendar calculations (4.264978ms)
+ℹ tests 47
+ℹ suites 0
+ℹ pass 47
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13897.414445
+ℹ start of coverage report
+ℹ --------------------------------------------------------------------------------------------------------------------------
+ℹ file                  | line % | branch % | funcs % | uncovered lines
+ℹ --------------------------------------------------------------------------------------------------------------------------
+ℹ src                   |        |          |         |
+ℹ  app.js               |  93.75 |    75.00 |  100.00 | 16-17
+ℹ  config               |        |          |         |
+ℹ   index.js            |  75.86 |    60.00 |   50.00 | 5-6 10-11 34-35 37-38 40-41 99-116
+ℹ  db                   |        |          |         |
+ℹ   connection.js       |  61.33 |    53.33 |  100.00 | 16-17 37-38 43-44 49-50 54-74
+ℹ   migrate.js          |  92.73 |    85.19 |  100.00 | 16-17 24-25 36-37 47-48
+ℹ  middleware           |        |          |         |
+ℹ   authentication.js   |  86.25 |    66.67 |  100.00 | 13-14 19-20 22 55-56 71-73 78
+ℹ   csrf.js             |  92.59 |    90.91 |  100.00 | 17-18 23-24
+ℹ   error-handler.js    |  88.64 |    84.62 |  100.00 | 12-13 20-22
+ℹ   rate-limit.js       |  80.00 |    66.67 |   66.67 | 11-12 23-26
+ℹ   request-context.js  | 100.00 |   100.00 |  100.00 |
+ℹ  modules              |        |          |         |
+ℹ   auth                |        |          |         |
+ℹ    controller.js      |  96.23 |    91.67 |  100.00 | 36-37
+ℹ    repository.js      | 100.00 |   100.00 |  100.00 |
+ℹ    routes.js          | 100.00 |   100.00 |  100.00 |
+ℹ    service.js         |  96.49 |    91.67 |  100.00 | 18-19
+ℹ    validation.js      |  86.36 |    62.50 |  100.00 | 35-36 38-39 41-42
+ℹ  shared               |        |          |         |
+ℹ   errors.js           |  85.37 |   100.00 |   66.67 | 12-13 36-37 40-41
+ℹ   responses.js        | 100.00 |   100.00 |  100.00 |
+ℹ   time.js             |  85.14 |    71.43 |   76.92 | 39-40 45-46 81-82 87-88 101-102 111-115 118 123-124 136-137 143-144
+ℹ   validation.js       |  81.82 |    77.78 |  100.00 | 5-6 10-11
+ℹ --------------------------------------------------------------------------------------------------------------------------
+ℹ all files             |  86.94 |    78.01 |   89.66 |
+ℹ --------------------------------------------------------------------------------------------------------------------------
+ℹ end of coverage report

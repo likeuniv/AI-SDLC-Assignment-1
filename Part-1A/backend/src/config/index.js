@@ -1,0 +1,116 @@
+import { validateTimeZone } from '../shared/time.js';
+
+function parsePositiveInteger(value, name, fallback, maximum) {
+  if (value === undefined || value === '') {
+    return fallback;
+  }
+
+  const parsed = Number(value);
+  if (!Number.isSafeInteger(parsed) || parsed < 1 || parsed > maximum) {
+    throw new TypeError(`${name} must be an integer between 1 and ${maximum}.`);
+  }
+  return parsed;
+}
+
+export function createConfig({
+  hospitalTimeZone,
+  applicationOrigin = 'http://localhost:5173',
+  nodeEnvironment = 'development',
+  secureCookies,
+  sessionTtlSeconds = 8 * 60 * 60,
+  loginRateLimit = { maxRequests: 10, windowMs: 15 * 60 * 1000 },
+  registrationRateLimit = { maxRequests: 5, windowMs: 60 * 60 * 1000 },
+  now = () => new Date(),
+} = {}) {
+  if (typeof hospitalTimeZone !== 'string' || hospitalTimeZone.trim() === '') {
+    throw new TypeError('HOSPITAL_TIME_ZONE must be configured.');
+  }
+  validateTimeZone(hospitalTimeZone);
+
+  let origin;
+  try {
+    origin = new URL(applicationOrigin);
+  } catch (error) {
+    throw new TypeError('APPLICATION_ORIGIN must be a valid HTTP(S) origin.', { cause: error });
+  }
+  if (!['http:', 'https:'].includes(origin.protocol) || origin.origin !== applicationOrigin) {
+    throw new TypeError('APPLICATION_ORIGIN must contain only an HTTP(S) scheme, host, and port.');
+  }
+  if (nodeEnvironment === 'production' && secureCookies === false) {
+    throw new TypeError('Secure session cookies are required in production.');
+  }
+
+  const cookieSecure = secureCookies
+    ?? (nodeEnvironment === 'production' || origin.protocol === 'https:');
+  const sessionLifetime = parsePositiveInteger(
+    String(sessionTtlSeconds),
+    'SESSION_TTL_SECONDS',
+    8 * 60 * 60,
+    30 * 24 * 60 * 60,
+  );
+  const limits = {
+    login: {
+      maxRequests: parsePositiveInteger(
+        String(loginRateLimit.maxRequests),
+        'LOGIN_RATE_LIMIT_MAX',
+        10,
+        10000,
+      ),
+      windowMs: parsePositiveInteger(
+        String(loginRateLimit.windowMs),
+        'LOGIN_RATE_LIMIT_WINDOW_MS',
+        15 * 60 * 1000,
+        24 * 60 * 60 * 1000,
+      ),
+    },
+    registration: {
+      maxRequests: parsePositiveInteger(
+        String(registrationRateLimit.maxRequests),
+        'REGISTRATION_RATE_LIMIT_MAX',
+        5,
+        10000,
+      ),
+      windowMs: parsePositiveInteger(
+        String(registrationRateLimit.windowMs),
+        'REGISTRATION_RATE_LIMIT_WINDOW_MS',
+        60 * 60 * 1000,
+        24 * 60 * 60 * 1000,
+      ),
+    },
+  };
+
+  return Object.freeze({
+    hospitalTimeZone,
+    applicationOrigin: origin.origin,
+    nodeEnvironment,
+    secureCookies: cookieSecure,
+    sessionCookieName: 'hms_session',
+    sessionTtlSeconds: sessionLifetime,
+    bcryptCost: 12,
+    rateLimits: Object.freeze({
+      login: Object.freeze(limits.login),
+      registration: Object.freeze(limits.registration),
+    }),
+    now,
+  });
+}
+
+export function loadConfig(environment = process.env) {
+  return createConfig({
+    hospitalTimeZone: environment.HOSPITAL_TIME_ZONE,
+    applicationOrigin: environment.APPLICATION_ORIGIN ?? 'http://localhost:5173',
+    nodeEnvironment: environment.NODE_ENV ?? 'development',
+    secureCookies: environment.SESSION_COOKIE_SECURE === undefined
+      ? undefined
+      : environment.SESSION_COOKIE_SECURE === 'true',
+    sessionTtlSeconds: environment.SESSION_TTL_SECONDS ?? 8 * 60 * 60,
+    loginRateLimit: {
+      maxRequests: environment.LOGIN_RATE_LIMIT_MAX ?? 10,
+      windowMs: environment.LOGIN_RATE_LIMIT_WINDOW_MS ?? 15 * 60 * 1000,
+    },
+    registrationRateLimit: {
+      maxRequests: environment.REGISTRATION_RATE_LIMIT_MAX ?? 5,
+      windowMs: environment.REGISTRATION_RATE_LIMIT_WINDOW_MS ?? 60 * 60 * 1000,
+    },
+  });
+}

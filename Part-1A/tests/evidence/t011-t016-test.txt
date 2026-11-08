@@ -1,0 +1,59 @@
+
+> backend@1.0.0 test
+> node --test
+
+✔ test/helpers/http-fixture.js (519.677728ms)
+✔ maps malformed structure to 400 and validly structured field errors to 422 (228.122804ms)
+✔ returns stable duplicate, unauthorized and privacy-safe not-found errors (1197.699912ms)
+✔ 204 success has no body and body-bearing success uses the approved envelope (1011.726551ms)
+✔ role denial is 403 and cannot be bypassed with client-supplied role (1024.369679ms)
+✔ unexpected errors return generic 500 and logs omit exception details (52.477187ms)
+✔ central response helper emits the standard 204 response (51.325537ms)
+✔ registers a patient, creates the profile, and persists only a bcrypt hash (1655.369068ms)
+✔ registration rejects duplicates and invalid fields with safe responses (1487.803844ms)
+✔ unknown email and incorrect password return equivalent login errors (1758.151418ms)
+✔ issues high-entropy HttpOnly SameSite session cookies and stores only token hashes (1916.015668ms)
+✔ restores authenticated identity from the cookie and ignores client role spoofing (1172.570696ms)
+✔ binds CSRF tokens to sessions and rotates/invalidate sessions on re-login (1589.523344ms)
+✔ enforces CSRF on cookie-authenticated writes but not read-only requests (1267.660173ms)
+✔ logout invalidates the session and expires its cookie (861.149288ms)
+✔ expired sessions cannot restore a session or obtain a CSRF token (945.763779ms)
+✔ configures foreign keys, WAL, and a 5000 ms busy timeout on each file connection (47.079987ms)
+✔ uses the configured environment path for the database file (4.201652ms)
+✔ supports parameterized statements and committed transactions (2.422975ms)
+✔ rolls back a failed transaction (1.849128ms)
+✔ applies migrations in ascending order and does not reapply them (5.044509ms)
+✔ rolls back a failed migration without recording its version (4.36373ms)
+✔ detects an applied migration whose file is missing (12.131942ms)
+✔ rejects invalid and duplicate migration filenames (19.232322ms)
+✔ closes database connections cleanly (4.001999ms)
+✔ rejects overlapping availability inserts for the same doctor (95.220232ms)
+✔ rejects overlapping availability updates but allows adjacent slots (19.20483ms)
+✔ allows overlapping intervals for different doctors (12.662499ms)
+✔ rejects updates and deletes of authorization audit records (22.196055ms)
+✔ rejects invalid foreign keys, slot uniqueness and CHECK constraints (40.01791ms)
+✔ rolls back the complete transaction when an availability trigger rejects a write (15.884328ms)
+✔ reapplying migrations leaves schema and triggers unchanged (37.664434ms)
+✔ creates all T006 schema tables and primary keys (77.382102ms)
+✔ enforces account requirements and normalized email uniqueness (30.211475ms)
+✔ enforces patient profile one-to-one and patient account ownership (49.068839ms)
+✔ enforces beneficiary ownership, approved relationships, dates and nullable authorization status (41.363512ms)
+✔ accepts only the approved adult beneficiary authorization states (31.854123ms)
+✔ enforces doctor profiles belong uniquely to doctor accounts (23.630192ms)
+✔ enforces unique department and specialization names case-insensitively (20.058867ms)
+✔ enforces session token-hash uniqueness and account references (37.427725ms)
+✔ enforces unique doctor-department and doctor-specialization associations (25.92885ms)
+✔ enforces restrictive deletion for dependent profiles, beneficiaries, associations and sessions (36.884113ms)
+✔ creates required lookup indexes and remains repeatable (37.339918ms)
+✔ requires a valid configured IANA timezone (94.506196ms)
+✔ converts an offset date-time only when its offset agrees with hospital timezone (49.243403ms)
+✔ rejects daylight-saving gaps and accepts repeated local times with explicit offsets (1.372721ms)
+✔ uses the injected clock and hospital-local date for calendar calculations (4.451297ms)
+ℹ tests 47
+ℹ suites 0
+ℹ pass 47
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13991.328022

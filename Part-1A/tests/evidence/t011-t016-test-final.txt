@@ -1,0 +1,60 @@
+
+> backend@1.0.0 test
+> node --test
+
+✔ test/helpers/http-fixture.js (718.423932ms)
+✔ maps malformed structure to 400 and validly structured field errors to 422 (326.330437ms)
+✔ returns stable duplicate, unauthorized and privacy-safe not-found errors (1247.432864ms)
+✔ 204 success has no body and body-bearing success uses the approved envelope (829.970915ms)
+✔ role denial is 403 and cannot be bypassed with client-supplied role (1516.514291ms)
+✔ unexpected errors return generic 500 and logs omit exception details (37.106918ms)
+✔ central response helper emits the standard 204 response (16.511448ms)
+✔ registers a patient, creates the profile, and persists only a bcrypt hash (1296.930383ms)
+✔ registration rejects duplicates and invalid fields with safe responses (892.30112ms)
+✔ unknown email and incorrect password return equivalent login errors (1306.652533ms)
+✔ issues high-entropy HttpOnly SameSite session cookies and stores only token hashes (1289.775528ms)
+✔ restores authenticated identity from the cookie and ignores client role spoofing (1012.393452ms)
+✔ binds CSRF tokens to sessions and rotates/invalidate sessions on re-login (1411.9429ms)
+✔ enforces CSRF Origin and token checks on cookie-authenticated writes (931.884142ms)
+✔ login rate limiting returns the approved 429 error envelope (1339.541965ms)
+✔ logout invalidates the session and expires its cookie (1002.999791ms)
+✔ expired sessions cannot restore a session or obtain a CSRF token (877.949017ms)
+✔ configures foreign keys, WAL, and a 5000 ms busy timeout on each file connection (38.55174ms)
+✔ uses the configured environment path for the database file (2.760211ms)
+✔ supports parameterized statements and committed transactions (2.495471ms)
+✔ rolls back a failed transaction (1.57953ms)
+✔ applies migrations in ascending order and does not reapply them (12.922428ms)
+✔ rolls back a failed migration without recording its version (3.904169ms)
+✔ detects an applied migration whose file is missing (10.295631ms)
+✔ rejects invalid and duplicate migration filenames (3.291624ms)
+✔ closes database connections cleanly (1.187709ms)
+✔ rejects overlapping availability inserts for the same doctor (31.240181ms)
+✔ rejects overlapping availability updates but allows adjacent slots (14.667109ms)
+✔ allows overlapping intervals for different doctors (13.828648ms)
+✔ rejects updates and deletes of authorization audit records (7.357078ms)
+✔ rejects invalid foreign keys, slot uniqueness and CHECK constraints (15.678526ms)
+✔ rolls back the complete transaction when an availability trigger rejects a write (13.454387ms)
+✔ reapplying migrations leaves schema and triggers unchanged (13.157957ms)
+✔ creates all T006 schema tables and primary keys (44.023609ms)
+✔ enforces account requirements and normalized email uniqueness (7.51123ms)
+✔ enforces patient profile one-to-one and patient account ownership (10.147631ms)
+✔ enforces beneficiary ownership, approved relationships, dates and nullable authorization status (13.579485ms)
+✔ accepts only the approved adult beneficiary authorization states (10.103146ms)
+✔ enforces doctor profiles belong uniquely to doctor accounts (7.174378ms)
+✔ enforces unique department and specialization names case-insensitively (6.961329ms)
+✔ enforces session token-hash uniqueness and account references (4.986721ms)
+✔ enforces unique doctor-department and doctor-specialization associations (17.201667ms)
+✔ enforces restrictive deletion for dependent profiles, beneficiaries, associations and sessions (9.595237ms)
+✔ creates required lookup indexes and remains repeatable (8.235934ms)
+✔ requires a valid configured IANA timezone (63.418781ms)
+✔ converts an offset date-time only when its offset agrees with hospital timezone (18.17957ms)
+✔ rejects daylight-saving gaps and accepts repeated local times with explicit offsets (1.241073ms)
+✔ uses the injected clock and hospital-local date for calendar calculations (24.518078ms)
+ℹ tests 48
+ℹ suites 0
+ℹ pass 48
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12580.388934

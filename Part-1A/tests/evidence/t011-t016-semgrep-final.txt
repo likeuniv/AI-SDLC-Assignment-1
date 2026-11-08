@@ -1,0 +1,107 @@
+running 1074 rules from 1 config remote-registry_0
+Rules:
+<SKIPPED DATA (too many entries; use --max-log-list-entries)>
+
+
+┌─────────────┐
+│ Scan Status │
+└─────────────┘
+  Scanning 74 files tracked by git with 1074 Code rules:
+
+  Language      Rules   Files          Origin      Rules
+ ─────────────────────────────        ───────────────────
+  <multilang>      60      74          Community    1074
+  js              153      24
+  json              4      11
+  bash              4       6
+  yaml             35       1
+  html              1       1
+
+SCA findings adjustment: No SCA rules to adjust
+[WARN] Syntax error at line .specify/scripts/bash/create-new-feature.sh:124:
+ `10#` was unexpected
+
+========================================
+Files skipped:
+========================================
+
+  Always skipped by Semgrep:
+
+   • <none>
+
+  Skipped by .gitignore:
+  (Disable by passing --no-git-ignore)
+
+   • <all files not listed by `git ls-files` were skipped>
+
+  Skipped by .semgrepignore:
+  - https://semgrep.dev/docs/ignoring-files-folders-code/#understand-semgrep-defaults
+
+   • backend/test/helpers/http-fixture.js
+   • backend/test/integration/api-errors.test.js
+   • backend/test/integration/auth.test.js
+   • backend/test/integration/db-foundation.test.js
+   • backend/test/integration/db-integrity.test.js
+   • backend/test/integration/db-schema.test.js
+   • backend/test/integration/time.test.js
+   • tests/evidence/coverage-initial.txt
+   • tests/evidence/lint-db-integrity.txt
+   • tests/evidence/lint-initial.txt
+   • tests/evidence/semgrep-initial.txt
+   • tests/evidence/t011-t016-coverage-final.txt
+   • tests/evidence/t011-t016-coverage.txt
+   • tests/evidence/t011-t016-lint-final.txt
+   • tests/evidence/t011-t016-lint.txt
+   • tests/evidence/t011-t016-semgrep-final.txt
+   • tests/evidence/t011-t016-semgrep.txt
+   • tests/evidence/t011-t016-test-final.txt
+   • tests/evidence/t011-t016-test.txt
+   • tests/evidence/test-db-integrity.txt
+   • tests/evidence/test-initial.txt
+
+  Skipped by --include patterns:
+
+   • <none>
+
+  Skipped by --exclude patterns:
+
+   • <none>
+
+  Files that couldn't be accessed:
+
+   • <none>
+
+  Skipped by limiting to files smaller than 1000000 bytes:
+  (Adjust with the --max-target-bytes flag)
+
+   • <none>
+
+  Partially analyzed due to parsing or internal Semgrep errors
+
+   • .specify/scripts/bash/create-new-feature.sh (~0.6% of lines always skipped)
+
+     The following lines were skipped for all analysis:
+
+     • lines 124-124 due to exception "PartialParsing" raised during analysis
+     • lines 382-382 due to exception "PartialParsing" raised during analysis
+     • lines 404-404 due to exception "PartialParsing" raised during analysis
+
+
+
+┌──────────────┐
+│ Scan Summary │
+└──────────────┘
+✅ Scan completed successfully.
+ • Findings: 0 (0 blocking)
+ • Rules run: 254
+ • Targets scanned: 74
+ • Parsed lines: ~99.9%
+ • Scan skipped:
+   ◦ Files matching .semgrepignore patterns: 21
+ • Scan was limited to files tracked by git
+Ran 254 rules on 74 files: 0 findings.
+(need more rules? `semgrep login` for additional free Semgrep Registry rules)
+
+If Semgrep missed a finding, please send us feedback to let us know!
+See https://semgrep.dev/docs/reporting-false-negatives/
+Not sending pseudonymous metrics since metrics are configured to OFF, registry usage is True, and login status is False
