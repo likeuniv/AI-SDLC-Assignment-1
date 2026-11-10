@@ -1,7 +1,7 @@
 {
   "command": "HOSPITAL_TIME_ZONE=<configured> node .harness/cli.js benchmark",
   "exitStatus": 0,
-  "runAtUtc": "2026-11-10T07:06:26.877Z",
+  "runAtUtc": "2026-11-10T12:41:08.347Z",
   "nodeVersion": "v24.22.2",
   "runtimeVersions": {
     "node": "24.22.2",
@@ -125,11 +125,11 @@
       "resetIncludedInMeasurement": false,
       "distinctMutationTargets": null,
       "durationMs": {
-        "min": 1.591,
-        "p50": 5.27,
-        "p95": 6.952,
-        "p99": 8.293,
-        "max": 8.431,
+        "min": 1.588,
+        "p50": 5.73,
+        "p95": 7.466,
+        "p99": 8.573,
+        "max": 9.205,
         "nearestRank": true
       },
       "failures": [],
@@ -142,7 +142,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.668
+          "durationMs": 4.917
         },
         {
           "sample": 2,
@@ -151,7 +151,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.866
+          "durationMs": 5.418
         },
         {
           "sample": 3,
@@ -160,7 +160,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.435
+          "durationMs": 5.863
         },
         {
           "sample": 4,
@@ -169,7 +169,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.887
+          "durationMs": 6.737
         },
         {
           "sample": 5,
@@ -178,7 +178,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.952
+          "durationMs": 6.395
         },
         {
           "sample": 6,
@@ -187,7 +187,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.467
+          "durationMs": 6.565
         },
         {
           "sample": 7,
@@ -196,7 +196,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.114
+          "durationMs": 6.493
         },
         {
           "sample": 8,
@@ -205,7 +205,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.399
+          "durationMs": 6.6
         },
         {
           "sample": 9,
@@ -214,7 +214,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.847
+          "durationMs": 6.854
         },
         {
           "sample": 10,
@@ -223,7 +223,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.169
+          "durationMs": 6.697
         },
         {
           "sample": 11,
@@ -232,7 +232,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.213
+          "durationMs": 6.773
         },
         {
           "sample": 12,
@@ -241,7 +241,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.893
+          "durationMs": 7.526
         },
         {
           "sample": 13,
@@ -250,7 +250,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.133
+          "durationMs": 5.356
         },
         {
           "sample": 14,
@@ -259,7 +259,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.217
+          "durationMs": 5.259
         },
         {
           "sample": 15,
@@ -268,7 +268,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.491
+          "durationMs": 5.417
         },
         {
           "sample": 16,
@@ -277,7 +277,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.723
+          "durationMs": 6.421
         },
         {
           "sample": 17,
@@ -286,7 +286,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.987
+          "durationMs": 7.241
         },
         {
           "sample": 18,
@@ -295,7 +295,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.534
+          "durationMs": 8.174
         },
         {
           "sample": 19,
@@ -304,7 +304,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.783
+          "durationMs": 8.573
         },
         {
           "sample": 20,
@@ -313,7 +313,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.857
+          "durationMs": 7.466
         },
         {
           "sample": 21,
@@ -322,7 +322,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.047
+          "durationMs": 7.121
         },
         {
           "sample": 22,
@@ -331,7 +331,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.911
+          "durationMs": 4.968
         },
         {
           "sample": 23,
@@ -340,7 +340,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.403
+          "durationMs": 5.698
         },
         {
           "sample": 24,
@@ -349,7 +349,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.024
+          "durationMs": 6.473
         },
         {
           "sample": 25,
@@ -358,7 +358,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.973
+          "durationMs": 6.134
         },
         {
           "sample": 26,
@@ -367,7 +367,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.06
+          "durationMs": 6.116
         },
         {
           "sample": 27,
@@ -376,7 +376,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.215
+          "durationMs": 6.361
         },
         {
           "sample": 28,
@@ -385,7 +385,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.193
+          "durationMs": 5.665
         },
         {
           "sample": 29,
@@ -394,7 +394,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.596
+          "durationMs": 6.313
         },
         {
           "sample": 30,
@@ -403,7 +403,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.156
+          "durationMs": 6.538
         },
         {
           "sample": 31,
@@ -412,7 +412,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.363
+          "durationMs": 6.179
         },
         {
           "sample": 32,
@@ -421,7 +421,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.738
+          "durationMs": 7.06
         },
         {
           "sample": 33,
@@ -430,7 +430,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.772
+          "durationMs": 7.106
         },
         {
           "sample": 34,
@@ -439,7 +439,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.886
+          "durationMs": 5.231
         },
         {
           "sample": 35,
@@ -448,7 +448,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.165
+          "durationMs": 5.878
         },
         {
           "sample": 36,
@@ -457,7 +457,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.206
+          "durationMs": 6.392
         },
         {
           "sample": 37,
@@ -466,7 +466,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.79
+          "durationMs": 5.242
         },
         {
           "sample": 38,
@@ -475,7 +475,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.806
+          "durationMs": 5.059
         },
         {
           "sample": 39,
@@ -484,7 +484,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.043
+          "durationMs": 5.657
         },
         {
           "sample": 40,
@@ -493,7 +493,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.441
+          "durationMs": 6.279
         },
         {
           "sample": 41,
@@ -502,7 +502,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.097
+          "durationMs": 6.849
         },
         {
           "sample": 42,
@@ -511,7 +511,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.555
+          "durationMs": 7.251
         },
         {
           "sample": 43,
@@ -520,7 +520,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.931
+          "durationMs": 6.249
         },
         {
           "sample": 44,
@@ -529,7 +529,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.025
+          "durationMs": 6.633
         },
         {
           "sample": 45,
@@ -538,7 +538,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.71
+          "durationMs": 6.813
         },
         {
           "sample": 46,
@@ -547,7 +547,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.897
+          "durationMs": 6.37
         },
         {
           "sample": 47,
@@ -556,7 +556,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.928
+          "durationMs": 6.397
         },
         {
           "sample": 48,
@@ -565,7 +565,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.072
+          "durationMs": 6.05
         },
         {
           "sample": 49,
@@ -574,7 +574,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.301
+          "durationMs": 4.996
         },
         {
           "sample": 50,
@@ -583,7 +583,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.438
+          "durationMs": 8.385
         },
         {
           "sample": 51,
@@ -592,7 +592,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.368
+          "durationMs": 9.205
         },
         {
           "sample": 52,
@@ -601,7 +601,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.748
+          "durationMs": 6.027
         },
         {
           "sample": 53,
@@ -610,7 +610,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.14
+          "durationMs": 6.726
         },
         {
           "sample": 54,
@@ -619,7 +619,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.748
+          "durationMs": 6.576
         },
         {
           "sample": 55,
@@ -628,7 +628,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.252
+          "durationMs": 5.258
         },
         {
           "sample": 56,
@@ -637,7 +637,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.293
+          "durationMs": 5.288
         },
         {
           "sample": 57,
@@ -646,7 +646,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.431
+          "durationMs": 5.391
         },
         {
           "sample": 58,
@@ -655,7 +655,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.133
+          "durationMs": 5.631
         },
         {
           "sample": 59,
@@ -664,7 +664,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.256
+          "durationMs": 5.73
         },
         {
           "sample": 60,
@@ -673,7 +673,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.395
+          "durationMs": 5.861
         },
         {
           "sample": 61,
@@ -682,7 +682,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.594
+          "durationMs": 4.057
         },
         {
           "sample": 62,
@@ -691,7 +691,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.034
+          "durationMs": 4.559
         },
         {
           "sample": 63,
@@ -700,7 +700,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.195
+          "durationMs": 4.944
         },
         {
           "sample": 64,
@@ -709,7 +709,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.918
+          "durationMs": 3.607
         },
         {
           "sample": 65,
@@ -718,7 +718,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.057
+          "durationMs": 3.657
         },
         {
           "sample": 66,
@@ -727,7 +727,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.129
+          "durationMs": 3.792
         },
         {
           "sample": 67,
@@ -736,7 +736,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.734
+          "durationMs": 4.915
         },
         {
           "sample": 68,
@@ -745,7 +745,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.836
+          "durationMs": 5.003
         },
         {
           "sample": 69,
@@ -754,7 +754,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.982
+          "durationMs": 5.146
         },
         {
           "sample": 70,
@@ -763,7 +763,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.055
+          "durationMs": 5.857
         },
         {
           "sample": 71,
@@ -772,7 +772,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.118
+          "durationMs": 6.14
         },
         {
           "sample": 72,
@@ -781,7 +781,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.443
+          "durationMs": 6.238
         },
         {
           "sample": 73,
@@ -790,7 +790,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.067
+          "durationMs": 4.915
         },
         {
           "sample": 74,
@@ -799,7 +799,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.708
+          "durationMs": 4.949
         },
         {
           "sample": 75,
@@ -808,7 +808,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.06
+          "durationMs": 5.113
         },
         {
           "sample": 76,
@@ -817,7 +817,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.99
+          "durationMs": 4.248
         },
         {
           "sample": 77,
@@ -826,7 +826,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.087
+          "durationMs": 4.372
         },
         {
           "sample": 78,
@@ -835,7 +835,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.22
+          "durationMs": 4.526
         },
         {
           "sample": 79,
@@ -844,7 +844,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.021
+          "durationMs": 2.756
         },
         {
           "sample": 80,
@@ -853,7 +853,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.841
+          "durationMs": 2.873
         },
         {
           "sample": 81,
@@ -862,7 +862,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.01
+          "durationMs": 3.032
         },
         {
           "sample": 82,
@@ -871,7 +871,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.81
+          "durationMs": 6.151
         },
         {
           "sample": 83,
@@ -880,7 +880,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.137
+          "durationMs": 6.234
         },
         {
           "sample": 84,
@@ -889,7 +889,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.314
+          "durationMs": 6.246
         },
         {
           "sample": 85,
@@ -898,7 +898,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.808
+          "durationMs": 4.961
         },
         {
           "sample": 86,
@@ -907,7 +907,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.27
+          "durationMs": 5.237
         },
         {
           "sample": 87,
@@ -916,7 +916,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.066
+          "durationMs": 5.864
         },
         {
           "sample": 88,
@@ -925,7 +925,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.112
+          "durationMs": 4.48
         },
         {
           "sample": 89,
@@ -934,7 +934,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.363
+          "durationMs": 4.175
         },
         {
           "sample": 90,
@@ -943,7 +943,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.272
+          "durationMs": 4.488
         },
         {
           "sample": 91,
@@ -952,7 +952,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.223
+          "durationMs": 5.327
         },
         {
           "sample": 92,
@@ -961,7 +961,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.652
+          "durationMs": 5.453
         },
         {
           "sample": 93,
@@ -970,7 +970,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.819
+          "durationMs": 5.648
         },
         {
           "sample": 94,
@@ -979,7 +979,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.361
+          "durationMs": 5.896
         },
         {
           "sample": 95,
@@ -988,7 +988,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.512
+          "durationMs": 5.117
         },
         {
           "sample": 96,
@@ -997,7 +997,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.315
+          "durationMs": 5.328
         },
         {
           "sample": 97,
@@ -1006,7 +1006,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.993
+          "durationMs": 2.888
         },
         {
           "sample": 98,
@@ -1015,7 +1015,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.066
+          "durationMs": 2.959
         },
         {
           "sample": 99,
@@ -1024,7 +1024,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.219
+          "durationMs": 3.12
         },
         {
           "sample": 100,
@@ -1033,7 +1033,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 1.591
+          "durationMs": 1.588
         }
       ],
       "latencyLimitMs": 1000,
@@ -1099,11 +1099,11 @@
       "resetIncludedInMeasurement": false,
       "distinctMutationTargets": null,
       "durationMs": {
-        "min": 1.359,
-        "p50": 3.385,
-        "p95": 6.174,
-        "p99": 8.373,
-        "max": 8.598,
+        "min": 0.928,
+        "p50": 3.866,
+        "p95": 6.208,
+        "p99": 7.487,
+        "max": 7.732,
         "nearestRank": true
       },
       "failures": [],
@@ -1116,7 +1116,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.533
+          "durationMs": 3.633
         },
         {
           "sample": 2,
@@ -1125,7 +1125,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.964
+          "durationMs": 3.684
         },
         {
           "sample": 3,
@@ -1134,7 +1134,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.152
+          "durationMs": 3.849
         },
         {
           "sample": 4,
@@ -1143,7 +1143,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.085
+          "durationMs": 4.171
         },
         {
           "sample": 5,
@@ -1152,7 +1152,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.299
+          "durationMs": 5.072
         },
         {
           "sample": 6,
@@ -1161,7 +1161,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.644
+          "durationMs": 5.101
         },
         {
           "sample": 7,
@@ -1170,7 +1170,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.967
+          "durationMs": 3.405
         },
         {
           "sample": 8,
@@ -1179,7 +1179,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.349
+          "durationMs": 3.647
         },
         {
           "sample": 9,
@@ -1188,7 +1188,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.874
+          "durationMs": 3.772
         },
         {
           "sample": 10,
@@ -1197,7 +1197,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.592
+          "durationMs": 2.08
         },
         {
           "sample": 11,
@@ -1206,7 +1206,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.673
+          "durationMs": 2.399
         },
         {
           "sample": 12,
@@ -1215,7 +1215,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.796
+          "durationMs": 2.561
         },
         {
           "sample": 13,
@@ -1224,7 +1224,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.277
+          "durationMs": 3.176
         },
         {
           "sample": 14,
@@ -1233,7 +1233,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.381
+          "durationMs": 3.3
         },
         {
           "sample": 15,
@@ -1242,7 +1242,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.502
+          "durationMs": 3.423
         },
         {
           "sample": 16,
@@ -1251,7 +1251,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.488
+          "durationMs": 4.049
         },
         {
           "sample": 17,
@@ -1260,7 +1260,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4
+          "durationMs": 4.642
         },
         {
           "sample": 18,
@@ -1269,7 +1269,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.136
+          "durationMs": 4.784
         },
         {
           "sample": 19,
@@ -1278,7 +1278,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.59
+          "durationMs": 3.102
         },
         {
           "sample": 20,
@@ -1287,7 +1287,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.64
+          "durationMs": 3.161
         },
         {
           "sample": 21,
@@ -1296,7 +1296,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.722
+          "durationMs": 3.304
         },
         {
           "sample": 22,
@@ -1305,7 +1305,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.588
+          "durationMs": 2.43
         },
         {
           "sample": 23,
@@ -1314,7 +1314,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.35
+          "durationMs": 2.198
         },
         {
           "sample": 24,
@@ -1323,7 +1323,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.457
+          "durationMs": 2.253
         },
         {
           "sample": 25,
@@ -1332,7 +1332,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.636
+          "durationMs": 4.636
         },
         {
           "sample": 26,
@@ -1341,7 +1341,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.957
+          "durationMs": 4.811
         },
         {
           "sample": 27,
@@ -1350,7 +1350,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.142
+          "durationMs": 4.603
         },
         {
           "sample": 28,
@@ -1359,7 +1359,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.04
+          "durationMs": 4.548
         },
         {
           "sample": 29,
@@ -1368,7 +1368,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.069
+          "durationMs": 4.536
         },
         {
           "sample": 30,
@@ -1377,7 +1377,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.848
+          "durationMs": 4.681
         },
         {
           "sample": 31,
@@ -1386,7 +1386,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.886
+          "durationMs": 2.549
         },
         {
           "sample": 32,
@@ -1395,7 +1395,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.948
+          "durationMs": 3.026
         },
         {
           "sample": 33,
@@ -1404,7 +1404,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.216
+          "durationMs": 3.272
         },
         {
           "sample": 34,
@@ -1413,7 +1413,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.344
+          "durationMs": 4.047
         },
         {
           "sample": 35,
@@ -1422,7 +1422,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.44
+          "durationMs": 4.126
         },
         {
           "sample": 36,
@@ -1431,7 +1431,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.578
+          "durationMs": 4.514
         },
         {
           "sample": 37,
@@ -1440,7 +1440,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.139
+          "durationMs": 7.472
         },
         {
           "sample": 38,
@@ -1449,7 +1449,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.375
+          "durationMs": 7.487
         },
         {
           "sample": 39,
@@ -1458,7 +1458,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.318
+          "durationMs": 7.732
         },
         {
           "sample": 40,
@@ -1467,7 +1467,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.71
+          "durationMs": 5.372
         },
         {
           "sample": 41,
@@ -1476,7 +1476,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.516
+          "durationMs": 4.611
         },
         {
           "sample": 42,
@@ -1485,7 +1485,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.524
+          "durationMs": 4.726
         },
         {
           "sample": 43,
@@ -1494,7 +1494,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.712
+          "durationMs": 3.298
         },
         {
           "sample": 44,
@@ -1503,7 +1503,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.817
+          "durationMs": 3.405
         },
         {
           "sample": 45,
@@ -1512,7 +1512,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.954
+          "durationMs": 3.56
         },
         {
           "sample": 46,
@@ -1521,7 +1521,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.598
+          "durationMs": 4.492
         },
         {
           "sample": 47,
@@ -1530,7 +1530,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.373
+          "durationMs": 4.811
         },
         {
           "sample": 48,
@@ -1539,7 +1539,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.354
+          "durationMs": 4.415
         },
         {
           "sample": 49,
@@ -1548,7 +1548,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.788
+          "durationMs": 2.245
         },
         {
           "sample": 50,
@@ -1557,7 +1557,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.859
+          "durationMs": 2.295
         },
         {
           "sample": 51,
@@ -1566,7 +1566,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.016
+          "durationMs": 2.45
         },
         {
           "sample": 52,
@@ -1575,7 +1575,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.127
+          "durationMs": 3.857
         },
         {
           "sample": 53,
@@ -1584,7 +1584,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.919
+          "durationMs": 4.416
         },
         {
           "sample": 54,
@@ -1593,7 +1593,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.407
+          "durationMs": 4.551
         },
         {
           "sample": 55,
@@ -1602,7 +1602,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.009
+          "durationMs": 3.999
         },
         {
           "sample": 56,
@@ -1611,7 +1611,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.159
+          "durationMs": 4.325
         },
         {
           "sample": 57,
@@ -1620,7 +1620,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.275
+          "durationMs": 4.463
         },
         {
           "sample": 58,
@@ -1629,7 +1629,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.922
+          "durationMs": 5.426
         },
         {
           "sample": 59,
@@ -1638,7 +1638,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.106
+          "durationMs": 5.606
         },
         {
           "sample": 60,
@@ -1647,7 +1647,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.264
+          "durationMs": 5.94
         },
         {
           "sample": 61,
@@ -1656,7 +1656,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.923
+          "durationMs": 2.753
         },
         {
           "sample": 62,
@@ -1665,7 +1665,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.947
+          "durationMs": 2.794
         },
         {
           "sample": 63,
@@ -1674,7 +1674,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.829
+          "durationMs": 2.912
         },
         {
           "sample": 64,
@@ -1683,7 +1683,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.3
+          "durationMs": 3.364
         },
         {
           "sample": 65,
@@ -1692,7 +1692,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.632
+          "durationMs": 4.245
         },
         {
           "sample": 66,
@@ -1701,7 +1701,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.812
+          "durationMs": 4.417
         },
         {
           "sample": 67,
@@ -1710,7 +1710,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.268
+          "durationMs": 2.435
         },
         {
           "sample": 68,
@@ -1719,7 +1719,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.79
+          "durationMs": 2.661
         },
         {
           "sample": 69,
@@ -1728,7 +1728,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.965
+          "durationMs": 3.457
         },
         {
           "sample": 70,
@@ -1737,7 +1737,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.693
+          "durationMs": 4.788
         },
         {
           "sample": 71,
@@ -1746,7 +1746,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.341
+          "durationMs": 5.001
         },
         {
           "sample": 72,
@@ -1755,7 +1755,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.14
+          "durationMs": 5.526
         },
         {
           "sample": 73,
@@ -1764,7 +1764,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.174
+          "durationMs": 5.072
         },
         {
           "sample": 74,
@@ -1773,7 +1773,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.031
+          "durationMs": 5.877
         },
         {
           "sample": 75,
@@ -1782,7 +1782,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.528
+          "durationMs": 6.226
         },
         {
           "sample": 76,
@@ -1791,7 +1791,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.006
+          "durationMs": 3.947
         },
         {
           "sample": 77,
@@ -1800,7 +1800,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.377
+          "durationMs": 4.429
         },
         {
           "sample": 78,
@@ -1809,7 +1809,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.671
+          "durationMs": 4.8
         },
         {
           "sample": 79,
@@ -1818,7 +1818,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.068
+          "durationMs": 4.145
         },
         {
           "sample": 80,
@@ -1827,7 +1827,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.808
+          "durationMs": 3.975
         },
         {
           "sample": 81,
@@ -1836,7 +1836,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.709
+          "durationMs": 4.064
         },
         {
           "sample": 82,
@@ -1845,7 +1845,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.385
+          "durationMs": 3.68
         },
         {
           "sample": 83,
@@ -1854,7 +1854,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.127
+          "durationMs": 3.761
         },
         {
           "sample": 84,
@@ -1863,7 +1863,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.219
+          "durationMs": 3.936
         },
         {
           "sample": 85,
@@ -1872,7 +1872,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.399
+          "durationMs": 3.52
         },
         {
           "sample": 86,
@@ -1881,7 +1881,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.521
+          "durationMs": 3.627
         },
         {
           "sample": 87,
@@ -1890,7 +1890,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.649
+          "durationMs": 3.866
         },
         {
           "sample": 88,
@@ -1899,7 +1899,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.353
+          "durationMs": 3.393
         },
         {
           "sample": 89,
@@ -1908,7 +1908,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.456
+          "durationMs": 3.487
         },
         {
           "sample": 90,
@@ -1917,7 +1917,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.537
+          "durationMs": 3.377
         },
         {
           "sample": 91,
@@ -1926,7 +1926,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 1.971
+          "durationMs": 2.072
         },
         {
           "sample": 92,
@@ -1935,7 +1935,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.314
+          "durationMs": 2.113
         },
         {
           "sample": 93,
@@ -1944,7 +1944,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.453
+          "durationMs": 2.234
         },
         {
           "sample": 94,
@@ -1953,7 +1953,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.227
+          "durationMs": 2.127
         },
         {
           "sample": 95,
@@ -1962,7 +1962,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.343
+          "durationMs": 2.255
         },
         {
           "sample": 96,
@@ -1971,7 +1971,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.477
+          "durationMs": 2.378
         },
         {
           "sample": 97,
@@ -1980,7 +1980,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.106
+          "durationMs": 6.105
         },
         {
           "sample": 98,
@@ -1989,7 +1989,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.194
+          "durationMs": 6.208
         },
         {
           "sample": 99,
@@ -1998,7 +1998,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.356
+          "durationMs": 6.322
         },
         {
           "sample": 100,
@@ -2007,7 +2007,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 1.359
+          "durationMs": 0.928
         }
       ],
       "latencyLimitMs": 1000,
@@ -2073,11 +2073,11 @@
       "resetIncludedInMeasurement": false,
       "distinctMutationTargets": null,
       "durationMs": {
-        "min": 3.053,
-        "p50": 7.893,
-        "p95": 12.762,
-        "p99": 13.833,
-        "max": 14.016,
+        "min": 3.51,
+        "p50": 8.328,
+        "p95": 12.065,
+        "p99": 12.573,
+        "max": 13.151,
         "nearestRank": true
       },
       "failures": [],
@@ -2090,7 +2090,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.26
+          "durationMs": 9.602
         },
         {
           "sample": 2,
@@ -2099,7 +2099,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 9.634
+          "durationMs": 9.765
         },
         {
           "sample": 3,
@@ -2108,7 +2108,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 10.153
+          "durationMs": 10.252
         },
         {
           "sample": 4,
@@ -2117,7 +2117,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 11.654
+          "durationMs": 6.94
         },
         {
           "sample": 5,
@@ -2126,7 +2126,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 12.762
+          "durationMs": 7.365
         },
         {
           "sample": 6,
@@ -2135,7 +2135,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 13.017
+          "durationMs": 7.516
         },
         {
           "sample": 7,
@@ -2144,7 +2144,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 12.92
+          "durationMs": 9.956
         },
         {
           "sample": 8,
@@ -2153,7 +2153,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 13.833
+          "durationMs": 11.046
         },
         {
           "sample": 9,
@@ -2162,7 +2162,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 14.016
+          "durationMs": 10.956
         },
         {
           "sample": 10,
@@ -2171,7 +2171,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 10.527
+          "durationMs": 6.397
         },
         {
           "sample": 11,
@@ -2180,7 +2180,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 10.447
+          "durationMs": 6.235
         },
         {
           "sample": 12,
@@ -2189,7 +2189,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 10.768
+          "durationMs": 6.186
         },
         {
           "sample": 13,
@@ -2198,7 +2198,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 9.692
+          "durationMs": 10.198
         },
         {
           "sample": 14,
@@ -2207,7 +2207,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 12.243
+          "durationMs": 10.61
         },
         {
           "sample": 15,
@@ -2216,7 +2216,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 13.705
+          "durationMs": 10.826
         },
         {
           "sample": 16,
@@ -2225,7 +2225,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 11.756
+          "durationMs": 11.846
         },
         {
           "sample": 17,
@@ -2234,7 +2234,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 11.022
+          "durationMs": 12.18
         },
         {
           "sample": 18,
@@ -2243,7 +2243,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 11.073
+          "durationMs": 12.065
         },
         {
           "sample": 19,
@@ -2252,7 +2252,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.574
+          "durationMs": 8.525
         },
         {
           "sample": 20,
@@ -2261,7 +2261,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.665
+          "durationMs": 8.959
         },
         {
           "sample": 21,
@@ -2270,7 +2270,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.077
+          "durationMs": 9.376
         },
         {
           "sample": 22,
@@ -2279,7 +2279,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.609
+          "durationMs": 8.185
         },
         {
           "sample": 23,
@@ -2288,7 +2288,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.702
+          "durationMs": 8.836
         },
         {
           "sample": 24,
@@ -2297,7 +2297,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 9.591
+          "durationMs": 9.127
         },
         {
           "sample": 25,
@@ -2306,7 +2306,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.459
+          "durationMs": 8.257
         },
         {
           "sample": 26,
@@ -2315,7 +2315,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.403
+          "durationMs": 8.666
         },
         {
           "sample": 27,
@@ -2324,7 +2324,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.547
+          "durationMs": 8.539
         },
         {
           "sample": 28,
@@ -2333,7 +2333,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.926
+          "durationMs": 7.914
         },
         {
           "sample": 29,
@@ -2342,7 +2342,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.03
+          "durationMs": 8.002
         },
         {
           "sample": 30,
@@ -2351,7 +2351,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.3
+          "durationMs": 7.735
         },
         {
           "sample": 31,
@@ -2360,7 +2360,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.967
+          "durationMs": 6.449
         },
         {
           "sample": 32,
@@ -2369,7 +2369,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.674
+          "durationMs": 7.15
         },
         {
           "sample": 33,
@@ -2378,7 +2378,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.848
+          "durationMs": 7.306
         },
         {
           "sample": 34,
@@ -2387,7 +2387,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.315
+          "durationMs": 8.505
         },
         {
           "sample": 35,
@@ -2396,7 +2396,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.816
+          "durationMs": 12.565
         },
         {
           "sample": 36,
@@ -2405,7 +2405,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.648
+          "durationMs": 13.151
         },
         {
           "sample": 37,
@@ -2414,7 +2414,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.04
+          "durationMs": 7.865
         },
         {
           "sample": 38,
@@ -2423,7 +2423,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.993
+          "durationMs": 8.185
         },
         {
           "sample": 39,
@@ -2432,7 +2432,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.366
+          "durationMs": 8.631
         },
         {
           "sample": 40,
@@ -2441,7 +2441,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.343
+          "durationMs": 7.825
         },
         {
           "sample": 41,
@@ -2450,7 +2450,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 10.485
+          "durationMs": 7.95
         },
         {
           "sample": 42,
@@ -2459,7 +2459,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 11.074
+          "durationMs": 8.119
         },
         {
           "sample": 43,
@@ -2468,7 +2468,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.334
+          "durationMs": 10.061
         },
         {
           "sample": 44,
@@ -2477,7 +2477,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.422
+          "durationMs": 10.215
         },
         {
           "sample": 45,
@@ -2486,7 +2486,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.554
+          "durationMs": 10.346
         },
         {
           "sample": 46,
@@ -2495,7 +2495,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.242
+          "durationMs": 9.119
         },
         {
           "sample": 47,
@@ -2504,7 +2504,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.163
+          "durationMs": 9.232
         },
         {
           "sample": 48,
@@ -2513,7 +2513,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.559
+          "durationMs": 9.584
         },
         {
           "sample": 49,
@@ -2522,7 +2522,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 9.253
+          "durationMs": 8.884
         },
         {
           "sample": 50,
@@ -2531,7 +2531,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 9.782
+          "durationMs": 9.761
         },
         {
           "sample": 51,
@@ -2540,7 +2540,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 9.837
+          "durationMs": 10.15
         },
         {
           "sample": 52,
@@ -2549,7 +2549,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.791
+          "durationMs": 8.086
         },
         {
           "sample": 53,
@@ -2558,7 +2558,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.9
+          "durationMs": 8.14
         },
         {
           "sample": 54,
@@ -2567,7 +2567,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.061
+          "durationMs": 8.232
         },
         {
           "sample": 55,
@@ -2576,7 +2576,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.522
+          "durationMs": 9.065
         },
         {
           "sample": 56,
@@ -2585,7 +2585,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.559
+          "durationMs": 9.444
         },
         {
           "sample": 57,
@@ -2594,7 +2594,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.667
+          "durationMs": 9.863
         },
         {
           "sample": 58,
@@ -2603,7 +2603,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.706
+          "durationMs": 8.787
         },
         {
           "sample": 59,
@@ -2612,7 +2612,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.775
+          "durationMs": 8.895
         },
         {
           "sample": 60,
@@ -2621,7 +2621,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.893
+          "durationMs": 9.042
         },
         {
           "sample": 61,
@@ -2630,7 +2630,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.042
+          "durationMs": 7.266
         },
         {
           "sample": 62,
@@ -2639,7 +2639,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.962
+          "durationMs": 7.383
         },
         {
           "sample": 63,
@@ -2648,7 +2648,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.12
+          "durationMs": 7.559
         },
         {
           "sample": 64,
@@ -2657,7 +2657,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.932
+          "durationMs": 9.966
         },
         {
           "sample": 65,
@@ -2666,7 +2666,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.297
+          "durationMs": 10.35
         },
         {
           "sample": 66,
@@ -2675,7 +2675,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.129
+          "durationMs": 10.509
         },
         {
           "sample": 67,
@@ -2684,7 +2684,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.522
+          "durationMs": 10.134
         },
         {
           "sample": 68,
@@ -2693,7 +2693,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 9.04
+          "durationMs": 10.236
         },
         {
           "sample": 69,
@@ -2702,7 +2702,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 9.373
+          "durationMs": 10.687
         },
         {
           "sample": 70,
@@ -2711,7 +2711,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.21
+          "durationMs": 9.934
         },
         {
           "sample": 71,
@@ -2720,7 +2720,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.506
+          "durationMs": 12.573
         },
         {
           "sample": 72,
@@ -2729,7 +2729,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.552
+          "durationMs": 12.554
         },
         {
           "sample": 73,
@@ -2738,7 +2738,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.457
+          "durationMs": 5.418
         },
         {
           "sample": 74,
@@ -2747,7 +2747,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.628
+          "durationMs": 5.485
         },
         {
           "sample": 75,
@@ -2756,7 +2756,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.756
+          "durationMs": 5.619
         },
         {
           "sample": 76,
@@ -2765,7 +2765,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.135
+          "durationMs": 6.376
         },
         {
           "sample": 77,
@@ -2774,7 +2774,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 9.845
+          "durationMs": 6.466
         },
         {
           "sample": 78,
@@ -2783,7 +2783,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 9.999
+          "durationMs": 6.612
         },
         {
           "sample": 79,
@@ -2792,7 +2792,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.58
+          "durationMs": 4.876
         },
         {
           "sample": 80,
@@ -2801,7 +2801,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.964
+          "durationMs": 5.245
         },
         {
           "sample": 81,
@@ -2810,7 +2810,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.114
+          "durationMs": 5.392
         },
         {
           "sample": 82,
@@ -2819,7 +2819,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.141
+          "durationMs": 5.933
         },
         {
           "sample": 83,
@@ -2828,7 +2828,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.556
+          "durationMs": 6.046
         },
         {
           "sample": 84,
@@ -2837,7 +2837,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.107
+          "durationMs": 6.186
         },
         {
           "sample": 85,
@@ -2846,7 +2846,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.792
+          "durationMs": 6.282
         },
         {
           "sample": 86,
@@ -2855,7 +2855,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.88
+          "durationMs": 6.432
         },
         {
           "sample": 87,
@@ -2864,7 +2864,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.029
+          "durationMs": 7.138
         },
         {
           "sample": 88,
@@ -2873,7 +2873,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.346
+          "durationMs": 6.42
         },
         {
           "sample": 89,
@@ -2882,7 +2882,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.324
+          "durationMs": 6.351
         },
         {
           "sample": 90,
@@ -2891,7 +2891,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.441
+          "durationMs": 6.416
         },
         {
           "sample": 91,
@@ -2900,7 +2900,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.41
+          "durationMs": 6.635
         },
         {
           "sample": 92,
@@ -2909,7 +2909,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.49
+          "durationMs": 6.829
         },
         {
           "sample": 93,
@@ -2918,7 +2918,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.61
+          "durationMs": 6.985
         },
         {
           "sample": 94,
@@ -2927,7 +2927,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.891
+          "durationMs": 7.495
         },
         {
           "sample": 95,
@@ -2936,7 +2936,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.123
+          "durationMs": 7.757
         },
         {
           "sample": 96,
@@ -2945,7 +2945,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.564
+          "durationMs": 8.328
         },
         {
           "sample": 97,
@@ -2954,7 +2954,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.993
+          "durationMs": 9.424
         },
         {
           "sample": 98,
@@ -2963,7 +2963,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.334
+          "durationMs": 9.856
         },
         {
           "sample": 99,
@@ -2972,7 +2972,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 7.734
+          "durationMs": 10.056
         },
         {
           "sample": 100,
@@ -2981,7 +2981,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.053
+          "durationMs": 3.51
         }
       ],
       "latencyLimitMs": 1000,
@@ -3047,11 +3047,11 @@
       "resetIncludedInMeasurement": false,
       "distinctMutationTargets": 100,
       "durationMs": {
-        "min": 1.817,
-        "p50": 4.477,
-        "p95": 8.563,
-        "p99": 14.09,
-        "max": 14.285,
+        "min": 1.145,
+        "p50": 4.272,
+        "p95": 6.557,
+        "p99": 8.268,
+        "max": 8.349,
         "nearestRank": true
       },
       "failures": [],
@@ -3064,7 +3064,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.579
+          "durationMs": 3.655
         },
         {
           "sample": 2,
@@ -3073,7 +3073,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.762
+          "durationMs": 4.805
         },
         {
           "sample": 3,
@@ -3082,7 +3082,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 10.104
+          "durationMs": 6.477
         },
         {
           "sample": 4,
@@ -3091,7 +3091,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.077
+          "durationMs": 5.53
         },
         {
           "sample": 5,
@@ -3100,7 +3100,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.069
+          "durationMs": 5.08
         },
         {
           "sample": 6,
@@ -3109,7 +3109,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.822
+          "durationMs": 4.962
         },
         {
           "sample": 7,
@@ -3118,7 +3118,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.529
+          "durationMs": 2.508
         },
         {
           "sample": 8,
@@ -3127,7 +3127,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.319
+          "durationMs": 3.123
         },
         {
           "sample": 9,
@@ -3136,7 +3136,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.343
+          "durationMs": 4.757
         },
         {
           "sample": 10,
@@ -3145,7 +3145,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.845
+          "durationMs": 5.657
         },
         {
           "sample": 11,
@@ -3154,7 +3154,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.754
+          "durationMs": 5.336
         },
         {
           "sample": 12,
@@ -3163,7 +3163,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.439
+          "durationMs": 5.279
         },
         {
           "sample": 13,
@@ -3172,7 +3172,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.27
+          "durationMs": 3.9
         },
         {
           "sample": 14,
@@ -3181,7 +3181,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.237
+          "durationMs": 3.506
         },
         {
           "sample": 15,
@@ -3190,7 +3190,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.541
+          "durationMs": 3.026
         },
         {
           "sample": 16,
@@ -3199,7 +3199,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.858
+          "durationMs": 3.644
         },
         {
           "sample": 17,
@@ -3208,7 +3208,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.869
+          "durationMs": 3.654
         },
         {
           "sample": 18,
@@ -3217,7 +3217,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.902
+          "durationMs": 3.694
         },
         {
           "sample": 19,
@@ -3226,7 +3226,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.249
+          "durationMs": 6.506
         },
         {
           "sample": 20,
@@ -3235,7 +3235,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.47
+          "durationMs": 6.258
         },
         {
           "sample": 21,
@@ -3244,7 +3244,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.817
+          "durationMs": 6.23
         },
         {
           "sample": 22,
@@ -3253,7 +3253,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.473
+          "durationMs": 4.863
         },
         {
           "sample": 23,
@@ -3262,7 +3262,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.169
+          "durationMs": 4.863
         },
         {
           "sample": 24,
@@ -3271,7 +3271,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.895
+          "durationMs": 4.907
         },
         {
           "sample": 25,
@@ -3280,7 +3280,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.28
+          "durationMs": 6.557
         },
         {
           "sample": 26,
@@ -3289,7 +3289,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.98
+          "durationMs": 6.803
         },
         {
           "sample": 27,
@@ -3298,7 +3298,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.392
+          "durationMs": 5.624
         },
         {
           "sample": 28,
@@ -3307,7 +3307,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.329
+          "durationMs": 2.996
         },
         {
           "sample": 29,
@@ -3316,7 +3316,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.329
+          "durationMs": 2.984
         },
         {
           "sample": 30,
@@ -3325,7 +3325,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.154
+          "durationMs": 3.237
         },
         {
           "sample": 31,
@@ -3334,7 +3334,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.452
+          "durationMs": 5.917
         },
         {
           "sample": 32,
@@ -3343,7 +3343,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.806
+          "durationMs": 5.835
         },
         {
           "sample": 33,
@@ -3352,7 +3352,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.434
+          "durationMs": 6.178
         },
         {
           "sample": 34,
@@ -3361,7 +3361,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.516
+          "durationMs": 5.626
         },
         {
           "sample": 35,
@@ -3370,7 +3370,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.452
+          "durationMs": 6.207
         },
         {
           "sample": 36,
@@ -3379,7 +3379,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.239
+          "durationMs": 5.909
         },
         {
           "sample": 37,
@@ -3388,7 +3388,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.78
+          "durationMs": 3.897
         },
         {
           "sample": 38,
@@ -3397,7 +3397,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.406
+          "durationMs": 3.879
         },
         {
           "sample": 39,
@@ -3406,7 +3406,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.418
+          "durationMs": 3.934
         },
         {
           "sample": 40,
@@ -3415,7 +3415,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.21
+          "durationMs": 5.956
         },
         {
           "sample": 41,
@@ -3424,7 +3424,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.458
+          "durationMs": 6.247
         },
         {
           "sample": 42,
@@ -3433,7 +3433,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.604
+          "durationMs": 6.563
         },
         {
           "sample": 43,
@@ -3442,7 +3442,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.69
+          "durationMs": 4.53
         },
         {
           "sample": 44,
@@ -3451,7 +3451,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.285
+          "durationMs": 4.544
         },
         {
           "sample": 45,
@@ -3460,7 +3460,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.175
+          "durationMs": 4.628
         },
         {
           "sample": 46,
@@ -3469,7 +3469,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.437
+          "durationMs": 3.8
         },
         {
           "sample": 47,
@@ -3478,7 +3478,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.477
+          "durationMs": 3.9
         },
         {
           "sample": 48,
@@ -3487,7 +3487,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.534
+          "durationMs": 3.954
         },
         {
           "sample": 49,
@@ -3496,7 +3496,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.852
+          "durationMs": 5.333
         },
         {
           "sample": 50,
@@ -3505,7 +3505,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.773
+          "durationMs": 5.297
         },
         {
           "sample": 51,
@@ -3514,7 +3514,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.764
+          "durationMs": 5.152
         },
         {
           "sample": 52,
@@ -3523,7 +3523,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.253
+          "durationMs": 3.619
         },
         {
           "sample": 53,
@@ -3532,7 +3532,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.384
+          "durationMs": 3.398
         },
         {
           "sample": 54,
@@ -3541,7 +3541,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.469
+          "durationMs": 3.413
         },
         {
           "sample": 55,
@@ -3550,7 +3550,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.545
+          "durationMs": 3.162
         },
         {
           "sample": 56,
@@ -3559,7 +3559,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.604
+          "durationMs": 3.188
         },
         {
           "sample": 57,
@@ -3568,7 +3568,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.873
+          "durationMs": 3.241
         },
         {
           "sample": 58,
@@ -3577,7 +3577,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.977
+          "durationMs": 4.375
         },
         {
           "sample": 59,
@@ -3586,7 +3586,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.996
+          "durationMs": 4.086
         },
         {
           "sample": 60,
@@ -3595,7 +3595,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.114
+          "durationMs": 4.091
         },
         {
           "sample": 61,
@@ -3604,7 +3604,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.537
+          "durationMs": 4.632
         },
         {
           "sample": 62,
@@ -3613,7 +3613,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.379
+          "durationMs": 3.988
         },
         {
           "sample": 63,
@@ -3622,7 +3622,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.396
+          "durationMs": 3.939
         },
         {
           "sample": 64,
@@ -3631,7 +3631,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.245
+          "durationMs": 4.811
         },
         {
           "sample": 65,
@@ -3640,7 +3640,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.228
+          "durationMs": 4.814
         },
         {
           "sample": 66,
@@ -3649,7 +3649,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.957
+          "durationMs": 4.871
         },
         {
           "sample": 67,
@@ -3658,7 +3658,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.512
+          "durationMs": 2.948
         },
         {
           "sample": 68,
@@ -3667,7 +3667,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.501
+          "durationMs": 2.922
         },
         {
           "sample": 69,
@@ -3676,7 +3676,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.538
+          "durationMs": 2.946
         },
         {
           "sample": 70,
@@ -3685,7 +3685,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.908
+          "durationMs": 4.389
         },
         {
           "sample": 71,
@@ -3694,7 +3694,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.976
+          "durationMs": 4.675
         },
         {
           "sample": 72,
@@ -3703,7 +3703,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.15
+          "durationMs": 4.856
         },
         {
           "sample": 73,
@@ -3712,7 +3712,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.618
+          "durationMs": 4.872
         },
         {
           "sample": 74,
@@ -3721,7 +3721,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.745
+          "durationMs": 5.093
         },
         {
           "sample": 75,
@@ -3730,7 +3730,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.88
+          "durationMs": 4.76
         },
         {
           "sample": 76,
@@ -3739,7 +3739,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.928
+          "durationMs": 3.896
         },
         {
           "sample": 77,
@@ -3748,7 +3748,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.561
+          "durationMs": 3.757
         },
         {
           "sample": 78,
@@ -3757,7 +3757,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.112
+          "durationMs": 4.164
         },
         {
           "sample": 79,
@@ -3766,7 +3766,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.222
+          "durationMs": 3.005
         },
         {
           "sample": 80,
@@ -3775,7 +3775,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.309
+          "durationMs": 3.378
         },
         {
           "sample": 81,
@@ -3784,7 +3784,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.803
+          "durationMs": 3.413
         },
         {
           "sample": 82,
@@ -3793,7 +3793,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.352
+          "durationMs": 4.272
         },
         {
           "sample": 83,
@@ -3802,7 +3802,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.802
+          "durationMs": 4.482
         },
         {
           "sample": 84,
@@ -3811,7 +3811,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.649
+          "durationMs": 4.545
         },
         {
           "sample": 85,
@@ -3820,7 +3820,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.879
+          "durationMs": 3.755
         },
         {
           "sample": 86,
@@ -3829,7 +3829,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.848
+          "durationMs": 3.491
         },
         {
           "sample": 87,
@@ -3838,7 +3838,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.878
+          "durationMs": 3.867
         },
         {
           "sample": 88,
@@ -3847,7 +3847,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.416
+          "durationMs": 4.322
         },
         {
           "sample": 89,
@@ -3856,7 +3856,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 8.563
+          "durationMs": 4.233
         },
         {
           "sample": 90,
@@ -3865,7 +3865,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.634
+          "durationMs": 4.055
         },
         {
           "sample": 91,
@@ -3874,7 +3874,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.207
+          "durationMs": 3.005
         },
         {
           "sample": 92,
@@ -3883,7 +3883,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.119
+          "durationMs": 2.938
         },
         {
           "sample": 93,
@@ -3892,7 +3892,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.418
+          "durationMs": 2.97
         },
         {
           "sample": 94,
@@ -3901,7 +3901,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 10.452
+          "durationMs": 2.818
         },
         {
           "sample": 95,
@@ -3910,7 +3910,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 14.285
+          "durationMs": 2.807
         },
         {
           "sample": 96,
@@ -3919,7 +3919,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 14.09
+          "durationMs": 2.837
         },
         {
           "sample": 97,
@@ -3928,7 +3928,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.907
+          "durationMs": 8.349
         },
         {
           "sample": 98,
@@ -3937,7 +3937,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.475
+          "durationMs": 8.268
         },
         {
           "sample": 99,
@@ -3946,7 +3946,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.716
+          "durationMs": 8.082
         },
         {
           "sample": 100,
@@ -3955,7 +3955,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 1.817
+          "durationMs": 1.145
         }
       ],
       "latencyLimitMs": 2000,
@@ -4021,11 +4021,11 @@
       "resetIncludedInMeasurement": false,
       "distinctMutationTargets": 100,
       "durationMs": {
-        "min": 1.764,
-        "p50": 2.929,
-        "p95": 4.39,
-        "p99": 6.805,
-        "max": 6.872,
+        "min": 1.03,
+        "p50": 2.737,
+        "p95": 5.297,
+        "p99": 10.056,
+        "max": 10.109,
         "nearestRank": true
       },
       "failures": [],
@@ -4038,7 +4038,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.658
+          "durationMs": 2.726
         },
         {
           "sample": 2,
@@ -4047,7 +4047,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.625
+          "durationMs": 3.754
         },
         {
           "sample": 3,
@@ -4056,7 +4056,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.39
+          "durationMs": 3.771
         },
         {
           "sample": 4,
@@ -4065,7 +4065,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.3
+          "durationMs": 3.313
         },
         {
           "sample": 5,
@@ -4074,7 +4074,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.343
+          "durationMs": 3.399
         },
         {
           "sample": 6,
@@ -4083,7 +4083,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.762
+          "durationMs": 3.686
         },
         {
           "sample": 7,
@@ -4092,7 +4092,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.239
+          "durationMs": 2.44
         },
         {
           "sample": 8,
@@ -4101,7 +4101,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.302
+          "durationMs": 4.167
         },
         {
           "sample": 9,
@@ -4110,7 +4110,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 5.279
+          "durationMs": 5.053
         },
         {
           "sample": 10,
@@ -4119,7 +4119,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.26
+          "durationMs": 2.833
         },
         {
           "sample": 11,
@@ -4128,7 +4128,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.613
+          "durationMs": 2.886
         },
         {
           "sample": 12,
@@ -4137,7 +4137,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.701
+          "durationMs": 2.983
         },
         {
           "sample": 13,
@@ -4146,7 +4146,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.367
+          "durationMs": 3.778
         },
         {
           "sample": 14,
@@ -4155,7 +4155,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.497
+          "durationMs": 3.828
         },
         {
           "sample": 15,
@@ -4164,7 +4164,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.604
+          "durationMs": 3.935
         },
         {
           "sample": 16,
@@ -4173,7 +4173,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.572
+          "durationMs": 4.066
         },
         {
           "sample": 17,
@@ -4182,7 +4182,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.273
+          "durationMs": 4.122
         },
         {
           "sample": 18,
@@ -4191,7 +4191,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.35
+          "durationMs": 4.226
         },
         {
           "sample": 19,
@@ -4200,7 +4200,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.645
+          "durationMs": 5.625
         },
         {
           "sample": 20,
@@ -4209,7 +4209,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.805
+          "durationMs": 4.93
         },
         {
           "sample": 21,
@@ -4218,7 +4218,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.872
+          "durationMs": 5.01
         },
         {
           "sample": 22,
@@ -4227,7 +4227,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.976
+          "durationMs": 3.628
         },
         {
           "sample": 23,
@@ -4236,7 +4236,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.005
+          "durationMs": 3.619
         },
         {
           "sample": 24,
@@ -4245,7 +4245,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.104
+          "durationMs": 3.341
         },
         {
           "sample": 25,
@@ -4254,7 +4254,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.848
+          "durationMs": 2.548
         },
         {
           "sample": 26,
@@ -4263,7 +4263,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.913
+          "durationMs": 2.533
         },
         {
           "sample": 27,
@@ -4272,7 +4272,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.01
+          "durationMs": 2.59
         },
         {
           "sample": 28,
@@ -4281,7 +4281,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.638
+          "durationMs": 1.862
         },
         {
           "sample": 29,
@@ -4290,7 +4290,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.452
+          "durationMs": 1.887
         },
         {
           "sample": 30,
@@ -4299,7 +4299,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.506
+          "durationMs": 2.006
         },
         {
           "sample": 31,
@@ -4308,7 +4308,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.361
+          "durationMs": 1.878
         },
         {
           "sample": 32,
@@ -4317,7 +4317,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.999
+          "durationMs": 1.947
         },
         {
           "sample": 33,
@@ -4326,7 +4326,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.573
+          "durationMs": 2.02
         },
         {
           "sample": 34,
@@ -4335,7 +4335,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.194
+          "durationMs": 1.824
         },
         {
           "sample": 35,
@@ -4344,7 +4344,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.265
+          "durationMs": 1.871
         },
         {
           "sample": 36,
@@ -4353,7 +4353,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.285
+          "durationMs": 1.993
         },
         {
           "sample": 37,
@@ -4362,7 +4362,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.457
+          "durationMs": 1.746
         },
         {
           "sample": 38,
@@ -4371,7 +4371,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.507
+          "durationMs": 1.908
         },
         {
           "sample": 39,
@@ -4380,7 +4380,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.697
+          "durationMs": 2.014
         },
         {
           "sample": 40,
@@ -4389,7 +4389,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.894
+          "durationMs": 2.618
         },
         {
           "sample": 41,
@@ -4398,7 +4398,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.927
+          "durationMs": 2.737
         },
         {
           "sample": 42,
@@ -4407,7 +4407,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.006
+          "durationMs": 2.838
         },
         {
           "sample": 43,
@@ -4416,7 +4416,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.406
+          "durationMs": 2.568
         },
         {
           "sample": 44,
@@ -4425,7 +4425,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.425
+          "durationMs": 2.642
         },
         {
           "sample": 45,
@@ -4434,7 +4434,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.826
+          "durationMs": 2.731
         },
         {
           "sample": 46,
@@ -4443,7 +4443,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.999
+          "durationMs": 2.314
         },
         {
           "sample": 47,
@@ -4452,7 +4452,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.087
+          "durationMs": 2.335
         },
         {
           "sample": 48,
@@ -4461,7 +4461,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.383
+          "durationMs": 2.386
         },
         {
           "sample": 49,
@@ -4470,7 +4470,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.888
+          "durationMs": 2.599
         },
         {
           "sample": 50,
@@ -4479,7 +4479,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.929
+          "durationMs": 2.628
         },
         {
           "sample": 51,
@@ -4488,7 +4488,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.995
+          "durationMs": 2.692
         },
         {
           "sample": 52,
@@ -4497,7 +4497,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.984
+          "durationMs": 3.719
         },
         {
           "sample": 53,
@@ -4506,7 +4506,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.553
+          "durationMs": 3.908
         },
         {
           "sample": 54,
@@ -4515,7 +4515,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.668
+          "durationMs": 4.089
         },
         {
           "sample": 55,
@@ -4524,7 +4524,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.605
+          "durationMs": 2.056
         },
         {
           "sample": 56,
@@ -4533,7 +4533,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.644
+          "durationMs": 2.033
         },
         {
           "sample": 57,
@@ -4542,7 +4542,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.75
+          "durationMs": 2.108
         },
         {
           "sample": 58,
@@ -4551,7 +4551,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.74
+          "durationMs": 3.472
         },
         {
           "sample": 59,
@@ -4560,7 +4560,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.002
+          "durationMs": 3.519
         },
         {
           "sample": 60,
@@ -4569,7 +4569,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 4.104
+          "durationMs": 3.58
         },
         {
           "sample": 61,
@@ -4578,7 +4578,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.37
+          "durationMs": 4.46
         },
         {
           "sample": 62,
@@ -4587,7 +4587,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.094
+          "durationMs": 4.315
         },
         {
           "sample": 63,
@@ -4596,7 +4596,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.429
+          "durationMs": 4.302
         },
         {
           "sample": 64,
@@ -4605,7 +4605,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.465
+          "durationMs": 2.428
         },
         {
           "sample": 65,
@@ -4614,7 +4614,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.472
+          "durationMs": 2.401
         },
         {
           "sample": 66,
@@ -4623,7 +4623,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.531
+          "durationMs": 2.243
         },
         {
           "sample": 67,
@@ -4632,7 +4632,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.854
+          "durationMs": 2.062
         },
         {
           "sample": 68,
@@ -4641,7 +4641,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.918
+          "durationMs": 2.106
         },
         {
           "sample": 69,
@@ -4650,7 +4650,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.054
+          "durationMs": 2.402
         },
         {
           "sample": 70,
@@ -4659,7 +4659,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.559
+          "durationMs": 2.473
         },
         {
           "sample": 71,
@@ -4668,7 +4668,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.437
+          "durationMs": 2.513
         },
         {
           "sample": 72,
@@ -4677,7 +4677,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.531
+          "durationMs": 2.618
         },
         {
           "sample": 73,
@@ -4686,7 +4686,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.235
+          "durationMs": 1.983
         },
         {
           "sample": 74,
@@ -4695,7 +4695,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.213
+          "durationMs": 2.204
         },
         {
           "sample": 75,
@@ -4704,7 +4704,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.531
+          "durationMs": 2.575
         },
         {
           "sample": 76,
@@ -4713,7 +4713,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 1.764
+          "durationMs": 2.102
         },
         {
           "sample": 77,
@@ -4722,7 +4722,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 1.81
+          "durationMs": 2.126
         },
         {
           "sample": 78,
@@ -4731,7 +4731,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 1.874
+          "durationMs": 2.173
         },
         {
           "sample": 79,
@@ -4740,7 +4740,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 1.99
+          "durationMs": 9.964
         },
         {
           "sample": 80,
@@ -4749,7 +4749,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.05
+          "durationMs": 10.056
         },
         {
           "sample": 81,
@@ -4758,7 +4758,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.117
+          "durationMs": 10.109
         },
         {
           "sample": 82,
@@ -4767,7 +4767,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 1.956
+          "durationMs": 3.668
         },
         {
           "sample": 83,
@@ -4776,7 +4776,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.032
+          "durationMs": 3.692
         },
         {
           "sample": 84,
@@ -4785,7 +4785,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.081
+          "durationMs": 3.771
         },
         {
           "sample": 85,
@@ -4794,7 +4794,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 1.914
+          "durationMs": 3.12
         },
         {
           "sample": 86,
@@ -4803,7 +4803,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 1.968
+          "durationMs": 3.072
         },
         {
           "sample": 87,
@@ -4812,7 +4812,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.041
+          "durationMs": 3.107
         },
         {
           "sample": 88,
@@ -4821,7 +4821,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.787
+          "durationMs": 5.227
         },
         {
           "sample": 89,
@@ -4830,7 +4830,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.844
+          "durationMs": 5.297
         },
         {
           "sample": 90,
@@ -4839,7 +4839,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.365
+          "durationMs": 5.958
         },
         {
           "sample": 91,
@@ -4848,7 +4848,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.897
+          "durationMs": 3.034
         },
         {
           "sample": 92,
@@ -4857,7 +4857,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.962
+          "durationMs": 3.024
         },
         {
           "sample": 93,
@@ -4866,7 +4866,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 3.071
+          "durationMs": 3.105
         },
         {
           "sample": 94,
@@ -4875,7 +4875,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.52
+          "durationMs": 4.664
         },
         {
           "sample": 95,
@@ -4884,7 +4884,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.534
+          "durationMs": 4.7
         },
         {
           "sample": 96,
@@ -4893,7 +4893,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.867
+          "durationMs": 4.77
         },
         {
           "sample": 97,
@@ -4902,7 +4902,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.491
+          "durationMs": 1.896
         },
         {
           "sample": 98,
@@ -4911,7 +4911,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.678
+          "durationMs": 1.929
         },
         {
           "sample": 99,
@@ -4920,7 +4920,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 2.94
+          "durationMs": 2.193
         },
         {
           "sample": 100,
@@ -4929,7 +4929,7 @@
           "success": true,
           "resultCountMatches": true,
           "writeStateMatches": true,
-          "durationMs": 6.47
+          "durationMs": 1.03
         }
       ],
       "latencyLimitMs": 2000,

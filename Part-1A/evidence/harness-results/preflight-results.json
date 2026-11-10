@@ -1,7 +1,7 @@
 {
   "command": "HOSPITAL_TIME_ZONE=<configured> node .harness/cli.js preflight",
   "exitStatus": 0,
-  "runAtUtc": "2026-11-10T07:06:24.512Z",
+  "runAtUtc": "2026-11-10T12:40:52.467Z",
   "manifest": {
     "seed": 20261107,
     "benchmarkClockAnchor": "2026-11-07T00:00:00.000Z",
