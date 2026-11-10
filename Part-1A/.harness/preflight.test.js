@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { createConfig } from '../../backend/src/config/index.js';
+import { createConfig } from '../backend/src/config/index.js';
 import { preflightFingerprint, runPreflight } from './preflight.js';
 
 test('public-API preflight is repeatable under different host dates and checks read-only SQLite state', async (t) => {

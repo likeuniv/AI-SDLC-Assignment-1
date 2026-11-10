@@ -10,7 +10,7 @@ import { formatHospitalOffsetDateTime } from './fixtures/time.js';
 import { apiRequest, authenticate } from './api.js';
 import { createIsolatedApplication } from './runtime.js';
 
-const requireBackend = createRequire(new URL('../../backend/package.json', import.meta.url));
+const requireBackend = createRequire(new URL('../backend/package.json', import.meta.url));
 const Database = requireBackend('better-sqlite3');
 
 function assert(condition, message) {

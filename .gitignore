@@ -69,3 +69,7 @@ test-results/
 \*.bak
 \*.backup
 \*\~
+
+# Runtime application data and database backups
+**/data/
+**/backups/

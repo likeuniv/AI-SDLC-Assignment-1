@@ -1,14 +1,14 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { loadConfig } from '../../backend/src/config/index.js';
+import { loadConfig } from '../backend/src/config/index.js';
 import { runBenchmark } from './benchmark.js';
 import { generateFixture, fixtureManifestHash } from './fixtures/generator.js';
 import { runPreflight } from './preflight.js';
 
 const harnessDirectory = dirname(fileURLToPath(import.meta.url));
-const projectDirectory = resolve(harnessDirectory, '../..');
-const evidenceDirectory = resolve(projectDirectory, 'tests/evidence');
+const projectDirectory = resolve(harnessDirectory, '..');
+const evidenceDirectory = resolve(projectDirectory, 'evidence/harness-results');
 
 function saveEvidence(filename, result, command, exitStatus = 0) {
   mkdirSync(evidenceDirectory, { recursive: true });
@@ -44,7 +44,7 @@ if (command === 'preflight') {
   const evidence = saveEvidence(
     'phase9-preflight-results.json',
     result,
-    'HOSPITAL_TIME_ZONE=<configured> node tests/harness/cli.js preflight',
+    'HOSPITAL_TIME_ZONE=<configured> node .harness/cli.js preflight',
   );
   console.log(JSON.stringify({
     command: evidence.command,
@@ -53,14 +53,14 @@ if (command === 'preflight') {
     actionCount: result.actionCount,
     passedActions: result.actions.filter(({ passed }) => passed).length,
     independentDatabaseChecks: result.independentDatabaseChecks,
-    evidenceFile: 'tests/evidence/phase9-preflight-results.json',
+    evidenceFile: 'evidence/harness-results/phase9-preflight-results.json',
   }, null, 2));
 } else if (command === 'benchmark') {
   const result = await runBenchmark({ hospitalTimeZone: config.hospitalTimeZone });
   const evidence = saveEvidence(
     'phase9-benchmark-results.json',
     result,
-    'HOSPITAL_TIME_ZONE=<configured> node tests/harness/cli.js benchmark',
+    'HOSPITAL_TIME_ZONE=<configured> node .harness/cli.js benchmark',
     result.accepted ? 0 : 1,
   );
   console.log(JSON.stringify({
@@ -76,7 +76,7 @@ if (command === 'preflight') {
       latencyLimitMs: operation.latencyLimitMs,
       accepted: operation.accepted,
     })),
-    evidenceFile: 'tests/evidence/phase9-benchmark-results.json',
+    evidenceFile: 'evidence/harness-results/phase9-benchmark-results.json',
   }, null, 2));
   if (!result.accepted) {
     process.exitCode = 1;

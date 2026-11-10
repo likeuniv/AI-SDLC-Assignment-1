@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node --test",
+    "test": "npm --prefix backend test && npm --prefix frontend test",
     "lint": "npm --prefix frontend run lint && npm --prefix backend run lint",
     "build": "npm --prefix frontend run build",
     "coverage": "node --experimental-test-coverage --test",
     "security": "semgrep scan --config p/default --metrics off .",
-    "harness:preflight": "node tests/harness/cli.js preflight",
-    "harness:benchmark": "node tests/harness/cli.js benchmark"
+    "harness:preflight": "node .harness/cli.js preflight",
+    "harness:benchmark": "node .harness/cli.js benchmark",
+    "harness:all": "bash .harness/runner.sh"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,403 @@
+{
+  "command": "HOSPITAL_TIME_ZONE=<configured> node .harness/cli.js preflight",
+  "exitStatus": 0,
+  "runAtUtc": "2026-11-10T07:06:24.512Z",
+  "manifest": {
+    "seed": 20261107,
+    "benchmarkClockAnchor": "2026-11-07T00:00:00.000Z",
+    "hospitalTimeZone": "Asia/Kolkata",
+    "generatorRevision": "phase9-fixture-v1",
+    "dateOffsetRules": {
+      "referenceInstant": "2026-11-07T00:00:00.000Z",
+      "localCalendarReference": "2026-11-07",
+      "beneficiaryBirthDates": "Hospital-local anchor date minus seeded whole-year ages; minors 1-17, adults 18-70.",
+      "availabilityStart": "UTC anchor plus 7 days plus 2 hours per slot index.",
+      "availabilityDuration": "30 minutes per slot; per-doctor intervals are non-overlapping.",
+      "appointmentDate": "Appointment slots inherit their deterministic availability UTC instants.",
+      "createdUpdatedAt": "Fixed benchmark clock anchor for seeded database timestamps."
+    },
+    "counts": {
+      "patients": 200,
+      "beneficiaries": {
+        "total": 100,
+        "minor": 40,
+        "pendingAdult": 20,
+        "authorizedAdult": 20,
+        "rejectedAdult": 20
+      },
+      "doctors": 20,
+      "departments": 10,
+      "availabilitySlots": {
+        "total": 300,
+        "unbooked": 200,
+        "futureBookedCancellationTargets": 100
+      },
+      "appointments": {
+        "BOOKED": 100,
+        "CANCELLED": 200,
+        "COMPLETED": 200
+      },
+      "authorizationAudits": 40
+    },
+    "search": {
+      "query": "Fixture Doctor",
+      "expectedResultCount": 20,
+      "pageSize": 20,
+      "sortOrder": "professionalName ASC, accountId ASC"
+    },
+    "pagination": {
+      "pageSize": 20,
+      "patientSortOrder": "fullName ASC, patientAccountId ASC",
+      "appointmentSortOrder": "startAt DESC, appointmentId DESC"
+    }
+  },
+  "manifestSha256": "287d7a65694113df06dd9c33fdd97b94f9311cd0414e909118a613f27e707633",
+  "benchmarkClockAnchor": "2026-11-07T00:00:00.000Z",
+  "hospitalTimeZone": "Asia/Kolkata",
+  "applicationClock": "2026-11-07T00:00:00.000Z",
+  "clockScope": "clock injection is confined to the isolated app configuration",
+  "actionCount": 49,
+  "actions": [
+    {
+      "name": "patient-registration",
+      "status": 201,
+      "expectedStatus": 201,
+      "passed": true
+    },
+    {
+      "name": "duplicate-registration-rejected",
+      "status": 409,
+      "expectedStatus": 409,
+      "code": "DUPLICATE_RESOURCE",
+      "passed": true
+    },
+    {
+      "name": "unknown-account-login-rejected-generically",
+      "status": 401,
+      "expectedStatus": 401,
+      "code": "INVALID_CREDENTIALS",
+      "passed": true
+    },
+    {
+      "name": "patient-login-session-and-csrf-acquisition",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "patient-profile-read",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "patient-profile-update",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "cross-account-profile-concealment",
+      "status": 404,
+      "expectedStatus": 404,
+      "code": "RESOURCE_NOT_FOUND",
+      "passed": true
+    },
+    {
+      "name": "minor-beneficiary-create",
+      "status": 201,
+      "expectedStatus": 201,
+      "passed": true
+    },
+    {
+      "name": "minor-beneficiary-read",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "minor-beneficiary-update",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "staff-login-session-and-csrf-acquisition",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "adult-beneficiary-pending-create",
+      "status": 201,
+      "expectedStatus": 201,
+      "passed": true
+    },
+    {
+      "name": "pending-adult-details-concealed",
+      "status": 422,
+      "expectedStatus": 422,
+      "code": "BENEFICIARY_NOT_AUTHORIZED",
+      "passed": true
+    },
+    {
+      "name": "pending-adult-safe-status-read",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "adult-beneficiary-authorized-by-staff",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "repeated-authorization-transition-rejected",
+      "status": 409,
+      "expectedStatus": 409,
+      "code": "BENEFICIARY_STATE_CONFLICT",
+      "passed": true
+    },
+    {
+      "name": "authorized-adult-profile-read",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "second-adult-beneficiary-pending-create",
+      "status": 201,
+      "expectedStatus": 201,
+      "passed": true
+    },
+    {
+      "name": "adult-beneficiary-rejected-by-staff",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "rejected-adult-details-concealed",
+      "status": 422,
+      "expectedStatus": 422,
+      "code": "BENEFICIARY_NOT_AUTHORIZED",
+      "passed": true
+    },
+    {
+      "name": "rejected-adult-safe-status-read",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "doctor-search",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "department-discovery",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "department-read",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "staff-department-create",
+      "status": 201,
+      "expectedStatus": 201,
+      "passed": true
+    },
+    {
+      "name": "staff-department-update",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "staff-doctor-provision",
+      "status": 201,
+      "expectedStatus": 201,
+      "passed": true
+    },
+    {
+      "name": "staff-doctor-department-association",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "doctor-login-session-and-csrf-acquisition",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "doctor-denied-staff-dashboard",
+      "status": 403,
+      "expectedStatus": 403,
+      "code": "FORBIDDEN",
+      "passed": true
+    },
+    {
+      "name": "doctor-own-profile-read",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "doctor-own-profile-update",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "doctor-availability-create",
+      "status": 201,
+      "expectedStatus": 201,
+      "passed": true
+    },
+    {
+      "name": "patient-future-availability-read",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "second-doctor-availability-create",
+      "status": 201,
+      "expectedStatus": 201,
+      "passed": true
+    },
+    {
+      "name": "third-doctor-availability-create",
+      "status": 201,
+      "expectedStatus": 201,
+      "passed": true
+    },
+    {
+      "name": "patient-appointment-booking",
+      "status": 201,
+      "expectedStatus": 201,
+      "passed": true
+    },
+    {
+      "name": "patient-upcoming-appointments",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "patient-appointment-read",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "patient-appointment-cancellation",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "staff-on-behalf-appointment-booking",
+      "status": 201,
+      "expectedStatus": 201,
+      "passed": true
+    },
+    {
+      "name": "permission-scoped-staff-appointment-cancellation",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "second-patient-appointment-booking",
+      "status": 201,
+      "expectedStatus": 201,
+      "passed": true
+    },
+    {
+      "name": "assigned-doctor-appointment-completion",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "staff-paginated-patient-read",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "permission-scoped-staff-appointment-read",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "staff-dashboard-read",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "patient-logout",
+      "status": 204,
+      "expectedStatus": 204,
+      "passed": true
+    },
+    {
+      "name": "invalidated-session-rejected",
+      "status": 401,
+      "expectedStatus": 401,
+      "code": "AUTHENTICATION_REQUIRED",
+      "passed": true
+    }
+  ],
+  "independentDatabaseChecks": {
+    "integrityCheck": "ok",
+    "foreignKeyViolations": 0,
+    "fixtureCounts": {
+      "patients": 200,
+      "beneficiaries": 100,
+      "doctors": 20,
+      "departments": 10,
+      "availabilitySlots": 300,
+      "appointments": 500
+    },
+    "fixtureAppointmentStatusCounts": {
+      "BOOKED": 100,
+      "CANCELLED": 200,
+      "COMPLETED": 200
+    },
+    "activeAppointmentOverlapCount": 0,
+    "missingAuthorizationAuditCount": 0,
+    "reviewedBeneficiaryAuditResults": [
+      {
+        "outcome": "AUTHORIZED",
+        "verificationMethod": "PHONE",
+        "reviewerRole": "STAFF",
+        "reviewedAtIsUtc": true,
+        "passed": true
+      },
+      {
+        "outcome": "REJECTED",
+        "verificationMethod": "IN_PERSON",
+        "reviewerRole": "STAFF",
+        "reviewedAtIsUtc": true,
+        "passed": true
+      }
+    ],
+    "hashedSessionRecordCount": 3,
+    "seededTimestampsMatchAnchor": true,
+    "connectionMode": "read-only SQLite connection"
+  },
+  "sanitized": true
+}

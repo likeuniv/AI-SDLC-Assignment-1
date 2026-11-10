@@ -4,10 +4,10 @@ import { mkdtempSync, rmSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { createApp } from '../../backend/src/app.js';
-import { createConfig } from '../../backend/src/config/index.js';
-import { createDatabase } from '../../backend/src/db/connection.js';
-import { runMigrations } from '../../backend/src/db/migrate.js';
+import { createApp } from '../backend/src/app.js';
+import { createConfig } from '../backend/src/config/index.js';
+import { createDatabase } from '../backend/src/db/connection.js';
+import { runMigrations } from '../backend/src/db/migrate.js';
 import {
   FIXTURE_PATIENT_ACCOUNT_ID,
   FIXTURE_STAFF_ACCOUNT_ID,
@@ -15,7 +15,7 @@ import {
 import { seedFixture } from './fixtures/seed.js';
 import { createFixedClock } from './fixtures/time.js';
 
-const requireBackend = createRequire(new URL('../../backend/package.json', import.meta.url));
+const requireBackend = createRequire(new URL('../backend/package.json', import.meta.url));
 const bcrypt = requireBackend('bcrypt');
 export const HARNESS_ORIGIN = 'http://hms.test';
 
