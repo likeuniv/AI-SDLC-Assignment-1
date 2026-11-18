@@ -12,9 +12,9 @@ Documentation: [Part-1A README](Part-1A/README.md)
 
 ## Part-1B: AI Spend Analyzer
 
-Video Demo: [Part-1B VIDEO](https://drive.google.com/file/d/1SKyTtfGtYnYH0UKi03SEHRq36Ua66r05/view?usp=drive_link)
-
 An AI-powered application for analyzing financial transactions and understanding spending patterns.
+
+Video Demo: [Part-1B VIDEO](https://drive.google.com/file/d/1SKyTtfGtYnYH0UKi03SEHRq36Ua66r05/view?usp=drive_link)
 
 Documentation: [Part-1B README](Part-1B/README.md)
 
