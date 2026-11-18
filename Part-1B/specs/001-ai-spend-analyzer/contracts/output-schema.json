@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "output-schema.json",
+  "title": "AI Spend Analyzer Transaction Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "amount",
+    "currency",
+    "category",
+    "transaction_type",
+    "merchant_or_person",
+    "description",
+    "confidence",
+    "requires_clarification",
+    "clarification_question"
+  ],
+  "properties": {
+    "amount": {
+      "oneOf": [
+        {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "currency": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "format": "iso-4217-currency",
+      "description": "An active ISO 4217 alphabetic currency code, or XXX when no currency can be established. INR may be inferred only when context supports INR."
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "FOOD",
+        "TRANSPORTATION",
+        "SHOPPING",
+        "GROCERIES",
+        "HEALTHCARE",
+        "BILLS",
+        "ENTERTAINMENT",
+        "SALARY",
+        "TRANSFER",
+        "REFUND",
+        "OTHER",
+        "UNKNOWN"
+      ]
+    },
+    "transaction_type": {
+      "type": "string",
+      "enum": [
+        "CREDIT",
+        "DEBIT",
+        "UNKNOWN"
+      ]
+    },
+    "merchant_or_person": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160,
+      "description": "At most 20 words. Count words by trimming the string and splitting on one or more Unicode whitespace characters; punctuation remains attached, and hyphenated compounds count as one word."
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "requires_clarification": {
+      "type": "boolean"
+    },
+    "clarification_question": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "requires_clarification": {
+            "const": true
+          }
+        },
+        "required": [
+          "requires_clarification"
+        ]
+      },
+      "then": {
+        "properties": {
+          "clarification_question": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "clarification_question": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}

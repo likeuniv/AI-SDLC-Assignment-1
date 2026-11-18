@@ -1,0 +1,110 @@
+{
+  "milestone": "T041 supplemental US3 validation",
+  "recorded_at": "2026-11-11",
+  "validation_execution_status": "PASS",
+  "model_evaluation_status": "FAIL",
+  "completion_note": "T041 completion means the validation was executed and documented. It does not mean the live model evaluation passed.",
+  "automated_validation": {
+    "prescribed_us3_test_suites": {
+      "command": "node --test tests/integration/errors.test.js tests/adversarial/security.test.js tests/evaluation/harness.test.js tests/evaluation/evidence.test.js",
+      "status": "PASS",
+      "tests": 67,
+      "passed": 67,
+      "failed": 0
+    },
+    "complete_root_test_suite": {
+      "command": "npm test",
+      "status": "PASS",
+      "tests": 171,
+      "passed": 171,
+      "failed": 0
+    },
+    "frontend_tests": {
+      "command": "./frontend/node_modules/.bin/vitest run --root . --config frontend/vite.config.js tests/frontend",
+      "status": "PASS",
+      "files": 2,
+      "tests": 25,
+      "passed": 25,
+      "failed": 0,
+      "notes": [
+        "React act() warnings were non-blocking."
+      ]
+    },
+    "frontend_production_build": {
+      "command": "npm --prefix frontend run build",
+      "status": "PASS"
+    },
+    "independent_test_criteria": {
+      "separate_structural_behavioral_semantic_adversarial_findings": "VERIFIED",
+      "behavioral_pass_does_not_imply_adversarial_pass": "VERIFIED",
+      "ec_020_separate_current_statement_provider_input_and_independent_logical_calls": "VERIFIED",
+      "unchanged_21_case_dataset_fixed_score_gates_bounded_repair_and_content_free_evidence": "VERIFIED"
+    }
+  },
+  "live_openai_evaluations": {
+    "mode": "openai",
+    "effective_model": "gpt-6-luna",
+    "cases_per_run": 21,
+    "required_thresholds_percent": {
+      "structural": 100,
+      "behavioral": 100,
+      "adversarial": 100,
+      "semantic_minimum": 85,
+      "aggregate_minimum": 97
+    },
+    "observed_scores_percent": {
+      "structural": 95.238,
+      "behavioral": 95.238,
+      "adversarial": 100,
+      "semantic": 85.714,
+      "aggregate": 93.333
+    },
+    "status": "FAIL",
+    "runs": [
+      {
+        "run_id": "1f5d0653-4d9e-4fd7-b11d-f6270896f435",
+        "api_attempts": 19,
+        "status": "FAIL"
+      },
+      {
+        "run_id": "2d6e9df9-13f1-4290-97ee-ab2c50ad26e9",
+        "api_attempts": 22,
+        "status": "FAIL"
+      },
+      {
+        "run_id": "bcb14750-f40c-4c1e-8d2f-55bf2bb9034b",
+        "api_attempts": 20,
+        "status": "FAIL",
+        "note": "EC-007 was repaired, but the run did not achieve an overall PASS."
+      },
+      {
+        "run_id": "ec656ac3-5f6a-45dc-8124-c53def66c6ed",
+        "api_attempts": 22,
+        "status": "FAIL"
+      }
+    ],
+    "unresolved_case_ids": [
+      "EC-003",
+      "EC-008",
+      "EC-017"
+    ],
+    "instrumentation_note": "In runs 2d6e9df9-13f1-4290-97ee-ab2c50ad26e9 and ec656ac3-5f6a-45dc-8124-c53def66c6ed, transport and usable-response counts are populated, but successful-extraction and failed-extraction-outcome counters are both zero.",
+    "acceptance_note": "No claim is made that SC-002, SC-005, SC-006, or SC-007 passed based solely on this validation."
+  },
+  "privacy_review": {
+    "frontend_source_and_production_bundle": "Source and production bundle scans found no API-key references or browser-storage usage.",
+    "backend_logging": "Source review found metadata-only logging and no transaction-statement logging.",
+    "limitations": "This was a source and bundle review, not a complete penetration test or an independent provider-retention audit."
+  },
+  "task_status": {
+    "T041": "Complete: validation executed and documented; live model evaluation did not pass.",
+    "T043": "Incomplete.",
+    "T044": "Incomplete.",
+    "T045": "Incomplete.",
+    "T046": "Complete."
+  },
+  "historical_evidence": {
+    "original_t041_us3_validation_record": "Preserved unchanged.",
+    "original_t041_harness_run_log": "Preserved unchanged."
+  }
+}

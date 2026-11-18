@@ -1,0 +1,16 @@
+{
+  "type": "result",
+  "fields": {
+    "amount": 20,
+    "currency": "INR",
+    "category": "FOOD",
+    "transaction_type": "DEBIT",
+    "merchant_or_person": "Tea shop",
+    "requires_clarification": false
+  },
+  "description_keywords": [
+    "paid",
+    "tea"
+  ],
+  "question_keywords": []
+}

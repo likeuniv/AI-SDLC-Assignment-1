@@ -1,0 +1,92 @@
+openapi: 3.1.0
+info:
+  title: AI Spend Analyzer API
+  version: 1.0.0
+  description: Stateless single-statement transaction extraction contract.
+paths:
+  /api/analyze:
+    post:
+      operationId: analyzeTransaction
+      summary: Analyze one transaction statement
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [statement]
+              additionalProperties: false
+              properties:
+                statement:
+                  type: string
+                  minLength: 1
+                  pattern: "\\S"
+                  description: One natural-language transaction statement.
+      responses:
+        "200":
+          description: Successful extraction or clarification. Clarification remains a successful contract-valid result.
+          content:
+            application/json:
+              schema:
+                $ref: "./output-schema.json"
+        "400":
+          description: Empty or malformed request.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SafeError"
+        "413":
+          description: Request exceeds the configured transport body limit.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SafeError"
+        "422":
+          description: Request cannot be processed as one transaction, including multiple transactions.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SafeError"
+        "502":
+          description: Provider returned an unusable or invalid result.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SafeError"
+        "503":
+          description: External provider is unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SafeError"
+        "504":
+          description: External provider request timed out.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SafeError"
+        "500":
+          description: Unexpected internal failure.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SafeError"
+components:
+  schemas:
+    SafeError:
+      type: object
+      additionalProperties: false
+      required: [error]
+      properties:
+        error:
+          type: object
+          additionalProperties: false
+          required: [code, message]
+          properties:
+            code:
+              type: string
+              enum: [INVALID_REQUEST, REQUEST_TOO_LARGE, MULTIPLE_TRANSACTIONS, PROVIDER_UNAVAILABLE, PROVIDER_TIMEOUT, INVALID_MODEL_RESPONSE, INTERNAL_ERROR]
+            message:
+              type: string
+              minLength: 1
+              description: Safe user-facing text with no statement, model output, prompt, credential, or internal exception details.

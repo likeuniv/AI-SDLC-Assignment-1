@@ -1,0 +1,67 @@
+{
+  "scope": "Targeted evaluator and safe-diagnostics corrections",
+  "test_first": {
+    "initial_run": {
+      "command": "node --test tests/evaluation/harness.test.js tests/adversarial/security.test.js tests/unit/openai-adapter.test.js tests/evaluation/evidence.test.js",
+      "tests": 58,
+      "passed": 51,
+      "failed": 7,
+      "evidence": "evidence/initial-generation/corrections-targeted-red.log"
+    }
+  },
+  "final_validation": {
+    "root_node_tests": {
+      "command": "npm test",
+      "status": "PASS",
+      "tests": 129,
+      "passed": 129,
+      "failed": 0,
+      "evidence": "evidence/final-generation/evaluator-corrections-root-tests.log"
+    },
+    "frontend_tests": {
+      "command": "./frontend/node_modules/.bin/vitest run --root . --config frontend/vite.config.js tests/frontend",
+      "status": "PASS",
+      "test_files": 2,
+      "passed": 13,
+      "failed": 0,
+      "evidence": "evidence/final-generation/evaluator-corrections-frontend-tests.log"
+    },
+    "frontend_production_build": {
+      "command": "npm --prefix frontend run build",
+      "status": "PASS",
+      "evidence": "evidence/final-generation/evaluator-corrections-frontend-build.log"
+    },
+    "git_diff_check": "PASS"
+  },
+  "preservation": {
+    "dataset_case_count": 21,
+    "ordered_case_ids": "EC-001 through EC-021",
+    "canonical_schema_required_fields": 9,
+    "scoring_weights": {
+      "structural": 0.4,
+      "behavioral": 0.4,
+      "semantic": 0.2
+    },
+    "scoring_thresholds": {
+      "structural": 1.0,
+      "behavioral": 1.0,
+      "adversarial": 1.0,
+      "semantic": 0.85,
+      "aggregate": 0.97
+    },
+    "maximum_repair_cycles": 2,
+    "t041_unchecked": true,
+    "historical_evaluation_sha256": "4e18aba6d05cb0f9d20981aed6118f002083636daeef70ca47337ce5b5deba08"
+  },
+  "execution": {
+    "live_openai_evaluation": "NOT RUN",
+    "live_api_calls": 0,
+    "dotenv_accessed": false,
+    "branch": "main",
+    "commit_created": false
+  },
+  "known_limitations": [
+    "The deterministic semantic and credential-format checks are intentionally conservative and may not recognize every valid paraphrase or secret format.",
+    "Mocked regressions do not establish actual model quality or prompt-injection resistance."
+  ]
+}

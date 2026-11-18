@@ -1,0 +1,11 @@
+{
+  "amount": 20,
+  "currency": "INR",
+  "category": "FOOD",
+  "transaction_type": "DEBIT",
+  "merchant_or_person": "tea shop",
+  "description": "Paid 20 INR at a tea shop.",
+  "confidence": 0.95,
+  "requires_clarification": false,
+  "clarification_question": null
+}

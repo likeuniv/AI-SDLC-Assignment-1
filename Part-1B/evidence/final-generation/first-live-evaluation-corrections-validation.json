@@ -1,0 +1,115 @@
+{
+  "recorded_at": "2026-11-11",
+  "historical_run": {
+    "run_id": "66599769-0e5e-4a53-b39d-ce898965b89b",
+    "status": "FAIL",
+    "preserved": true,
+    "original_scores_modified": false
+  },
+  "correction_validation": {
+    "status": "PASS_WITH_MOCKS",
+    "live_openai_evaluation": "NOT RUN",
+    "live_api_calls": 0,
+    "dotenv_accessed": false,
+    "canonical_schema_changed": false,
+    "dataset_cases": 21,
+    "dataset_or_expected_labels_changed": false,
+    "scoring_weights_or_thresholds_changed": false,
+    "task_checkboxes_changed": false,
+    "t041_marked_complete": false
+  },
+  "test_first": {
+    "initial_run": {
+      "command": "node --test tests/evaluation/harness.test.js tests/unit/openai-adapter.test.js tests/unit/extraction-service.test.js",
+      "tests": 53,
+      "passed": 38,
+      "failed": 15,
+      "failure_causes": [
+        "Input echo incorrectly failed behavior evaluation.",
+        "Merchant normalization and semantic relevance expectations failed.",
+        "Unexpected safe errors incorrectly satisfied adversarial semantics.",
+        "EC-020 skipped or did not record its second logical call.",
+        "Requested safe diagnostic stages were not available."
+      ],
+      "evidence": "evidence/initial-generation/corrections-regression-tests-red.log",
+      "statement_details_redacted": true
+    },
+    "ec_021_empty_statement_regression": {
+      "command": "node --test --test-name-pattern=\"EC-021 does not run statement-dependent checks against an empty statement\" tests/evaluation/harness.test.js",
+      "tests_failed_as_expected": 1,
+      "evidence": "evidence/initial-generation/corrections-ec021-red.log"
+    },
+    "targeted_final_run": {
+      "command": "node --test tests/evaluation/harness.test.js tests/evaluation/evidence.test.js tests/adversarial/security.test.js tests/integration/errors.test.js tests/unit/openai-adapter.test.js tests/unit/extraction-service.test.js",
+      "tests": 69,
+      "passed": 69,
+      "failed": 0,
+      "evidence": "evidence/final-generation/corrections-harness-security-evidence-tests.log"
+    },
+    "root_suite": {
+      "command": "npm test",
+      "tests": 125,
+      "passed": 125,
+      "failed": 0,
+      "evidence": "evidence/final-generation/corrections-root-tests.log"
+    },
+    "frontend_suite": {
+      "command": "./frontend/node_modules/.bin/vitest run --root . --config frontend/vite.config.js tests/frontend",
+      "test_files": 2,
+      "passed": 13,
+      "failed": 0,
+      "evidence": "evidence/final-generation/corrections-frontend-tests.log"
+    },
+    "frontend_production_build": {
+      "command": "npm --prefix frontend run build",
+      "status": "PASS",
+      "evidence": "evidence/final-generation/corrections-frontend-build.log"
+    },
+    "git_diff_check": "PASS"
+  },
+  "mocked_regressions": {
+    "evaluated_case_count": 21,
+    "case_ids": "EC-001 through EC-021",
+    "model_pass_claimed": false,
+    "ec_017": "Safe rejection remains adversarial-safe but fails expected clarification semantics.",
+    "ec_020": [
+      "Prior failure followed by current success: both logical calls recorded.",
+      "Both calls fail: both safe outcomes recorded.",
+      "Both calls succeed: both outcomes recorded."
+    ],
+    "ec_021": "Structural boundary validation remains active; statement-dependent behavioral checks are skipped."
+  },
+  "request_accounting": {
+    "expected_logical_calls": 16,
+    "ec_020_logical_calls": 2,
+    "mocked_live_api_attempts": 0,
+    "prior_failure_does_not_skip_current_request": true,
+    "unattempted_calls_counted_as_attempts": false,
+    "per_call_evidence_fields": [
+      "role",
+      "outcome",
+      "safe error code",
+      "diagnostic stage",
+      "duration"
+    ]
+  },
+  "safe_diagnostic_stages": [
+    "refusal",
+    "incomplete_response",
+    "empty_output",
+    "parse_failure",
+    "field_shape_failure",
+    "canonical_schema_failure",
+    "invariant_failure"
+  ],
+  "privacy_checks": {
+    "historical_result_overwritten": false,
+    "raw_statements_in_correction_logs": false,
+    "raw_provider_output_or_exceptions_retained": false,
+    "credentials_or_environment_values_retained": false
+  },
+  "remaining_limitations": [
+    "The original live model output was not retained, so the exact provider-side cause for EC-003 and EC-020 remains unknown.",
+    "No live model-quality conclusions can be drawn from mocked regression tests."
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "milestone": "T045 final project validation",
+  "recorded_at": "2026-11-11",
+  "validation_execution_status": "COMPLETED_WITH_ACCEPTANCE_GAPS",
+  "scope": {
+    "project": "AI Spend Analyzer",
+    "no_commit_or_branch_change": true,
+    "historical_evidence_preserved": true
+  },
+  "automated_validation": {
+    "root_tests": {
+      "command": "npm test",
+      "status": "PASS",
+      "passed": 171,
+      "failed": 0
+    },
+    "frontend_tests": {
+      "command": "./frontend/node_modules/.bin/vitest run --root . --config frontend/vite.config.js tests/frontend",
+      "status": "PASS",
+      "test_files": 2,
+      "passed": 25,
+      "failed": 0,
+      "notes": [
+        "Non-blocking React act() warnings were observed."
+      ]
+    },
+    "frontend_default_test_script": {
+      "command": "npm --prefix frontend test",
+      "status": "NO_TESTS_DISCOVERED",
+      "note": "Frontend tests are under repository-root tests/frontend. The explicit Vitest command passed."
+    },
+    "frontend_production_build": {
+      "command": "npm --prefix frontend run build",
+      "status": "PASS"
+    },
+    "javascript_syntax": {
+      "status": "PASS"
+    },
+    "json_integrity": {
+      "status": "PASS"
+    },
+    "backend_startup": {
+      "status": "PASS",
+      "port": 3100,
+      "credentials_supplied": false,
+      "analysis_request_submitted": false,
+      "provider_api_call_made": false,
+      "observed_http_root_status": 404,
+      "note": "The server started and accepted a local HTTP connection. GET / returned 404 because no root route is defined."
+    },
+    "harness_test_coverage": {
+      "status": "PASS",
+      "note": "No standalone test files exist under .harness. Harness behavior is covered by root tests including tests/evaluation/harness.test.js and tests/evaluation/evidence.test.js."
+    },
+    "quickstart": {
+      "status": "REVIEWED_WITH_EMPIRICAL_GAPS",
+      "note": "Startup, test, and frontend commands were checked. Previously performed UI smoke tests covered valid, clarification, error, injection, and multiple-transaction flows. SC-005 and SC-006 remain unexecuted."
+    },
+    "privacy_and_evidence_scan": {
+      "status": "PASS_WITH_SCOPE_LIMITATIONS",
+      "checks": [
+        "No .env file tracked by Git",
+        "No secret-like patterns found in retained evidence files scanned",
+        "No OPENAI_API_KEY or browser-storage references found in frontend source or production bundle",
+        "Backend logging reviewed as metadata-only"
+      ],
+      "limitations": [
+        "Not a complete penetration test",
+        "No independent browser Network inspection",
+        "No hosting configuration or operating-system log audit",
+        "No provider-side retention audit"
+      ]
+    },
+    "git_diff_check": "PASS"
+  },
+  "live_model_evaluation": {
+    "model": "gpt-6-luna",
+    "dataset_cases": 21,
+    "latest_run_count": 4,
+    "run_ids": [
+      "2d6e9df9-13f1-4290-97ee-ab2c50ad26e9",
+      "ec656ac3-5f6a-45dc-8124-c53def66c6ed",
+      "bcb14750-f40c-4c1e-8d2f-55bf2bb9034b",
+      "1f5d0653-4d9e-4fd7-b11d-f6270896f435"
+    ],
+    "scores_percent": {
+      "structural": 95.238,
+      "behavioral": 95.238,
+      "adversarial": 100.0,
+      "semantic": 85.714,
+      "aggregate": 93.333
+    },
+    "acceptance_status": "FAIL",
+    "unresolved_cases": [
+      "EC-003",
+      "EC-008",
+      "EC-017"
+    ],
+    "instrumentation_limitation": "Runs 2d6e9df9-13f1-4290-97ee-ab2c50ad26e9 and ec656ac3-5f6a-45dc-8124-c53def66c6ed report zero successful-extraction and failed-outcome counters despite populated transport and usable-response counters."
+  },
+  "acceptance_criteria": {
+    "SC-001": {
+      "status": "NOT_MET",
+      "evidence": "Live structural score 95.238%; required 100%."
+    },
+    "SC-002": {
+      "status": "FAIL",
+      "evidence": "Structural 95.238% vs 100%; behavioral 95.238% vs 100%; adversarial 100% vs 100%; semantic 85.714% vs at least 85%; aggregate 93.333% vs at least 97%."
+    },
+    "SC-003": {
+      "status": "PASS_WITH_SCOPE_LIMITATIONS",
+      "evidence": "Automated privacy tests and source, bundle, logging, and retained-evidence reviews passed within the documented scope."
+    },
+    "SC-004": {
+      "status": "PASS",
+      "evidence": "Automated integration/invariant coverage and manual UI smoke test verified multiple-transaction rejection and independent corrected requests."
+    },
+    "SC-005": {
+      "status": "NOT_RUN",
+      "evidence": "The prescribed study with 10 first-time participants and timed task completion has not been performed."
+    },
+    "SC-006": {
+      "status": "NOT_RUN",
+      "evidence": "The prescribed 63-request production-built UI latency measurement has not been performed."
+    },
+    "SC-007": {
+      "status": "NOT_VERIFIED",
+      "evidence": "The live adversarial score was 100%, and a manual injection smoke test did not disclose secrets. Full criterion-level acceptance is not claimed, and EC-017 remains unresolved."
+    }
+  },
+  "task_status": {
+    "T041": "COMPLETE",
+    "T043": "INCOMPLETE",
+    "T044": "INCOMPLETE",
+    "T045": "COMPLETE_WITH_ACCEPTANCE_GAPS",
+    "T046": "COMPLETE"
+  },
+  "residual_risks": [
+    "Live model evaluation does not meet structural, behavioral, or aggregate thresholds.",
+    "EC-003, EC-008, and EC-017 remain unresolved.",
+    "SC-005 usability and SC-006 latency studies remain unrun.",
+    "SC-007 remains unverified.",
+    "Currency-list equivalence remains unresolved.",
+    "The privacy review is not a complete security or provider-retention audit."
+  ],
+  "historical_evidence_policy": "This record supplements rather than replaces final-project-validation.json, the T041 supplemental record, existing run directories, and prior harness log entries."
+}

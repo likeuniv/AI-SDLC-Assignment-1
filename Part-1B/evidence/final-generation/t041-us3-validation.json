@@ -1,0 +1,50 @@
+{
+  "milestone": "T029-T041",
+  "validation": {
+    "us3_test_suites": {
+      "command": "node --test tests/integration/errors.test.js tests/adversarial/security.test.js tests/evaluation/harness.test.js tests/evaluation/evidence.test.js",
+      "status": "PASS",
+      "tests": 21,
+      "passed": 21,
+      "failed": 0
+    },
+    "root_test_suite": {
+      "command": "npm test",
+      "status": "PASS",
+      "tests": 101,
+      "passed": 101,
+      "failed": 0
+    },
+    "frontend_tests": {
+      "command": "./frontend/node_modules/.bin/vitest run --root . --config frontend/vite.config.js tests/frontend",
+      "status": "PASS",
+      "files": 2,
+      "tests": 13,
+      "passed": 13,
+      "failed": 0
+    },
+    "frontend_build": {
+      "command": "npm --prefix frontend run build",
+      "status": "PASS"
+    },
+    "mocked_runner_coverage": {
+      "execution_status": "PASS",
+      "cases_evaluated": 21,
+      "provider_calls": 16,
+      "model_performance": "NOT CLAIMED"
+    },
+    "live_openai_evaluation": {
+      "status": "NOT RUN",
+      "reason": "OPENAI_API_KEY was unavailable in the process environment; no credential file was read and no API call was made."
+    }
+  },
+  "initial_test_notes": {
+    "T029": "The safe-error tests passed on their initial run because the relevant safe-error behavior already existed.",
+    "T030": "The corrected initial run had 4 passing tests and 1 expected failure because the adapter had not yet explicitly disabled tools.",
+    "T031": "The initial harness tests failed because the harness modules had not yet been created."
+  },
+  "task_status": {
+    "T029-T040": "Complete and verified",
+    "T041": "Incomplete: live 21-case OpenAI evaluation was unavailable; the complete mocked dataset path and automated validation passed."
+  }
+}

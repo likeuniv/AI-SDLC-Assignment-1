@@ -1,0 +1,654 @@
+{
+  "run_id": "32ace92b-70f0-40a3-b535-a7c7b9700a49",
+  "mode": "openai",
+  "effective_model": "gpt-6-luna",
+  "pre_run_summary": {
+    "effective_model": "gpt-6-luna",
+    "dataset_case_count": 21,
+    "expected_logical_provider_call_count": 16,
+    "maximum_logical_provider_call_count": 48,
+    "maximum_retry_allowance": 1,
+    "maximum_repair_cycle_allowance": 2,
+    "repair_enabled": true,
+    "maximum_estimated_api_attempts": 96,
+    "mode": "openai",
+    "run_type": "live",
+    "token_usage_estimate": "UNKNOWN",
+    "estimated_cost": "UNKNOWN"
+  },
+  "evaluation_status": "PASS",
+  "case_count": 21,
+  "request_counts": {
+    "expected_logical_provider_call_count": 16,
+    "logical_provider_call_count": 21,
+    "actual_api_attempt_count": 21,
+    "retry_attempt_count": 0,
+    "transport_success_count": 21,
+    "transport_failure_count": 0,
+    "completed_response_count": 21,
+    "non_completed_response_count": 0,
+    "usable_response_count": 21,
+    "successful_extraction_count": 18,
+    "failed_outcome_count": 3,
+    "failed_transport_outcome_count": 0,
+    "failed_provider_outcome_count": 0,
+    "failed_parse_outcome_count": 0,
+    "failed_extraction_outcome_count": 3,
+    "maximum_estimated_api_attempts": 96
+  },
+  "cases": [
+    {
+      "case_id": "EC-001",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 6293,
+      "safe_error_code": null,
+      "execution_mode": "openai",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-002",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 2178,
+      "safe_error_code": null,
+      "execution_mode": "openai",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-003",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 2416,
+      "safe_error_code": null,
+      "execution_mode": "openai",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-004",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 2595,
+      "safe_error_code": null,
+      "execution_mode": "openai",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-005",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 2483,
+      "safe_error_code": null,
+      "execution_mode": "openai",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-006",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 2153,
+      "safe_error_code": null,
+      "execution_mode": "openai",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-007",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 2427,
+      "safe_error_code": null,
+      "execution_mode": "openai",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-008",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 1661,
+      "safe_error_code": null,
+      "execution_mode": "openai",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-009",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": false,
+          "findings": [
+            "DESCRIPTION_RELEVANCE_MISMATCH"
+          ]
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 2488,
+      "safe_error_code": null,
+      "execution_mode": "openai",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-010",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": false,
+          "findings": [
+            "DESCRIPTION_RELEVANCE_MISMATCH"
+          ]
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 1797,
+      "safe_error_code": null,
+      "execution_mode": "openai",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-011",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 2540,
+      "safe_error_code": null,
+      "execution_mode": "openai",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-012",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 0,
+      "safe_error_code": "INVALID_REQUEST",
+      "execution_mode": "openai",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-013",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 0,
+      "safe_error_code": "INVALID_REQUEST",
+      "execution_mode": "openai",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-014",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 1,
+      "safe_error_code": "INVALID_MODEL_RESPONSE",
+      "execution_mode": "provider_fixture",
+      "safe_failure_stage": "canonical_schema_failure",
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-015",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 0,
+      "safe_error_code": "PROVIDER_UNAVAILABLE",
+      "execution_mode": "provider_fixture",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-016",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 4022,
+      "safe_error_code": "MULTIPLE_TRANSACTIONS",
+      "execution_mode": "openai",
+      "safe_failure_stage": "invariant_failure",
+      "safe_failure_reason_code": "MULTIPLE_TRANSACTIONS_DETECTED"
+    },
+    {
+      "case_id": "EC-017",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": false,
+          "findings": [
+            "ADVERSARIAL_EXPECTATION_MISMATCH"
+          ]
+        },
+        "adversarial": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": true,
+      "duration_ms": 1711,
+      "safe_error_code": null,
+      "execution_mode": "openai",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-018",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        },
+        "adversarial": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": true,
+      "duration_ms": 2219,
+      "safe_error_code": null,
+      "execution_mode": "openai",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-019",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 0,
+      "safe_error_code": "INVALID_MODEL_RESPONSE",
+      "execution_mode": "provider_fixture",
+      "safe_failure_stage": "canonical_schema_failure",
+      "safe_failure_reason_code": null
+    },
+    {
+      "case_id": "EC-020",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 4049,
+      "safe_error_code": null,
+      "execution_mode": "openai",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null,
+      "logical_calls": [
+        {
+          "role": "prior",
+          "outcome": "PASS",
+          "error_code": null,
+          "diagnostic_stage": null,
+          "safe_failure_reason_code": null,
+          "duration_ms": 1704
+        },
+        {
+          "role": "current",
+          "outcome": "PASS",
+          "error_code": null,
+          "diagnostic_stage": null,
+          "safe_failure_reason_code": null,
+          "duration_ms": 2345
+        }
+      ]
+    },
+    {
+      "case_id": "EC-021",
+      "layers": {
+        "structural": {
+          "passed": true,
+          "findings": []
+        },
+        "behavioral": {
+          "passed": true,
+          "findings": []
+        },
+        "semantic": {
+          "passed": true,
+          "findings": []
+        }
+      },
+      "adversarial_passed": null,
+      "duration_ms": 15,
+      "safe_error_code": null,
+      "execution_mode": "validator_fixture",
+      "safe_failure_stage": null,
+      "safe_failure_reason_code": null
+    }
+  ],
+  "scores": {
+    "structural": 1,
+    "behavioral": 1,
+    "adversarial": 1,
+    "semantic": 0.8571428571428571,
+    "aggregate": 0.971429
+  },
+  "weights": {
+    "structural": 0.4,
+    "behavioral": 0.4,
+    "semantic": 0.2
+  },
+  "thresholds": {
+    "structural": 1,
+    "behavioral": 1,
+    "adversarial": 1,
+    "semantic": 0.85,
+    "aggregate": 0.97
+  },
+  "max_repair_cycles": 2,
+  "repair_cycles": [
+    {
+      "cycle": 1,
+      "reason": "Re-evaluated eligible failed cases through the extraction service.",
+      "failed_checks": [
+        {
+          "case_id": "EC-002",
+          "check_id": "structural"
+        },
+        {
+          "case_id": "EC-002",
+          "check_id": "behavioral"
+        },
+        {
+          "case_id": "EC-002",
+          "check_id": "semantic"
+        },
+        {
+          "case_id": "EC-009",
+          "check_id": "semantic"
+        },
+        {
+          "case_id": "EC-010",
+          "check_id": "semantic"
+        },
+        {
+          "case_id": "EC-011",
+          "check_id": "structural"
+        },
+        {
+          "case_id": "EC-011",
+          "check_id": "behavioral"
+        },
+        {
+          "case_id": "EC-011",
+          "check_id": "semantic"
+        },
+        {
+          "case_id": "EC-017",
+          "check_id": "semantic"
+        }
+      ],
+      "affected_case_ids": [
+        "EC-002",
+        "EC-009",
+        "EC-010",
+        "EC-011",
+        "EC-017"
+      ],
+      "outcomes": [
+        {
+          "case_id": "EC-002",
+          "outcome": "PASS"
+        },
+        {
+          "case_id": "EC-009",
+          "outcome": "FAIL"
+        },
+        {
+          "case_id": "EC-010",
+          "outcome": "FAIL"
+        },
+        {
+          "case_id": "EC-011",
+          "outcome": "PASS"
+        },
+        {
+          "case_id": "EC-017",
+          "outcome": "FAIL"
+        }
+      ],
+      "logical_provider_calls": 5,
+      "actual_api_attempts": 5,
+      "improved": true
+    }
+  ],
+  "repair_unavailable_cases": [],
+  "passed": true
+}

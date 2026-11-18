@@ -1,0 +1,165 @@
+{
+  "project": "AI Spend Analyzer",
+  "validation_date": "2026-11-11",
+  "task_completion": {
+    "completed": [
+      "T001", "T002", "T003", "T004", "T005", "T006", "T007", "T008",
+      "T009", "T010", "T011", "T012", "T013", "T014", "T015", "T016",
+      "T017", "T018", "T019", "T020", "T021", "T022", "T023", "T024",
+      "T025", "T026", "T027", "T028", "T029", "T030", "T031", "T032",
+      "T033", "T034", "T035", "T036", "T037", "T038", "T039", "T040",
+      "T042", "T046"
+    ],
+    "incomplete": {
+      "T041": "Live OpenAI 21-case evaluation was not run; automated validation did run.",
+      "T043": "SC-005 and SC-006 empirical studies have not been performed.",
+      "T044": "Known limitations are documented, but no human acceptance or rejection decision is recorded.",
+      "T045": "Automated checks ran, but the live quickstart and empirical acceptance criteria could not be completed."
+    },
+    "task_ids_preserved": 46
+  },
+  "automated_validation": {
+    "root_node_tests": {
+      "command": "npm test",
+      "status": "PASS",
+      "tests": 101,
+      "passed": 101,
+      "failed": 0,
+      "evidence": "evidence/final-generation/final-project-root-tests.log"
+    },
+    "contract_invariant_currency_tests": {
+      "command": "node --test tests/unit/output-schema.test.js tests/unit/transaction-invariants.test.js tests/unit/extraction-service.test.js",
+      "status": "PASS",
+      "tests": 34,
+      "passed": 34,
+      "failed": 0,
+      "evidence": "evidence/final-generation/final-project-contract-currency-tests.log"
+    },
+    "frontend_tests": {
+      "command": "./frontend/node_modules/.bin/vitest run --root . --config frontend/vite.config.js tests/frontend",
+      "status": "PASS",
+      "test_files": 2,
+      "tests": 13,
+      "passed": 13,
+      "failed": 0,
+      "evidence": "evidence/final-generation/final-project-frontend-tests.log"
+    },
+    "frontend_production_build": {
+      "command": "npm --prefix frontend run build",
+      "status": "PASS",
+      "evidence": "evidence/final-generation/final-project-frontend-build.log"
+    },
+    "harness": {
+      "status": "PASS for automated harness behavior",
+      "details": "Root test suite executes the evaluation and evidence tests. The mocked-runner test evaluates all 21 cases; its 16 provider calls exclude controlled request/provider and validator-boundary fixtures.",
+      "mocked_results_are_model_performance": false
+    },
+    "dataset": {
+      "status": "PASS",
+      "case_count": 21,
+      "ordered_ids": "EC-001 through EC-021"
+    },
+    "configuration": {
+      "status": "PASS",
+      "weights": {
+        "structural": 0.4,
+        "behavioral": 0.4,
+        "semantic": 0.2
+      },
+      "thresholds": {
+        "structural": 1.0,
+        "behavioral": 1.0,
+        "adversarial": 1.0,
+        "semantic": 0.85,
+        "aggregate": 0.97
+      },
+      "maximum_repair_cycles": 2
+    },
+    "canonical_schema": {
+      "status": "PASS",
+      "required_field_count": 9,
+      "changed": false
+    },
+    "json_files": {
+      "status": "PASS",
+      "valid_count": 19
+    },
+    "evidence_privacy": {
+      "status": "PASS for checked artifacts",
+      "details": "Automated evidence/log tests passed; exact dataset statements were checked across retained evidence. Two initial-generation diagnostic logs had synthetic statements redacted and are labeled. No checked provider markers or API-key patterns were found. .env was not read and is not tracked."
+    },
+    "git_diff_check": "PASS"
+  },
+  "acceptance_criteria": {
+    "SC-001": {
+      "status": "NOT VERIFIED",
+      "basis": "Schema and synthetic contract tests pass, but there is no actual-model result set to establish conformance of model-generated evaluation outputs."
+    },
+    "SC-002": {
+      "status": "NOT RUN",
+      "basis": "The live OpenAI evaluation and its fixed-threshold scores are unavailable."
+    },
+    "SC-003": {
+      "status": "PASS",
+      "basis": "Automated privacy tests check operational logs and retained evidence; the app has no transaction persistence layer."
+    },
+    "SC-004": {
+      "status": "PASS",
+      "basis": "Synthetic integration and invariant tests cover multiple-transaction rejection and independent corrected requests."
+    },
+    "SC-005": {
+      "status": "NOT RUN",
+      "basis": "No 10-participant first-use study or participant measurements were performed."
+    },
+    "SC-006": {
+      "status": "NOT RUN",
+      "basis": "No live 63-request latency run or timing measurements were performed."
+    },
+    "SC-007": {
+      "status": "NOT VERIFIED",
+      "basis": "Synthetic security tests pass with injected fake providers, but actual-model prompt-injection behavior was not evaluated."
+    }
+  },
+  "model_evaluation": {
+    "status": "NOT RUN",
+    "model": "gpt-6-luna",
+    "reason": "OPENAI_API_KEY was unavailable in the process environment. No .env file was accessed and no live API call was made.",
+    "evidence": "evidence/eval-results.json"
+  },
+  "empirical_studies": {
+    "SC-005": {
+      "status": "NOT RUN",
+      "required_participants": 10,
+      "pass_threshold": "At least 9 of 10 complete correctly without assistance in 60 seconds or less."
+    },
+    "SC-006": {
+      "status": "NOT RUN",
+      "required_requests": 63,
+      "pass_threshold": "At least 60 of 63 requests render a result or safe failure within 30 seconds."
+    }
+  },
+  "currency_registry_qualification": {
+    "status": "UNRESOLVED",
+    "details": "The 156-code ICU-derived implementation snapshot is not an exact match to the recorded SIX List One XML revision Pblshd=2026-09-17. The documented differences include SVC, XCG, VED, and ANG. No currency codes, labels, or schema were changed."
+  },
+  "known_limitations": [
+    "The 21 synthetic cases do not establish comprehensive real-world accuracy or robustness.",
+    "Actual model semantic performance and availability have not been measured.",
+    "Prompt-injection defenses reduce risk but do not guarantee immunity.",
+    "Provider retention, processing, deletion, and regional terms require current official verification.",
+    "Currency registry equivalence remains unresolved.",
+    "Human usability and live latency acceptance have not been measured."
+  ],
+  "residual_risks": [
+    "Real model behavior may differ from mocked-provider tests.",
+    "External provider failures, policy changes, and model availability are outside local automated validation.",
+    "No human acceptance decision is recorded."
+  ],
+  "readiness": {
+    "implementation_complete": "YES for application and harness implementation T001-T040; empirical/validation tasks remain open.",
+    "automated_validation_complete": "YES for the recorded root, frontend, build, harness, dataset, and privacy checks.",
+    "empirical_acceptance_validation_complete": "NO",
+    "ready_for_demonstration": "CONDITIONAL; requires configured provider access for live AI behavior, which was not tested here.",
+    "ready_for_final_academic_submission": "NO; live model evaluation, required studies, human acceptance, and final quickstart validation remain outstanding."
+  }
+}

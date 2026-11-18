@@ -1,0 +1,58 @@
+{
+  "run_id": "133a8a71-e6a0-4934-853a-53f6c1dd9dcb",
+  "mode": "openai",
+  "effective_model": "gpt-6-luna",
+  "pre_run_summary": {
+    "effective_model": "gpt-6-luna",
+    "dataset_case_count": 21,
+    "expected_logical_provider_call_count": 16,
+    "maximum_logical_provider_call_count": 48,
+    "maximum_retry_allowance": 1,
+    "maximum_repair_cycle_allowance": 2,
+    "repair_enabled": true,
+    "maximum_estimated_api_attempts": 96,
+    "mode": "openai",
+    "run_type": "live",
+    "token_usage_estimate": "UNKNOWN",
+    "estimated_cost": "UNKNOWN"
+  },
+  "evaluation_status": "NOT RUN",
+  "not_run_reason": "OPENAI_API_KEY is not available in the process environment; no credential file was read.",
+  "case_count": 0,
+  "request_counts": {
+    "expected_logical_provider_call_count": 16,
+    "logical_provider_call_count": 0,
+    "actual_api_attempt_count": 0,
+    "retry_attempt_count": 0,
+    "transport_success_count": 0,
+    "transport_failure_count": 0,
+    "completed_response_count": 0,
+    "non_completed_response_count": 0,
+    "usable_response_count": 0,
+    "successful_extraction_count": 0,
+    "failed_outcome_count": 0,
+    "failed_transport_outcome_count": 0,
+    "failed_provider_outcome_count": 0,
+    "failed_parse_outcome_count": 0,
+    "failed_extraction_outcome_count": 0,
+    "maximum_estimated_api_attempts": 96
+  },
+  "cases": [],
+  "scores": null,
+  "weights": {
+    "structural": 0.4,
+    "behavioral": 0.4,
+    "semantic": 0.2
+  },
+  "thresholds": {
+    "structural": 1,
+    "behavioral": 1,
+    "adversarial": 1,
+    "semantic": 0.85,
+    "aggregate": 0.97
+  },
+  "max_repair_cycles": 2,
+  "repair_cycles": [],
+  "repair_unavailable_cases": [],
+  "passed": false
+}

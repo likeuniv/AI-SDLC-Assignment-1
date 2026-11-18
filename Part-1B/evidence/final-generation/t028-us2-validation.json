@@ -1,0 +1,87 @@
+{
+  "milestone": "User Story 2 - Clarify Incomplete or Ambiguous Details",
+  "tasks": {
+    "T024": {
+      "status": "PASS",
+      "initial_test_output": "evidence/initial-generation/t024-clarification-tests-red.log",
+      "initial_tests": {
+        "passed": 5,
+        "failed": 1,
+        "expected_failure": "The service accepted an irrelevant clarification question."
+      }
+    },
+    "T025": {
+      "status": "PASS",
+      "initial_test_output": "evidence/initial-generation/t025-clarification-ui-tests-red.log",
+      "initial_tests": {
+        "passed": 1,
+        "failed": 3,
+        "expected_failures": [
+          "Clarification lacked distinct presentation.",
+          "Clarification question was not prominent.",
+          "Null and UNKNOWN values were not presented as required."
+        ]
+      }
+    },
+    "T026": "PASS",
+    "T027": "PASS",
+    "T028": "PASS"
+  },
+  "validation": {
+    "clarification_integration": {
+      "command": "node --test tests/integration/clarification.test.js",
+      "result": "PASS",
+      "passed": 7,
+      "failed": 0,
+      "evidence": "evidence/final-generation/t028-clarification-integration.log"
+    },
+    "api_integration": {
+      "command": "node --test tests/integration/analyze-route.test.js",
+      "result": "PASS",
+      "passed": 14,
+      "failed": 0,
+      "evidence": "evidence/final-generation/t028-api-integration.log"
+    },
+    "extraction_service_and_adapter": {
+      "command": "node --test tests/unit/extraction-service.test.js tests/unit/openai-adapter.test.js",
+      "result": "PASS",
+      "passed": 24,
+      "failed": 0,
+      "evidence": "evidence/final-generation/t028-service-adapter-tests.log"
+    },
+    "frontend": {
+      "command": "vitest run --config frontend/vite.config.js --root . tests/frontend",
+      "result": "PASS",
+      "test_files_passed": 2,
+      "tests_passed": 13,
+      "failed": 0,
+      "evidence": "evidence/final-generation/t028-frontend-tests.log"
+    },
+    "root_node_suite": {
+      "command": "npm test",
+      "result": "PASS",
+      "passed": 80,
+      "failed": 0,
+      "evidence": "evidence/final-generation/t028-root-test-suite.log"
+    },
+    "frontend_production_build": {
+      "command": "npm --prefix frontend run build",
+      "result": "PASS",
+      "evidence": "evidence/final-generation/t028-frontend-build.log"
+    }
+  },
+  "acceptance": {
+    "EC-009": "PASS: null amount, XXX currency, supported debit/food/person details, and a focused amount question.",
+    "EC-010": "PASS: amount 500, XXX currency, UNKNOWN category, supported debit direction, and a focused purpose question.",
+    "EC-011": "PASS: amount 500, XXX currency, UNKNOWN category and direction, supported person, and a focused direction question.",
+    "EC-020": "PASS: the corrected statement is sent alone as a new request; no prior result or statement is included.",
+    "clarification_question_validation": "PASS: irrelevant questions are rejected as INVALID_MODEL_RESPONSE.",
+    "schema_and_safe_errors": "PASS: canonical nine-field validation and safe error mapping remain in place.",
+    "EC-001_through_EC-008_regression": "PASS: included in passing API integration and root Node test suites.",
+    "full_21_case_harness": "NOT RUN: reserved for User Story 3; no full evaluation result is claimed.",
+    "live_OpenAI_calls": "NOT RUN: validation used synthetic fixtures and injected fake providers."
+  },
+  "notes": [
+    "An earlier concurrent API-test run had one false positive when a numeric transaction amount equaled request-duration metadata. The existing T014 test was left unchanged; the final standalone API suite and full root suite both passed with it unchanged."
+  ]
+}

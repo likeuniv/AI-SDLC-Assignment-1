@@ -1,0 +1,138 @@
+{
+  "milestone": "T041 live-evaluation pre-flight blocker fixes",
+  "preflight_status": "PASS",
+  "actual_openai_evaluation": "NOT RUN",
+  "effective_model": "gpt-6-luna",
+  "request_estimate": {
+    "dataset_case_count": 21,
+    "expected_logical_provider_call_count": 16,
+    "maximum_retry_allowance_per_call": 1,
+    "maximum_repair_cycles": 2,
+    "maximum_estimated_api_attempts": 96,
+    "token_usage_estimate": "UNKNOWN",
+    "estimated_cost": "UNKNOWN"
+  },
+  "checks": [
+    {
+      "id": 1,
+      "check": "Effective live model is exactly gpt-6-luna; unexpected overrides are rejected.",
+      "status": "PASS"
+    },
+    {
+      "id": 2,
+      "check": "Live CLI wires the official OpenAI adapter and has no mock-provider fallback.",
+      "status": "PASS"
+    },
+    {
+      "id": 3,
+      "check": "The ordered EC-001 through EC-021 dataset remains unchanged.",
+      "status": "PASS"
+    },
+    {
+      "id": 4,
+      "check": "The initial runner pass visits each case once; EC-020 makes two logical calls.",
+      "status": "PASS"
+    },
+    {
+      "id": 5,
+      "check": "Mock provider activity is excluded from live API-attempt accounting.",
+      "status": "PASS"
+    },
+    {
+      "id": 6,
+      "check": "Structural, behavioral, adversarial, and semantic results are reported independently.",
+      "status": "PASS"
+    },
+    {
+      "id": 7,
+      "check": "Scoring weights and all acceptance thresholds are unchanged.",
+      "status": "PASS"
+    },
+    {
+      "id": 8,
+      "check": "The maximum repair allowance remains two cycles.",
+      "status": "PASS"
+    },
+    {
+      "id": 9,
+      "check": "The live CLI sources inputs only from the synthetic evaluation dataset.",
+      "status": "PASS"
+    },
+    {
+      "id": 10,
+      "check": "Logs and evidence retain metadata only, not statements, prompts, outputs, or credentials.",
+      "status": "PASS"
+    },
+    {
+      "id": 11,
+      "check": "Evidence records model, cases, request counts, scores, safe errors, and durations.",
+      "status": "PASS"
+    },
+    {
+      "id": 12,
+      "check": "One bounded adapter retry is counted; dataset reruns occur only through capped repair cycles.",
+      "status": "PASS"
+    },
+    {
+      "id": 13,
+      "check": "The pre-run summary reports model, usage bounds, run mode, and UNKNOWN token/cost estimates.",
+      "status": "PASS"
+    }
+  ],
+  "automated_validation": {
+    "initial_regression_run": {
+      "status": "EXPECTED FAILURES REPRODUCED",
+      "tests": 35,
+      "passed": 23,
+      "failed": 12,
+      "evidence": "evidence/initial-generation/t041-preflight-blockers-red-final.log"
+    },
+    "evidence_preservation_regression": {
+      "status": "EXPECTED FAILURE REPRODUCED",
+      "tests": 5,
+      "passed": 4,
+      "failed": 1,
+      "evidence": "evidence/initial-generation/t041-evidence-log-preservation-red.log"
+    },
+    "root_tests": {
+      "status": "PASS",
+      "tests": 112,
+      "passed": 112,
+      "failed": 0
+    },
+    "security_harness_evidence_adapter_tests": {
+      "status": "PASS",
+      "tests": 45,
+      "passed": 45,
+      "failed": 0
+    },
+    "frontend_tests": {
+      "status": "PASS",
+      "tests": 13,
+      "passed": 13,
+      "failed": 0
+    },
+    "frontend_production_build": "PASS",
+    "git_diff_check": "PASS",
+    "evidence_privacy_scan": {
+      "status": "PASS",
+      "evidence_files_scanned": 51,
+      "dataset_statement_leaks": 0,
+      "credential_like_values": 0
+    }
+  },
+  "live_run": {
+    "status": "NOT RUN",
+    "logical_provider_call_count": 0,
+    "actual_api_attempt_count": 0,
+    "retry_attempt_count": 0,
+    "reason": "The CLI was run with OPENAI_API_KEY and OPENAI_MODEL unset; no API request was made."
+  },
+  "task_status": {
+    "T041": "INCOMPLETE: actual 21-case OpenAI evaluation remains NOT RUN."
+  },
+  "repository": {
+    "branch": "main",
+    "commit_created": false
+  }
+}

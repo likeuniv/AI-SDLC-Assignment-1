@@ -1,0 +1,368 @@
+{
+  "test_type": "partial-sc006-live-provider-browser-measurement",
+  "protocol_status": "PARTIAL_MEASUREMENT",
+  "sc006_acceptance_status": "NOT ESTABLISHED",
+  "run_started_at": "2026-11-14T16:08:29.244Z",
+  "run_completed_at": "2026-11-14T16:10:34.268Z",
+  "manifest": {
+    "provider": "OpenAI",
+    "model": "gpt-6-luna",
+    "region": "Not declared in project configuration; provider-managed region unknown",
+    "node_version": "v24.22.2",
+    "browser": "Firefox",
+    "browser_version": "159.0",
+    "operating_system": "Linux 7.0.0-43-generic x64",
+    "machine_class": "VirtualBox Ubuntu VM; 4 vCPUs; approximately 11 GiB RAM",
+    "deployment_mode": "Production Vite build served by Express",
+    "network_conditions": "Not independently instrumented; external provider latency included"
+  },
+  "protocol_deviation": {
+    "reason": "Only real statement submissions can be measured through the live UI. Request-error, provider-fixture, and validator-boundary cases require separate controlled tests.",
+    "measured_scenarios": 15,
+    "repetitions_per_scenario": 3,
+    "measured_request_target": 45,
+    "unmeasured_independence_setup_requests": 3,
+    "provider_preflight_requests": 1,
+    "excluded_cases": [
+      "EC-012",
+      "EC-013",
+      "EC-014",
+      "EC-015",
+      "EC-019",
+      "EC-021"
+    ],
+    "full_63_request_protocol_completed": false
+  },
+  "preflight": {
+    "passed": true,
+    "request_count": 1
+  },
+  "invalidation_reason": null,
+  "summary": {
+    "measured_requests": 45,
+    "successful_within_30_seconds": 45,
+    "failed_or_not_visible": 0,
+    "success_rate_percent": 100,
+    "min_elapsed_ms": 1390,
+    "median_elapsed_ms": 2067,
+    "max_elapsed_ms": 5839
+  },
+  "results": [
+    {
+      "case_id": "EC-001",
+      "repetition": 1,
+      "elapsed_ms": 4855,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-001",
+      "repetition": 2,
+      "elapsed_ms": 2136,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-001",
+      "repetition": 3,
+      "elapsed_ms": 2952,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-002",
+      "repetition": 1,
+      "elapsed_ms": 1723,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-002",
+      "repetition": 2,
+      "elapsed_ms": 2353,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-002",
+      "repetition": 3,
+      "elapsed_ms": 2076,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-003",
+      "repetition": 1,
+      "elapsed_ms": 1390,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-003",
+      "repetition": 2,
+      "elapsed_ms": 2066,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-003",
+      "repetition": 3,
+      "elapsed_ms": 1626,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-004",
+      "repetition": 1,
+      "elapsed_ms": 2767,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-004",
+      "repetition": 2,
+      "elapsed_ms": 2080,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-004",
+      "repetition": 3,
+      "elapsed_ms": 2277,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-005",
+      "repetition": 1,
+      "elapsed_ms": 1818,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-005",
+      "repetition": 2,
+      "elapsed_ms": 1661,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-005",
+      "repetition": 3,
+      "elapsed_ms": 2350,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-006",
+      "repetition": 1,
+      "elapsed_ms": 1730,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-006",
+      "repetition": 2,
+      "elapsed_ms": 1596,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-006",
+      "repetition": 3,
+      "elapsed_ms": 2914,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-007",
+      "repetition": 1,
+      "elapsed_ms": 1846,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-007",
+      "repetition": 2,
+      "elapsed_ms": 2643,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-007",
+      "repetition": 3,
+      "elapsed_ms": 2147,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-008",
+      "repetition": 1,
+      "elapsed_ms": 1874,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-008",
+      "repetition": 2,
+      "elapsed_ms": 2067,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-008",
+      "repetition": 3,
+      "elapsed_ms": 2118,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-009",
+      "repetition": 1,
+      "elapsed_ms": 1928,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-009",
+      "repetition": 2,
+      "elapsed_ms": 1495,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-009",
+      "repetition": 3,
+      "elapsed_ms": 1522,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-010",
+      "repetition": 1,
+      "elapsed_ms": 1629,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-010",
+      "repetition": 2,
+      "elapsed_ms": 1444,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-010",
+      "repetition": 3,
+      "elapsed_ms": 2009,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-011",
+      "repetition": 1,
+      "elapsed_ms": 1821,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-011",
+      "repetition": 2,
+      "elapsed_ms": 4502,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-011",
+      "repetition": 3,
+      "elapsed_ms": 1793,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-016",
+      "repetition": 1,
+      "elapsed_ms": 2658,
+      "pass": true,
+      "safe_error_code": "MULTIPLE_TRANSACTIONS"
+    },
+    {
+      "case_id": "EC-016",
+      "repetition": 2,
+      "elapsed_ms": 3299,
+      "pass": true,
+      "safe_error_code": "MULTIPLE_TRANSACTIONS"
+    },
+    {
+      "case_id": "EC-016",
+      "repetition": 3,
+      "elapsed_ms": 2402,
+      "pass": true,
+      "safe_error_code": "MULTIPLE_TRANSACTIONS"
+    },
+    {
+      "case_id": "EC-017",
+      "repetition": 1,
+      "elapsed_ms": 1935,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-017",
+      "repetition": 2,
+      "elapsed_ms": 5839,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-017",
+      "repetition": 3,
+      "elapsed_ms": 2214,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-018",
+      "repetition": 1,
+      "elapsed_ms": 1995,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-018",
+      "repetition": 2,
+      "elapsed_ms": 2163,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-018",
+      "repetition": 3,
+      "elapsed_ms": 1710,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-020",
+      "repetition": 1,
+      "elapsed_ms": 2446,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-020",
+      "repetition": 2,
+      "elapsed_ms": 2048,
+      "pass": true,
+      "safe_error_code": null
+    },
+    {
+      "case_id": "EC-020",
+      "repetition": 3,
+      "elapsed_ms": 2646,
+      "pass": true,
+      "safe_error_code": null
+    }
+  ],
+  "evidence_privacy": "Case IDs, repetition, elapsed time, pass/fail and safe error codes only. No statements or generated transaction details retained."
+}

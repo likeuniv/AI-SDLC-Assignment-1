@@ -1,0 +1,123 @@
+{
+  "milestone": "T023",
+  "run_type": "automated tests and production build",
+  "checks": [
+    {
+      "check_id": "output-schema",
+      "outcome": "PASS",
+      "tests": 11,
+      "test_runtime_ms": 947.026
+    },
+    {
+      "check_id": "transaction-invariants",
+      "outcome": "PASS",
+      "tests": 12,
+      "test_runtime_ms": 472.967
+    },
+    {
+      "check_id": "openai-adapter",
+      "outcome": "PASS",
+      "tests": 13,
+      "test_runtime_ms": 973.282
+    },
+    {
+      "check_id": "extraction-service",
+      "outcome": "PASS",
+      "tests": 11,
+      "test_runtime_ms": 944.671
+    },
+    {
+      "check_id": "analyze-api-integration",
+      "outcome": "PASS",
+      "tests": 14,
+      "test_runtime_ms": 1170.938
+    },
+    {
+      "check_id": "frontend",
+      "outcome": "PASS",
+      "tests": 8,
+      "test_runtime_ms": 2400
+    },
+    {
+      "check_id": "root-test-suite",
+      "outcome": "PASS",
+      "tests": 73,
+      "test_runtime_ms": 5099.596
+    },
+    {
+      "check_id": "pinned-currency-registry-snapshot",
+      "outcome": "PASS",
+      "currency_codes": 156,
+      "withdrawn_codes_excluded": 6,
+      "unknown_currency_code": "XXX"
+    },
+    {
+      "check_id": "frontend-production-build",
+      "outcome": "PASS",
+      "modules_transformed": 17,
+      "build_runtime_ms": 482
+    },
+    {
+      "check_id": "EC-001",
+      "case_id": "EC-001",
+      "outcome": "PASS"
+    },
+    {
+      "check_id": "EC-002",
+      "case_id": "EC-002",
+      "outcome": "PASS"
+    },
+    {
+      "check_id": "EC-003",
+      "case_id": "EC-003",
+      "outcome": "PASS"
+    },
+    {
+      "check_id": "EC-004",
+      "case_id": "EC-004",
+      "outcome": "PASS"
+    },
+    {
+      "check_id": "EC-005",
+      "case_id": "EC-005",
+      "outcome": "PASS"
+    },
+    {
+      "check_id": "EC-006",
+      "case_id": "EC-006",
+      "outcome": "PASS"
+    },
+    {
+      "check_id": "EC-007",
+      "case_id": "EC-007",
+      "outcome": "PASS"
+    },
+    {
+      "check_id": "EC-008",
+      "case_id": "EC-008",
+      "outcome": "PASS"
+    }
+  ],
+  "not_run": [
+    {
+      "check_id": "live-openai-semantic-evaluation",
+      "outcome": "NOT RUN",
+      "reason": "Automated tests use injected fake providers; no live provider call was required for T023."
+    },
+    {
+      "check_id": "full-21-case-harness-evaluation",
+      "outcome": "NOT RUN",
+      "reason": "evals/dataset.json and the harness runner are not present; full harness implementation is outside T016-T023."
+    },
+    {
+      "check_id": "AC-011-usability-study",
+      "outcome": "NOT RUN",
+      "reason": "Requires 10 participants and timed first-use sessions."
+    },
+    {
+      "check_id": "AC-012-live-latency-study",
+      "outcome": "NOT RUN",
+      "reason": "Requires 63 provider-backed browser requests in the specified reference environment."
+    }
+  ]
+}

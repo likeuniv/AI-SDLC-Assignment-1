@@ -1,0 +1,76 @@
+{
+  "scoring": {
+    "weights": {
+      "structural": 0.4,
+      "behavioral": 0.4,
+      "semantic": 0.2
+    },
+    "thresholds": {
+      "structural": 1.0,
+      "behavioral": 1.0,
+      "adversarial": 1.0,
+      "semantic": 0.85,
+      "aggregate": 0.97
+    }
+  },
+  "evaluation": {
+    "dataset": "evals/dataset.json",
+    "expected_case_count": 21,
+    "preserve_cases": true,
+    "independent_evaluators": true,
+    "model": "gpt-6-luna"
+  },
+  "currency_registry": {
+    "source": "Node.js Intl currency data snapshot (bundled ICU)",
+    "revision": "Node.js v24.22.2 / ICU 78.3, captured 2026-11-11",
+    "excluded_withdrawn_codes": ["BGN", "CUC", "HRK", "SLL", "SVC", "ZWL"],
+    "unknown_currency_code": "XXX",
+    "official_comparison": {
+      "source": "SIX ISO 4217 List One XML",
+      "url": "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml",
+      "revision": "Pblshd=2026-09-17",
+      "verified": "2026-11-11",
+      "result": "Not an exact match: List One includes SVC, XCG, and VED absent from the implementation set; it omits ANG present in the implementation set. BGN, CUC, HRK, SLL, and ZWL are absent from List One.",
+      "list_one_distinct_alphabetic_code_count": 178,
+      "comparison_note": "List One includes fund and special-purpose codes and is not directly interchangeable with the 156-code ICU-derived currency snapshot."
+    }
+  },
+  "repair": {
+    "max_cycles": 2,
+    "rerun_all_cases_after_repair": true,
+    "preserve_thresholds": true,
+    "stop_if_gates_unmet": true
+  },
+  "logging": {
+    "mode": "metadata_only",
+    "allowed_fields": [
+      "synthetic_case_id",
+      "check_id",
+      "pass_fail",
+      "duration",
+      "safe_error_code",
+      "aggregate_result",
+      "repair_cycle",
+      "repair_history_metadata",
+      "pseudonymous_participant_id",
+      "usability_study_outcome"
+    ],
+    "prohibited_content": [
+      "raw_transaction_statements",
+      "generated_transaction_details",
+      "api_keys",
+      "secrets",
+      "provider_responses",
+      "raw_exceptions"
+    ]
+  },
+  "evidence": {
+    "content_free": true,
+    "initial_generation": "evidence/initial-generation/",
+    "final_generation": "evidence/final-generation/",
+    "evaluation_results": "evidence/runs/<run_id>/eval-results.json",
+    "harness_log": "evidence/runs/<run_id>/harness-log.md",
+    "historical_evaluation_results": "evidence/eval-results.json",
+    "historical_harness_log": "evidence/harness-log.md"
+  }
+}
